@@ -61,13 +61,13 @@ fi
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
+#case "$TERM" in
+#xterm*|rxvt*)
+#    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+#    ;;
+#*)
+#    ;;
+#esac
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -121,6 +121,9 @@ alias py='python'
 if ! { [ "$TERM" = "screen" ] && [ -n "$TMUX" ]; } then
 	PS1='\[\e[01;37m\]\n\u\[\e[0m\]\[\e[00;37m\] \[\e[0m\]\[\e[01;34m\]\w\[\e[0m\]\[\e[00;37m\]$(__git_ps1 " (%s)")\n\$ \[\e[0m\]'
 fi
+
+# Colors please
+export TERM="screen-256color"
 
 # Git prompt
 export GIT_PS1_SHOWDIRTYSTATE=1
