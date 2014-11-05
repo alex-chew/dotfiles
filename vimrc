@@ -6,6 +6,10 @@ set showcmd
 set backspace=indent,eol,start
 set whichwrap+=<,>,h,l,[,]
 
+" Cursor movement on wrapped lines
+inoremap <Down> <C-o>gj
+inoremap <Up> <C-o>gk
+
 " Indentation
 set autoindent
 set tabstop=4
@@ -36,6 +40,9 @@ filetype on
 filetype indent on
 "filetype plugin on
 
+" X clipboard is the + register
+set clipboard=unnamedplus
+
 " Search
 set incsearch
 set hlsearch
@@ -49,10 +56,6 @@ set t_vb=
 " Backup/swap files
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
-
-" Cursor movement on wrapped lines
-inoremap <Down> <C-o>gj
-inoremap <Up> <C-o>gk
 
 " Color scheme
 color Tomorrow-Night-Eighties
