@@ -1,0 +1,16 @@
+UXTerm*faceName: Source Code Pro
+UXTerm*faceSize: 9
+
+UXTerm*loginshell: false
+
+UXTerm*savelines: 8192
+
+UXTerm*ScrollBar: false
+UXTerm*scrollTtyOutput: false
+
+! colors
+UXTerm*background: rgb:26/26/26
+
+! Select URLs with double click
+UXTerm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
+
