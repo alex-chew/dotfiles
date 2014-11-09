@@ -60,3 +60,6 @@ set directory=~/.vim/backup
 " Color scheme
 color Tomorrow-Night-Eighties
 
+" Custom file types
+au BufRead,BufNewFile *.ino set filetype=arduino
+
