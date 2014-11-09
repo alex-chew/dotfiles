@@ -18,8 +18,13 @@ for s, d in cfg.iteritems():
 	# Expand user alias in destination path
 	d = os.path.expanduser(d)
 
-	# If link, make backup as a file and remove existing
 	if (os.path.islink(d)):
+		# If link source is correct, move on
+		if (os.readlink(d) == os.path.join(here, s)):
+			print('{}: destination link already exists'.format(s))
+			continue
+
+		# Otherwise, backup and delete
 		if (sp.call(['cp', '-L', d, '{}.old'.format(d)]) == 0):
 			print('{}: destination backup from link made'.format(s))
 		else:
