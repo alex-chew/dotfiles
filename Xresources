@@ -4,9 +4,14 @@ UXTerm*faceSize: 9
 UXTerm*loginshell: false
 
 UXTerm*savelines: 8192
-
 UXTerm*ScrollBar: false
 UXTerm*scrollTtyOutput: false
+
+! Alt key fix
+UXTerm*metaSendsEscape: true
+
+! locale UTF-8 settings
+UXTerm*locale: true
 
 ! colors
 UXTerm*background: rgb:26/26/26
