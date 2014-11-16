@@ -1,0 +1,5 @@
+#!/bin/bash
+# This hook is sourced after every virtualenv is deactivated.
+
+PS1="$DEFAULT_PS1"
+

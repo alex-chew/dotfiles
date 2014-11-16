@@ -1,9 +1,14 @@
 {
 	"bashrc": "~/.bashrc",
+
 	"vimrc": "~/.vimrc",
 	"vim/Tomorrow-Night-Eighties.vim": "~/.vim/colors/Tomorrow-Night-Eighties.vim",
 	"vim/arduino.vim": "~/.vim/arduino.vim",
+
 	"tmux.conf": "~/.tmux.conf",
-	"Xresources": "~/.Xresources"
+	"Xresources": "~/.Xresources",
+
+	"virtualenvs/postactivate": "~/.virtualenvs/postactivate",
+	"virtualenvs/postdeactivate": "~/.virtualenvs/postdeactivate"
 }
 

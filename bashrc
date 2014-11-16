@@ -118,6 +118,7 @@ alias py='python'
 
 # Custom prompt
 export DEFAULT_PS1='\[\e[01;37m\]\n\u\[\e[0m\]\[\e[00;37m\] \[\e[0m\]\[\e[01;34m\]\w\[\e[0m\]\[\e[00;37m\]$(__git_ps1 " (%s)")\n\$ \[\e[0m\]'
+export VIRTUALENV_PS1='\[\e[01;37m\]\n\u\[\e[0m\]\[\e[00;37m\] \[\e[0m\]\[\e[01;34m\]\w\[\e[0m\]\[\e[00;37m\]$(__git_ps1 " (%s)")\n($(basename "$VIRTUAL_ENV" )) \$ \[\e[0m\]'
 #export PS1="\[\e[01;34m\]\u\[\e[0m\]\[\e[00;37m\]@\h \[\e[0m\]\[\e[01;34m\]\w\[\e[0m\]\[\e[00;37m\] \\$ \[\e[0m\]"
 if ! { [ "$TERM" = "screen" ] && [ -n "$TMUX" ]; } then
 	PS1=$DEFAULT_PS1
