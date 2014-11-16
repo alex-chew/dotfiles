@@ -117,9 +117,10 @@ alias py='python'
 #alias ved='deactivate'
 
 # Custom prompt
+export DEFAULT_PS1='\[\e[01;37m\]\n\u\[\e[0m\]\[\e[00;37m\] \[\e[0m\]\[\e[01;34m\]\w\[\e[0m\]\[\e[00;37m\]$(__git_ps1 " (%s)")\n\$ \[\e[0m\]'
 #export PS1="\[\e[01;34m\]\u\[\e[0m\]\[\e[00;37m\]@\h \[\e[0m\]\[\e[01;34m\]\w\[\e[0m\]\[\e[00;37m\] \\$ \[\e[0m\]"
 if ! { [ "$TERM" = "screen" ] && [ -n "$TMUX" ]; } then
-	PS1='\[\e[01;37m\]\n\u\[\e[0m\]\[\e[00;37m\] \[\e[0m\]\[\e[01;34m\]\w\[\e[0m\]\[\e[00;37m\]$(__git_ps1 " (%s)")\n\$ \[\e[0m\]'
+	PS1=$DEFAULT_PS1
 fi
 
 # Colors please
@@ -128,6 +129,12 @@ export TERM="screen-256color"
 # Git prompt
 export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWUPSTREAM="auto"
+
+# Virtualenv
+export VIRTUAL_ENV_DISABLE_PROMPT=1 # disable default prompt
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Development/py
+source /usr/local/bin/virtualenvwrapper.sh
 
 # Editor
 export EDITOR='vim'
