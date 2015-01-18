@@ -7,6 +7,7 @@
 
 	"tmux.conf": "~/.tmux.conf",
 	"Xresources": "~/.Xresources",
+	"inputrc": "~/.inputrc",
 
 	"virtualenvs/postactivate": "~/.virtualenvs/postactivate",
 	"virtualenvs/postdeactivate": "~/.virtualenvs/postdeactivate"

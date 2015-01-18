@@ -14,6 +14,7 @@ UXTerm*metaSendsEscape: true
 UXTerm*locale: true
 
 ! colors
+UXTerm*foreground: white
 UXTerm*background: rgb:26/26/26
 
 ! Select URLs with double click

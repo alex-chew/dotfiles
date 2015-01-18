@@ -106,7 +106,10 @@ alias ll='ls -halF'
 alias lls='ls -halF | less'
 alias la='ls -a'
 alias l='ls -CF'
- 
+
+# safety
+alias rm='rm -I'
+
 # misc aliases
 alias histc='history -c && history -w'
 alias df='df -h'
