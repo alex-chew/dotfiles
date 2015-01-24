@@ -1,10 +1,20 @@
+! Always use Unicode support
+UXTerm*utf8: 1
+
+! Font name and size
 UXTerm*faceName: Source Code Pro
 UXTerm*faceSize: 9
 
+! Cursor
+UXTerm*cursorColor: white
+UXTerm*cursorBlink: true
+
 UXTerm*loginshell: false
 
+! Line history and scrolling
 UXTerm*savelines: 8192
 UXTerm*ScrollBar: false
+UXTerm*ScrollKey: true
 UXTerm*scrollTtyOutput: false
 
 ! Alt key fix
