@@ -4,6 +4,7 @@ import os
 import sys
 import subprocess as sp
 import json
+import shlex
 
 here = os.path.dirname(os.path.realpath(sys.argv[0]))
 with open('config.json') as cfg_file:
@@ -51,4 +52,9 @@ for s, d in cfg.iteritems():
 		print('{}: link at {} created'.format(s, d))
 	else:
 		print('{}: link at {} could not be created'.format(s, d))
+
+if (sp.call(os.path.join(here, 'postdeploy.sh')) == 0):
+	print('post-deploy ran successfully')
+else:
+	print('post-deploy failed')
 
