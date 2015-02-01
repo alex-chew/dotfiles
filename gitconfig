@@ -1,0 +1,10 @@
+[alias]
+	br = branch
+	cm = commit
+	co = checkout
+	logo = log --oneline
+	logg = log --oneline --graph --decorate
+
+[user]
+	name = Alex Chew
+	email = alex@alexchew.net
