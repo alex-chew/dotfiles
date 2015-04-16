@@ -143,3 +143,5 @@ source /usr/local/bin/virtualenvwrapper.sh
 # Editor
 export EDITOR='vim'
 
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
