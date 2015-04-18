@@ -13,8 +13,9 @@ inoremap <Up> <C-o>gk
 " Indentation
 set autoindent
 set tabstop=4
-set shiftwidth=4
-set noexpandtab
+set softtabstop=2
+set shiftwidth=2
+set expandtab
 
 " Show whitespace
 set list
