@@ -1,6 +1,8 @@
 {
 	"bashrc": "~/.bashrc",
 
+	"gitconfig": "~/.gitconfig",
+
 	"vimrc": "~/.vimrc",
 	"vim/Tomorrow-Night-Eighties.vim": "~/.vim/colors/Tomorrow-Night-Eighties.vim",
 	"vim/arduino.vim": "~/.vim/arduino.vim",
