@@ -8,3 +8,5 @@
 [user]
 	name = Alex Chew
 	email = alex@alexchew.net
+[push]
+	default = simple
