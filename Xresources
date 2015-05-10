@@ -52,6 +52,10 @@ URxvt*.scrollTtyOutput: false
 URxvt*.scrollWithBuffer: true
 URxvt*.scrollTtyKeypress: true
 
+! Custom scroll keyboard shortcuts
+URxvt.keysym.Shift-Up: command:\033]720;1\007
+URxvt.keysym.Shift-Down: command:\033]721;1\007
+
 ! Disable perl stuff
 URxvt*.perl-ext:
 URxvt*.perl-ext-common:
