@@ -2,6 +2,9 @@ set nocompatible
 set t_Co=256
 set showcmd
 
+" Color scheme
+color Tomorrow-Night-Eighties
+
 " Correct backspace/movement wrapping
 set backspace=indent,eol,start
 set whichwrap+=<,>,h,l,[,]
@@ -23,11 +26,14 @@ set listchars=tab:»\ ,trail:·
 
 " Line highlighting/numbering
 set number
-"hi LineNr ctermfg=8
+hi LineNr ctermfg=238
 set cursorline
-"hi clear CursorLine
-"hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
-"hi CursorLineNr term=bold cterm=bold ctermfg=6 guifg=8
+hi CursorLine ctermbg=236
+hi CursorLineNr ctermfg=7
+
+" Show 80th column
+set colorcolumn=80
+hi ColorColumn ctermbg=237
 
 " Matching brackets
 set showmatch
@@ -57,9 +63,6 @@ set t_vb=
 " Backup/swap files
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
-
-" Color scheme
-color Tomorrow-Night-Eighties
 
 " Custom file types
 au BufRead,BufNewFile *.ino set filetype=arduino
