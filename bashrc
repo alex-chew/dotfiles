@@ -128,7 +128,11 @@ if ! { [ "$TERM" = "screen" ] && [ -n "$TMUX" ]; } then
 fi
 
 # Colors please
-export TERM="screen-256color"
+#export TERM="screen-256color"
+
+# Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/base16-ocean.dark.sh"
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 # Git prompt
 export GIT_PS1_SHOWDIRTYSTATE=1

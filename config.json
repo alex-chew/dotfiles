@@ -1,9 +1,11 @@
 {
 	"bashrc": "~/.bashrc",
+    "base16-shell/base16-ocean.dark.sh": "~/.config/base16-shell/base16-ocean.dark.sh",
 
 	"gitconfig": "~/.gitconfig",
 
 	"vimrc": "~/.vimrc",
+    "vim/base16-ocean.vim": "~/.vim/colors/base16-ocean.vim",
 	"vim/Tomorrow-Night-Eighties.vim": "~/.vim/colors/Tomorrow-Night-Eighties.vim",
 	"vim/arduino.vim": "~/.vim/arduino.vim",
 

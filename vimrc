@@ -3,7 +3,9 @@ set t_Co=256
 set showcmd
 
 " Color scheme
-color Tomorrow-Night-Eighties
+let base16colorspace=256
+set background=dark
+color base16-ocean
 
 " Correct backspace/movement wrapping
 set backspace=indent,eol,start
@@ -26,14 +28,10 @@ set listchars=tab:»\ ,trail:·
 
 " Line highlighting/numbering
 set number
-hi LineNr ctermfg=238
 set cursorline
-hi CursorLine ctermbg=236
-hi CursorLineNr ctermfg=7
 
 " Show 80th column
 set colorcolumn=80
-hi ColorColumn ctermbg=237
 
 " Matching brackets
 set showmatch
