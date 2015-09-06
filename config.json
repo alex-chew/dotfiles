@@ -15,6 +15,8 @@
 	"Xresources": "~/.Xresources",
 	"inputrc": "~/.inputrc",
 
+    "i3/config": "~/.i3/config",
+
 	"virtualenvs/postactivate": "~/.virtualenvs/postactivate",
 	"virtualenvs/postdeactivate": "~/.virtualenvs/postdeactivate"
 }
