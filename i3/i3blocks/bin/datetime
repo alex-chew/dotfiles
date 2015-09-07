@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+echo $(date +"%a %Y-%m-%d %H:%M")
+

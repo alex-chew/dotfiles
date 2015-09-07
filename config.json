@@ -17,6 +17,15 @@
 
     "i3/config": "~/.i3/config",
 
+    "i3/i3blocks/config": "~/.i3/i3blocks/config",
+    "i3/i3blocks/bin/battery": "~/.i3/i3blocks/bin/battery",
+    "i3/i3blocks/bin/cpu": "~/.i3/i3blocks/bin/cpu",
+    "i3/i3blocks/bin/datetime": "~/.i3/i3blocks/bin/datetime",
+    "i3/i3blocks/bin/ethernet": "~/.i3/i3blocks/bin/ethernet",
+    "i3/i3blocks/bin/memory": "~/.i3/i3blocks/bin/memory",
+    "i3/i3blocks/bin/volume": "~/.i3/i3blocks/bin/volume",
+    "i3/i3blocks/bin/wifi": "~/.i3/i3blocks/bin/wifi",
+
 	"virtualenvs/postactivate": "~/.virtualenvs/postactivate",
 	"virtualenvs/postdeactivate": "~/.virtualenvs/postdeactivate"
 }
