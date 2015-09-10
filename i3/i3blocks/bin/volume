@@ -1,4 +1,20 @@
 #!/usr/bin/env bash
 
-echo "volume placeholder"
+info=$(amixer -D pulse get Master)
+regex="\[([0-9]+%)\] \[(on|off)\]"
+
+# full text
+[[ $info =~ $regex ]]
+echo "VOL ${BASH_REMATCH[1]} (${BASH_REMATCH[2]})"
+
+# short text
+echo
+
+# color
+source $(dirname $0)/_colors
+if [[ "${BASH_REMATCH[2]}" == "off" ]]; then
+  echo ${base0A}
+else
+  echo ${base07}
+fi
 

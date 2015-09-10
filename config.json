@@ -18,6 +18,7 @@
     "i3/config": "~/.i3/config",
 
     "i3/i3blocks/config": "~/.i3/i3blocks/config",
+    "i3/i3blocks/bin/_colors": "~/.i3/i3blocks/bin/_colors",
     "i3/i3blocks/bin/battery": "~/.i3/i3blocks/bin/battery",
     "i3/i3blocks/bin/cpu": "~/.i3/i3blocks/bin/cpu",
     "i3/i3blocks/bin/datetime": "~/.i3/i3blocks/bin/datetime",

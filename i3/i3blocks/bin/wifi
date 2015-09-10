@@ -1,4 +1,36 @@
 #!/usr/bin/env bash
 
-echo "wifi placeholder"
+info=$(nmcli -f "GENERAL.STATE,GENERAL.CONNECTION" dev show wlan0)
+
+source $(dirname $0)/_colors
+
+if [[ $(echo $info | awk '{ print $3 }') != '(connected)' ]]; then
+  # full text
+  echo "WFI down"
+  # short text
+  echo
+  #color
+  echo ${base08}
+
+else
+  ssid=$(echo $info | awk '{ print $5 }')
+  ip=$(ip addr show wlan0 | awk '/inet / { print $2 }')
+  qual=$(grep wlan0 /proc/net/wireless | awk '{ print int($3 * 100 / 70) }')
+
+  # full text
+  echo "WFI $ssid at $ip ($qual%)"
+  
+  # short text
+  echo
+
+  # color
+  if (( "$qual" > 70 )); then
+    echo ${base07}
+  elif (( "$qual" > 30 )); then
+    echo ${base0A}
+  else
+    echo ${base09}
+  fi
+
+fi
 

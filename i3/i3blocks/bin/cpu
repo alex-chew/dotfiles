@@ -1,4 +1,25 @@
 #!/usr/bin/env bash
 
-echo "cpu placeholder"
+cpu=$(top -bn1 | grep load)
+regex="load average: ([0-9.]+), ([0-9.]+), ([0-9.]+)"
+full=$(grep 'model name' /proc/cpuinfo | wc -l)
+
+# full text
+[[ $cpu =~ $regex ]]
+echo "CPU ${BASH_REMATCH[1]}/${BASH_REMATCH[2]}/${BASH_REMATCH[3]}"
+
+# short text
+echo
+
+# color
+source $(dirname $0)/_colors
+if (( $(echo "${BASH_REMATCH[3]} > $full * 0.8" | bc -l) )); then
+  echo ${base08}
+elif (( $(echo "${BASH_REMATCH[2]} > $full * 0.9" | bc -l) )); then
+  echo ${base09}
+elif (( $(echo "${BASH_REMATCH[1]} > $full" | bc -l) )); then
+  echo ${base0A}
+else
+  echo ${base07}
+fi
 

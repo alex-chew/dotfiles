@@ -158,6 +158,7 @@ bar {
         status_command i3blocks -c ~/.i3/i3blocks/config
         position top
         font pango:Source Code Pro 10
+        separator_symbol " ❱ "
         colors {
                 background #2b303b
                 focused_workspace #4c7899 #8fa1b3 #ffffff
