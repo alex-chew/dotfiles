@@ -15,3 +15,8 @@ interval=1
 
 [datetime]
 
+[nothing]
+# Use zero width space for nonempty line
+command=echo "​"
+interval=once
+
