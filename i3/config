@@ -134,6 +134,9 @@ bindsym $mod+Control+slash exec playerctl play-pause
 bindsym XF86AudioRaiseVolume exec amixer -q -D pulse set Master 5%+ unmute
 bindsym XF86AudioLowerVolume exec amixer -q -D pulse set Master 5%- unmute
 bindsym XF86AudioMute exec amixer -q -D pulse set Master toggle
+bindsym $mod+Control+F12 exec amixer -q -D pulse set Master 5%+ unmute
+bindsym $mod+Control+F11 exec amixer -q -D pulse set Master 5%- unmute
+bindsym $mod+Control+F10 exec amixer -q -D pulse set Master toggle
 
 
 
