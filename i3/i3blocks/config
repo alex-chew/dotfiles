@@ -12,6 +12,7 @@ interval=1
 [volume]
 
 [battery]
+command=~/.i3/i3blocks/bin/battery | sed 's/BAT /🗲   /'
 
 [datetime]
 

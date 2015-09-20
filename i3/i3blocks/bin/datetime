@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-echo "TIM $(date +"%a %Y-%m-%d %H:%M")"
+echo "🕓   $(date +"%a %Y-%m-%d %H:%M")"
 

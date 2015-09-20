@@ -6,7 +6,7 @@ source $(dirname $0)/_colors
 
 if [[ $(echo $info | awk '{ print $3 }') != '(connected)' ]]; then
   # full text
-  echo "WFI down"
+  echo "   down"
   # short text
   echo
   #color
@@ -18,7 +18,7 @@ else
   qual=$(grep wlan0 /proc/net/wireless | awk '{ print int($3 * 100 / 70) }')
 
   # full text
-  echo "WFI $ssid at $ip ($qual%)"
+  echo "   $ssid at $ip ($qual%)"
   
   # short text
   echo

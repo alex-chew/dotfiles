@@ -6,7 +6,7 @@ used=$(echo "$mem" | awk '{ print $3 }')
 perc=$(echo "$used / $total" | bc -l)
 
 # full text
-printf "MEM %s/%sMB (%.2f%%)\n" $used $total $(echo "$perc * 100" | bc -l)
+printf "   %s/%sMB (%.2f%%)\n" $used $total $(echo "$perc * 100" | bc -l)
 
 # short text
 echo
