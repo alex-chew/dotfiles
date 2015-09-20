@@ -13,7 +13,7 @@ echo
 # color
 source $(dirname $0)/_colors
 if [[ "${BASH_REMATCH[2]}" == "off" ]]; then
-  echo ${base0A}
+  echo ${base03}
 else
   echo ${base07}
 fi

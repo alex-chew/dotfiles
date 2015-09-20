@@ -8,7 +8,7 @@ if [[ "$(cat /sys/class/net/eth0/operstate)" != "up" ]]; then
   # short text
   echo
   # color
-  echo ${base0A}
+  echo ${base03}
 
 else
   # full text

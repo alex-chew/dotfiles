@@ -10,7 +10,7 @@ if [[ $(echo $info | awk '{ print $3 }') != '(connected)' ]]; then
   # short text
   echo
   #color
-  echo ${base0A}
+  echo ${base03}
 
 else
   ssid=$(echo $info | awk '{ print $5 }')
