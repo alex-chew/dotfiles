@@ -180,7 +180,12 @@ bar {
         separator_symbol " ❱ "
         colors {
                 background #2b303b
-                focused_workspace #4c7899 #8fa1b3 #ffffff
+                statusline #eff1f5
+                separator #4f5b66
+
+                focused_workspace #2b303b #2b303b #eff1f5
+                inactive_workspace #2b303b #2b303b #4f5b66
+                urgent_workspace #2b303b #2b303b #bf616a
         }
 }
 
