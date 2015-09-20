@@ -10,7 +10,7 @@ if [[ $(echo $info | awk '{ print $3 }') != '(connected)' ]]; then
   # short text
   echo
   #color
-  echo ${base08}
+  echo ${base0A}
 
 else
   ssid=$(echo $info | awk '{ print $5 }')
@@ -26,10 +26,12 @@ else
   # color
   if (( "$qual" > 70 )); then
     echo ${base07}
-  elif (( "$qual" > 30 )); then
+  elif (( "$qual" > 40 )); then
     echo ${base0A}
-  else
+  elif (( "$qual" > 20 )); then
     echo ${base09}
+  else
+    echo ${base08}
   fi
 
 fi
