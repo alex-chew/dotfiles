@@ -197,6 +197,7 @@ bar {
 
 
 for_window [class="^.*"] border pixel 1
+for_window [title="^Pushbullet$" window_role="pop-up"] floating enable
 
 assign [class="^Spotify$"] 10
 
