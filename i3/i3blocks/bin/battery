@@ -1,46 +1,25 @@
-#!/usr/bin/env python
+#!/usr/bin/env bash
 
-import os
-import re
-import shlex
-import subprocess as sp
-import sys
+info=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0)
+perc=$(echo "$info" | awk '/percentage:/ { print $2 }' | sed 's/%//')
+time=$(echo "$info" | awk '/time to (empty|full):/ { printf "%.0f%.1s → %.1s", $4, $5, $3 }')
 
-if os.path.exists('/sys/class/power_supply/BAT0'):
-	batt_loc = '/org/freedesktop/UPower/devices/battery_BAT0'
-	command = 'upower -i {}'.format(batt_loc)
-	try:
-		cmd_output = sp.check_output(shlex.split(command))
-		outstr = 'BAT '
-		
-		# Battery percentage
-		perc = re.search(r'percentage:\s+([\d%]+)', cmd_output)
-		if perc:
-			outstr += perc.group(1)
+# full text
+echo "🗲   ${perc}% ($time)"
 
-		# State: [discharging | charging | fully-charged]
-		state = re.search(r'state:\s+(\w)', cmd_output)
-		if state:
-			outstr += ' ('
-			# Time to [full|empty]
-			timeto = re.search(r'time to \w+:\s+([\d\.]+) (\w)', cmd_output)
-			
-			if timeto:
-				outstr += (''
-						+ str(int(round(float(timeto.group(1)))))
-						+ timeto.group(2)
-						+ ' to ')
+# short text
+echo
 
-			outstr += state.group(1)
-			outstr += ')'
-
-		print(outstr)
-	except sp.CalledProcessError: # Exit code nonzero
-		print('BAT error')
-		sys.exit()
-
-# No battery on this computer
-else:
-	sys.exit()
+# color
+source $(dirname $0)/_colors
+if (( $(echo "$perc > 60" | bc -l) )); then
+  echo ${base07}
+elif (( $(echo "$perc > 40" | bc -l) )); then
+  echo ${base0A}
+elif (( $(echo "$perc > 20" | bc -l) )); then
+  echo ${base09}
+else
+  echo ${base08}
+fi
 
 
