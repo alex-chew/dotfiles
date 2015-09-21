@@ -15,6 +15,8 @@ font pango:Source Code Pro 10
 
 set $mod Mod4
 
+exec --no-startup-id setxkbmap -model pc105 -layout us -option compose:ralt
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
