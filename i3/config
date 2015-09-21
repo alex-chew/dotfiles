@@ -204,11 +204,12 @@ for_window [title="^Pushbullet$" window_role="pop-up"] floating enable
 assign [class="^Spotify$"] 10
 
 # Window colors
+# class                 border  bg      text    indicator
 client.focused          #4c7899 #8fa1b3 #ffffff #bf616a
 client.focused_inactive #333333 #5f676a #ffffff #484e50
 client.unfocused        #333333 #222222 #888888 #292d2e
-client.urgent           #2f343a #900000 #ffffff #900000
-#client.placeholder      #000000 #0c0c0c #ffffff #000000
+client.urgent           #2f343a #bf616a #ffffff #bf616a
+client.placeholder      #000000 #0c0c0c #ffffff #000000
 
 
 
