@@ -12,7 +12,7 @@ if [[ "$(cat /sys/class/net/eth0/operstate)" != "up" ]]; then
 
 else
   # full text
-  echo  "🖧   $(ip addr show eth0 | awk '/inet / { print $2 }')"
+  echo  "🖧   $(ip addr show eth0 | awk '/inet / { print $2 }' | cut -d \/ -f 1)"
   # short text
   echo
   # color

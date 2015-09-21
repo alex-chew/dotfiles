@@ -5,7 +5,11 @@ perc=$(echo "$info" | awk '/percentage:/ { print $2 }' | sed 's/%//')
 time=$(echo "$info" | awk '/time to (empty|full):/ { printf "%.0f%.1s → %.1s", $4, $5, $3 }')
 
 # full text
-echo "🗲   ${perc}% ($time)"
+if [[ -n "$time" ]]; then
+  echo "🗲   ${perc}% ($time)"
+else
+  echo "🗲   ${perc}%"
+fi
 
 # short text
 echo
