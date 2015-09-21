@@ -1,20 +1,26 @@
 command=~/.i3/i3blocks/bin/$BLOCK_NAME
-interval=1
 
 [wifi]
+interval=5
 
 [ethernet]
+interval=5
 
 [cpu]
+interval=10
 
 [memory]
+interval=10
 
 [volume]
+interval=once
 signal=1
 
 [battery]
+interval=10
 
 [datetime]
+interval=5
 
 [nothing]
 # Use zero width space for nonempty line
