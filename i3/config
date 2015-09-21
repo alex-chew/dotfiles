@@ -136,12 +136,12 @@ bindsym $mod+Control+period exec playerctl next
 bindsym $mod+Control+slash exec playerctl play-pause
 
 # audio up/down/mute
-bindsym XF86AudioRaiseVolume exec amixer -q -D pulse set Master 5%+ unmute
-bindsym XF86AudioLowerVolume exec amixer -q -D pulse set Master 5%- unmute
-bindsym XF86AudioMute exec amixer -q -D pulse set Master toggle
-bindsym $mod+Control+F12 exec amixer -q -D pulse set Master 5%+ unmute
-bindsym $mod+Control+F11 exec amixer -q -D pulse set Master 5%- unmute
-bindsym $mod+Control+F10 exec amixer -q -D pulse set Master toggle
+bindsym XF86AudioRaiseVolume exec amixer -q -D pulse set Master 5%+ unmute; exec pkill -RTMIN+1 i3blocks
+bindsym XF86AudioLowerVolume exec amixer -q -D pulse set Master 5%- unmute; exec pkill -RTMIN+1 i3blocks
+bindsym XF86AudioMute exec amixer -q -D pulse set Master toggle; exec pkill -RTMIN+1 i3blocks
+bindsym $mod+Control+F12 exec amixer -q -D pulse set Master 5%+ unmute; exec pkill -RTMIN+1 i3blocks
+bindsym $mod+Control+F11 exec amixer -q -D pulse set Master 5%- unmute; exec pkill -RTMIN+1 i3blocks
+bindsym $mod+Control+F10 exec amixer -q -D pulse set Master toggle; exec pkill -RTMIN+1 i3blocks
 
 
 

@@ -10,6 +10,7 @@ interval=1
 [memory]
 
 [volume]
+signal=1
 
 [battery]
 
