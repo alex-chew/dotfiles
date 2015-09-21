@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-mem=$(free -m | sed -n 2p)
-total=$(echo "$mem" | awk '{ print $2 }')
-used=$(echo "$mem" | awk '{ print $3 }')
+mem=$(free -m)
+total=$(echo "$mem" | awk 'NR == 2 { print $2 }')
+used=$(echo "$mem" | awk 'NR == 3 { print $3 }')
 perc=$(echo "$used / $total" | bc -l)
 
 # full text
