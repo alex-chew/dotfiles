@@ -10,10 +10,10 @@ interval=5
 interval=10
 
 [memory]
-interval=10
+interval=5
 
 [volume]
-interval=once
+interval=10
 signal=1
 
 [battery]
