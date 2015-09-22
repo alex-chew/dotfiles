@@ -213,6 +213,8 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000
 
 
 
+exec --no-startup-id nitrogen --restore
+exec --no-startup-id compton -i 0.6 -I 0.05 -b --mark-ovredir-focused
 exec --no-startup-id nm-applet
 
 
