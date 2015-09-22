@@ -2,3 +2,7 @@
 
 echo "🕓   $(date +"%a %Y-%m-%d %H:%M")"
 
+if [[ -n "$BLOCK_BUTTON" ]]; then
+  gsimplecal
+fi
+
