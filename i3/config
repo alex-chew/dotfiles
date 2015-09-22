@@ -121,6 +121,9 @@ bindsym $mod+Shift+slash move container to workspace back_and_forth
 bindsym $mod+Shift+p move scratchpad
 bindsym $mod+p scratchpad show
 
+bindsym $mod+Shift+o exec xprop -id $(xprop -root _NET_ACTIVE_WINDOW | awk '{ print $5 }') -f FORCE_OPAQUE 8s -set FORCE_OPAQUE "yes"
+bindsym $mod+o exec xprop -id $(xprop -root _NET_ACTIVE_WINDOW | awk '{ print $5 }') -remove FORCE_OPAQUE
+
 
 
 # reload the configuration file
@@ -214,7 +217,7 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000
 
 
 exec --no-startup-id nitrogen --restore
-exec --no-startup-id compton -i 0.6 -I 0.05 -b --mark-ovredir-focused
+exec --no-startup-id compton -i 0.6 -I 0.05 -b --mark-ovredir-focused --focus-exclude 'FORCE_OPAQUE'
 exec --no-startup-id nm-applet
 
 
