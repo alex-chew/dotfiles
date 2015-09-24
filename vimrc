@@ -53,6 +53,10 @@ set incsearch
 set hlsearch
 set ignorecase smartcase
 
+" Completion options
+set wildmode=longest,list,full
+set wildmenu
+
 " Bells
 set noerrorbells
 set visualbell
