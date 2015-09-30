@@ -1,5 +1,6 @@
 {
 	"bashrc": "~/.bashrc",
+	"bash_aliases": "~/.bash_aliases",
     "base16-shell/base16-ocean.dark.sh": "~/.config/base16-shell/base16-ocean.dark.sh",
 
 	"gitconfig": "~/.gitconfig",

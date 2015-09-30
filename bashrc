@@ -101,24 +101,6 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-# some more ls aliases
-alias ll='ls -halF'
-alias lls='ls -halF | less'
-alias la='ls -a'
-alias l='ls -CF'
-
-# safety
-alias rm='rm -I'
-
-# misc aliases
-alias histc='history -c && history -w'
-alias df='df -h'
-alias du='du -h'
-alias g='git status'
-alias py='python'
-#alias vea='. ve/bin/activate'
-#alias ved='deactivate'
-
 # Custom prompt
 export DEFAULT_PS1='\n\[\e[01;36m\]\u\[\e[0m\]\[\e[00;37m\] \h \[\e[1m\]\[\e[01;34m\]\w\[\e[0m\]\[\e[00;37m\]$(__git_ps1 " (%s)")\n\[\e[01;37m\]\$ \[\e[0m\]'
 export VIRTUALENV_PS1='\n\[\e[01;36m\]\u\[\e[0m\]\[\e[00;37m\] \h \[\e[0m\]\[\e[01;34m\]\w\[\e[0m\]\[\e[00;37m\]$(__git_ps1 " (%s)")\n($(basename "$VIRTUAL_ENV" )) \[\e[01;37m\]\$ \[\e[0m\]'
