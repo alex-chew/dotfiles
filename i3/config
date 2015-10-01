@@ -172,6 +172,7 @@ mode "launch" {
         bindsym f exec --no-startup-id firefox; mode "default"
         bindsym s exec --no-startup-id spotify; mode "default"
         bindsym h exec --no-startup-id urxvt -e htop; mode "default"
+        bindsym p exec --no-startup-id ~/.i3/dmenu/school-pdfs; mode "default"
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
