@@ -28,6 +28,7 @@ set listchars=tab:»\ ,trail:·
 
 " Line highlighting/numbering
 set number
+set relativenumber
 set cursorline
 
 " Show 80th column
@@ -65,6 +66,26 @@ set t_vb=
 " Backup/swap files
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
+
+" Path for :find
+set path=.,**
+
+
+
+" Leader mappings
+let mapleader=","
+nnoremap <leader>l :setlocal invrelativenumber<CR>
+nnoremap <leader>p :setlocal invspell<CR>
+nnoremap <leader>n :noh<CR>
+nnoremap <leader>f :find *
+nnoremap <leader>b :bnext<CR>
+nnoremap <leader>B :bprevious<CR>
+
+" Misc mappings
+nnoremap <F2> :buffers<CR>:b
+nnoremap <F3> :registers<CR>
+
+
 
 " Custom file types
 au BufRead,BufNewFile *.ino set filetype=arduino
