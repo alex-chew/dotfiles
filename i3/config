@@ -121,8 +121,8 @@ bindsym $mod+Shift+slash move container to workspace back_and_forth
 bindsym $mod+Shift+p move scratchpad
 bindsym $mod+p scratchpad show
 
-bindsym $mod+Shift+o exec xprop -id $(xprop -root _NET_ACTIVE_WINDOW | awk '{ print $5 }') -f FORCE_OPAQUE 8s -set FORCE_OPAQUE "yes"
-bindsym $mod+o exec xprop -id $(xprop -root _NET_ACTIVE_WINDOW | awk '{ print $5 }') -remove FORCE_OPAQUE
+bindsym $mod+Shift+o exec --no-startup-id xprop -id $(xprop -root _NET_ACTIVE_WINDOW | awk '{ print $5 }') -f FORCE_OPAQUE 8s -set FORCE_OPAQUE "yes"
+bindsym $mod+o exec --no-startup-id xprop -id $(xprop -root _NET_ACTIVE_WINDOW | awk '{ print $5 }') -remove FORCE_OPAQUE
 
 
 
@@ -136,17 +136,17 @@ bindsym $mod+Shift+Escape exec "i3-nagbar -t warning -m 'You pressed the exit sh
 
 
 # media prev/next/pause
-bindsym $mod+Control+comma exec playerctl previous
-bindsym $mod+Control+period exec playerctl next
-bindsym $mod+Control+slash exec playerctl play-pause
+bindsym $mod+Control+comma  exec --no-startup-id playerctl previous
+bindsym $mod+Control+period exec --no-startup-id playerctl next
+bindsym $mod+Control+slash  exec --no-startup-id playerctl play-pause
 
 # audio up/down/mute
-bindsym XF86AudioRaiseVolume exec amixer -q -D pulse set Master 5%+ unmute; exec pkill -RTMIN+1 i3blocks
-bindsym XF86AudioLowerVolume exec amixer -q -D pulse set Master 5%- unmute; exec pkill -RTMIN+1 i3blocks
-bindsym XF86AudioMute exec amixer -q -D pulse set Master toggle; exec pkill -RTMIN+1 i3blocks
-bindsym $mod+Control+F12 exec amixer -q -D pulse set Master 5%+ unmute; exec pkill -RTMIN+1 i3blocks
-bindsym $mod+Control+F11 exec amixer -q -D pulse set Master 5%- unmute; exec pkill -RTMIN+1 i3blocks
-bindsym $mod+Control+F10 exec amixer -q -D pulse set Master toggle; exec pkill -RTMIN+1 i3blocks
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q -D pulse set Master 5%+ unmute; exec pkill -RTMIN+1 i3blocks
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q -D pulse set Master 5%- unmute; exec pkill -RTMIN+1 i3blocks
+bindsym XF86AudioMute        exec --no-startup-id amixer -q -D pulse set Master toggle;     exec pkill -RTMIN+1 i3blocks
+bindsym $mod+Control+F12     exec --no-startup-id amixer -q -D pulse set Master 5%+ unmute; exec pkill -RTMIN+1 i3blocks
+bindsym $mod+Control+F11     exec --no-startup-id amixer -q -D pulse set Master 5%- unmute; exec pkill -RTMIN+1 i3blocks
+bindsym $mod+Control+F10     exec --no-startup-id amixer -q -D pulse set Master toggle;     exec pkill -RTMIN+1 i3blocks
 
 
 
