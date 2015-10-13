@@ -1,6 +1,7 @@
 set nocompatible
 set t_Co=256
 set showcmd
+set laststatus=2
 
 " Color scheme
 let base16colorspace=256
