@@ -140,6 +140,9 @@ bindsym $mod+Shift+Escape exec "i3-nagbar -t warning -m 'You pressed the exit sh
 bindsym $mod+Control+comma  exec --no-startup-id playerctl previous
 bindsym $mod+Control+period exec --no-startup-id playerctl next
 bindsym $mod+Control+slash  exec --no-startup-id playerctl play-pause
+bindsym $mod+Control+Mod1+comma  exec --no-startup-id cmus-remote -r
+bindsym $mod+Control+Mod1+period exec --no-startup-id cmus-remote -n
+bindsym $mod+Control+Mod1+slash  exec --no-startup-id cmus-remote -u
 
 # audio up/down/mute
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q -D pulse set Master 5%+ unmute; exec pkill -RTMIN+1 i3blocks
@@ -172,6 +175,7 @@ mode "launch" {
         bindsym t exec --no-startup-id thunderbird; mode "default"
         bindsym f exec --no-startup-id firefox; mode "default"
         bindsym s exec --no-startup-id spotify; mode "default"
+        bindsym n exec --no-startup-id nemo; mode "default"
         bindsym h exec --no-startup-id urxvt -e htop; mode "default"
         bindsym p exec --no-startup-id ~/.i3/dmenu/school-pdfs; mode "default"
 
