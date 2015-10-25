@@ -91,3 +91,14 @@ nnoremap <F3> :registers<CR>
 " Custom file types
 au BufRead,BufNewFile *.ino set filetype=arduino
 
+
+
+" Plugins
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'SirVer/ultisnips'
+Plug 'tpope/vim-commentary'
+
+call plug#end()
+
