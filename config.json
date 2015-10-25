@@ -1,37 +1,37 @@
 {
-	"bashrc": "~/.bashrc",
-	"bash_aliases": "~/.bash_aliases",
-    "base16-shell/base16-ocean.dark.sh": "~/.config/base16-shell/base16-ocean.dark.sh",
+  "bashrc": "~/.bashrc",
+  "bash_aliases": "~/.bash_aliases",
+  "base16-shell/base16-ocean.dark.sh": "~/.config/base16-shell/base16-ocean.dark.sh",
 
-	"gitconfig": "~/.gitconfig",
+  "gitconfig": "~/.gitconfig",
 
-	"vimrc": "~/.vimrc",
-    "vim/plug.vim": "~/.vim/autoload/plug.vim",
-    "vim/base16-ocean.vim": "~/.vim/colors/base16-ocean.vim",
-	"vim/Tomorrow-Night-Eighties.vim": "~/.vim/colors/Tomorrow-Night-Eighties.vim",
-	"vim/arduino.vim": "~/.vim/arduino.vim",
+  "vimrc": "~/.vimrc",
+  "vim/plug.vim": "~/.vim/autoload/plug.vim",
+  "vim/base16-ocean.vim": "~/.vim/colors/base16-ocean.vim",
+  "vim/Tomorrow-Night-Eighties.vim": "~/.vim/colors/Tomorrow-Night-Eighties.vim",
+  "vim/arduino.vim": "~/.vim/arduino.vim",
 
-	"tmux.conf": "~/.tmux.conf",
-	"scripts/tmuxbatt.py": "~/.scripts/tmuxbatt.py",
+  "tmux.conf": "~/.tmux.conf",
+  "scripts/tmuxbatt.py": "~/.scripts/tmuxbatt.py",
 
-	"Xresources": "~/.Xresources",
-	"inputrc": "~/.inputrc",
+  "Xresources": "~/.Xresources",
+  "inputrc": "~/.inputrc",
 
-    "i3/config": "~/.i3/config",
+  "i3/config": "~/.i3/config",
 
-    "i3/i3blocks/config": "~/.i3/i3blocks/config",
-    "i3/i3blocks/bin/_colors": "~/.i3/i3blocks/bin/_colors",
-    "i3/i3blocks/bin/battery": "~/.i3/i3blocks/bin/battery",
-    "i3/i3blocks/bin/cpu": "~/.i3/i3blocks/bin/cpu",
-    "i3/i3blocks/bin/datetime": "~/.i3/i3blocks/bin/datetime",
-    "i3/i3blocks/bin/ethernet": "~/.i3/i3blocks/bin/ethernet",
-    "i3/i3blocks/bin/memory": "~/.i3/i3blocks/bin/memory",
-    "i3/i3blocks/bin/volume": "~/.i3/i3blocks/bin/volume",
-    "i3/i3blocks/bin/wifi": "~/.i3/i3blocks/bin/wifi",
+  "i3/i3blocks/config": "~/.i3/i3blocks/config",
+  "i3/i3blocks/bin/_colors": "~/.i3/i3blocks/bin/_colors",
+  "i3/i3blocks/bin/battery": "~/.i3/i3blocks/bin/battery",
+  "i3/i3blocks/bin/cpu": "~/.i3/i3blocks/bin/cpu",
+  "i3/i3blocks/bin/datetime": "~/.i3/i3blocks/bin/datetime",
+  "i3/i3blocks/bin/ethernet": "~/.i3/i3blocks/bin/ethernet",
+  "i3/i3blocks/bin/memory": "~/.i3/i3blocks/bin/memory",
+  "i3/i3blocks/bin/volume": "~/.i3/i3blocks/bin/volume",
+  "i3/i3blocks/bin/wifi": "~/.i3/i3blocks/bin/wifi",
 
-    "i3/dmenu/school-pdfs": "~/.i3/dmenu/school-pdfs",
+  "i3/dmenu/school-pdfs": "~/.i3/dmenu/school-pdfs",
 
-	"virtualenvs/postactivate": "~/.virtualenvs/postactivate",
-	"virtualenvs/postdeactivate": "~/.virtualenvs/postdeactivate"
+  "virtualenvs/postactivate": "~/.virtualenvs/postactivate",
+  "virtualenvs/postdeactivate": "~/.virtualenvs/postdeactivate"
 }
 
