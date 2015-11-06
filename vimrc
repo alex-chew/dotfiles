@@ -29,6 +29,7 @@ set listchars=tab:»\ ,trail:·
 
 " Better wrapping behavior
 set breakindent
+let &showbreak = '↳ '
 
 " Line highlighting/numbering
 set number
