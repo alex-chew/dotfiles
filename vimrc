@@ -27,6 +27,9 @@ set expandtab
 set list
 set listchars=tab:»\ ,trail:·
 
+" Better wrapping behavior
+set breakindent
+
 " Line highlighting/numbering
 set number
 set relativenumber
