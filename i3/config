@@ -178,6 +178,7 @@ mode "launch" {
         bindsym n exec --no-startup-id nemo; mode "default"
         bindsym h exec --no-startup-id urxvt -e htop; mode "default"
         bindsym p exec --no-startup-id ~/.i3/dmenu/school-pdfs; mode "default"
+        bindsym c exec --no-startup-id urxvt -title cliped -e bash -ic ~/.scripts/cliped; mode "default"
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
@@ -229,6 +230,7 @@ bar {
 
 for_window [class="^.*"] border pixel 1
 for_window [title="^Pushbullet$" window_role="pop-up"] floating enable
+for_window [title="^cliped$"] floating enable
 
 assign [class="^Spotify$"] 10
 

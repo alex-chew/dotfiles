@@ -13,6 +13,7 @@
 
   "tmux.conf": "~/.tmux.conf",
   "scripts/tmuxbatt.py": "~/.scripts/tmuxbatt.py",
+  "scripts/cliped": "~/.scripts/cliped",
 
   "Xresources": "~/.Xresources",
   "inputrc": "~/.inputrc",

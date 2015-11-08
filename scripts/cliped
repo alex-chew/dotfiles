@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+source ~/.bashrc
+
+tmpf=$(mktemp /tmp/cliped.XXXXXX)
+trap "rm -f $tmpf" INT TERM HUP EXIT
+
+vim "$tmpf"
+
+if [[ $(wc -w < "$tmpf" ) -gt 0 ]]; then
+  xsel -i -b < "$tmpf"
+fi
+
