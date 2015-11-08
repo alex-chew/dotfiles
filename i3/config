@@ -140,12 +140,16 @@ bindsym $mod+Shift+slash move container to workspace back_and_forth
 
 
 
+# scratchpad windows
 bindsym $mod+Shift+p move scratchpad
 bindsym $mod+p scratchpad show
 
 # binds to force/unforce full opqcity on active window
 bindsym $mod+Shift+o exec --no-startup-id transset -i $(xprop -root _NET_ACTIVE_WINDOW | awk '{ print $5 }') -x 2 2
 bindsym $mod+o exec --no-startup-id transset -i $(xprop -root _NET_ACTIVE_WINDOW | awk '{ print $5 }') 1
+
+# sticky windows
+bindsym $mod+i floating toggle; sticky toggle
 
 
 
