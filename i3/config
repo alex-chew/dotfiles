@@ -248,7 +248,7 @@ bar {
                 separator #4f5b66
 
                 focused_workspace #2b303b #2b303b #eff1f5
-                inactive_workspace #2b303b #2b303b #4f5b66
+                inactive_workspace #2b303b #2b303b #65737e
                 urgent_workspace #2b303b #2b303b #bf616a
         }
 }
@@ -263,7 +263,7 @@ assign [class="^Spotify$"] 10
 
 # Window colors
 # class                 border  bg      text    indicator
-client.focused          #4c7899 #8fa1b3 #ffffff #bf616a
+client.focused          #4c7899 #65737e #ffffff #ebcb8b
 client.focused_inactive #333333 #5f676a #ffffff #484e50
 client.unfocused        #333333 #222222 #888888 #292d2e
 client.urgent           #2f343a #bf616a #ffffff #bf616a
