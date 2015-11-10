@@ -197,14 +197,15 @@ bindsym $mod+r mode "resize"
 
 # quick launcher
 mode "launch" {
-        bindsym g exec --no-startup-id google-chrome; mode "default"
-        bindsym t exec --no-startup-id thunderbird; mode "default"
-        bindsym f exec --no-startup-id firefox; mode "default"
-        bindsym s exec --no-startup-id spotify; mode "default"
-        bindsym n exec --no-startup-id nemo; mode "default"
-        bindsym h exec --no-startup-id urxvt -e htop; mode "default"
-        bindsym p exec --no-startup-id ~/.i3/bin/school-pdfs; mode "default"
         bindsym c exec --no-startup-id urxvt -title cliped -e bash -ic ~/.scripts/cliped; mode "default"
+        bindsym f exec --no-startup-id firefox; mode "default"
+        bindsym g exec --no-startup-id google-chrome; mode "default"
+        bindsym h exec --no-startup-id urxvt -e htop; mode "default"
+        bindsym n exec --no-startup-id nemo; mode "default"
+        bindsym p exec --no-startup-id ~/.i3/bin/school-pdfs; mode "default"
+        bindsym r exec --no-startup-id urxvt -e ranger; mode "default"
+        bindsym s exec --no-startup-id spotify; mode "default"
+        bindsym t exec --no-startup-id thunderbird; mode "default"
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
