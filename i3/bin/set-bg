@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -ex
+
+if [[ -n "$1" && -r "$1" ]]; then
+  nitrogen --set-centered --save "$1"
+  convert -resize 20% -fill "#202020" -colorize 50% -blur 0x2 -resize 500%\
+    "$1" ~/Pictures/i3/lock.png
+fi
+
