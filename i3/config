@@ -259,7 +259,7 @@ for_window [class="^.*"] border pixel 1
 for_window [title="^Pushbullet$" window_role="pop-up"] floating enable
 for_window [title="^cliped$"] floating enable
 
-assign [class="^Spotify$"] 10
+assign [class="^Spotify$"] $wM
 
 # Window colors
 # class                 border  bg      text    indicator
