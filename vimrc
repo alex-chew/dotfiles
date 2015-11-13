@@ -103,6 +103,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-commentary'
+Plug 'ap/vim-buftabline'
 
 call plug#end()
 
