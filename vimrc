@@ -68,6 +68,9 @@ set noerrorbells
 set visualbell
 set t_vb=
 
+" Switch buffers without write
+set hidden
+
 " Backup/swap files
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
@@ -89,6 +92,7 @@ nnoremap <leader>B :bprevious<CR>
 " Misc mappings
 nnoremap <F2> :buffers<CR>:b
 nnoremap <F3> :registers<CR>
+nnoremap <F4> :marks<CR>
 
 
 
@@ -103,7 +107,10 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-commentary'
+
 Plug 'ap/vim-buftabline'
+let g:buftabline_show = 1
+let g:buftabline_indicators = 1
 
 call plug#end()
 
