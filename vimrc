@@ -93,6 +93,8 @@ nnoremap <leader>B :bprevious<CR>
 nnoremap <F2> :buffers<CR>:b
 nnoremap <F3> :registers<CR>
 nnoremap <F4> :marks<CR>
+nnoremap l :bnext<CR>
+nnoremap h :bprevious<CR>
 
 
 
