@@ -138,6 +138,18 @@ bindsym $mod+Shift+comma move container to workspace prev_on_output
 bindsym $mod+Shift+period move container to workspace next_on_output
 bindsym $mod+Shift+slash move container to workspace back_and_forth
 
+# move focus to left/right
+bindsym $mod+F7 focus output left
+bindsym $mod+F8 focus output right
+
+# move focused container to left/right
+bindsym $mod+Shift+F7 move container to output left
+bindsym $mod+Shift+F8 move container to output right
+
+# move focused workspace to left/right
+bindsym $mod+Shift+Mod1+F7 move workspace to output left
+bindsym $mod+Shift+Mod1+F8 move workspace to output right
+
 
 
 # scratchpad windows
@@ -157,6 +169,8 @@ bindsym $mod+i floating toggle; sticky toggle
 bindsym $mod+Shift+F5 reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+F6 restart
+# refresh xrandr configuration
+bindsym $mod+Shift+Mod1+F6 exec --no-startup-id autorandr --change
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+Escape exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
