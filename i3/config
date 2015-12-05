@@ -29,12 +29,15 @@ bindsym $mod+Shift+q kill
 bindsym $mod+Return exec urxvt
 
 # start dmenu (a program launcher)
-bindsym $mod+Shift+d exec --no-startup-id dmenu_run -b -i -fn "Source Code Pro-10:Regular" -nb "#2b303b" -sb "#8fa1b3"
+bindsym $mod+Shift+d exec --no-startup-id \
+    dmenu_run -b -i -fn "Source Code Pro-10:Regular" -nb "#2b303b" -sb "#8fa1b3"
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -b -i -fn "Source Code Pro-10:Regular" -nb "#2b303b" -sb "#8fa1b3"'
+bindsym $mod+d exec --no-startup-id \
+    i3-dmenu-desktop --dmenu=\
+    'dmenu -b -i -fn "Source Code Pro-10:Regular" -nb "#2b303b" -sb "#8fa1b3"'
 
 
 
@@ -157,8 +160,10 @@ bindsym $mod+Shift+p move scratchpad
 bindsym $mod+p scratchpad show
 
 # binds to force/unforce full opqcity on active window
-bindsym $mod+Shift+o exec --no-startup-id transset -i $(xprop -root _NET_ACTIVE_WINDOW | awk '{ print $5 }') -x 2 2
-bindsym $mod+o exec --no-startup-id transset -i $(xprop -root _NET_ACTIVE_WINDOW | awk '{ print $5 }') 1
+bindsym $mod+Shift+o exec --no-startup-id \
+    transset -i $(xprop -root _NET_ACTIVE_WINDOW | awk '{ print $5 }') -x 2 2
+bindsym $mod+o exec --no-startup-id \
+    transset -i $(xprop -root _NET_ACTIVE_WINDOW | awk '{ print $5 }') 1
 
 # sticky windows
 bindsym $mod+i floating toggle; sticky toggle
@@ -172,7 +177,8 @@ bindsym $mod+Shift+F6 restart
 # refresh xrandr configuration
 bindsym $mod+Shift+Mod1+F6 exec --no-startup-id autorandr --change
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+Escape exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+Escape exec \
+    "i3-nagbar -t warning -m 'Exit i3?' -b 'Yes, exit i3' 'i3-msg exit'"
 
 
 
@@ -211,7 +217,8 @@ bindsym $mod+r mode "resize"
 
 # quick launcher
 mode "launch" {
-        bindsym c exec --no-startup-id urxvt -title cliped -e bash -ic ~/.scripts/cliped; mode "default"
+        bindsym c exec --no-startup-id \
+            urxvt -title cliped -e bash -ic ~/.scripts/cliped; mode "default"
         bindsym f exec --no-startup-id firefox; mode "default"
         bindsym g exec --no-startup-id google-chrome; mode "default"
         bindsym h exec --no-startup-id urxvt -e htop; mode "default"
