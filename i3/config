@@ -292,7 +292,7 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000
 
 
 
-set $wall ~/Pictures/i3/wall.png
+set $wall ~/Pictures/i3/wall.jpg
 
 exec --no-startup-id feh --bg-center $wall
 exec --no-startup-id compton -i 0.6 -I 0.05 -b --mark-ovredir-focused
