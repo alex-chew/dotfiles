@@ -30,7 +30,7 @@
   "i3/i3blocks/bin/volume": "~/.i3/i3blocks/bin/volume",
   "i3/i3blocks/bin/wifi": "~/.i3/i3blocks/bin/wifi",
 
-  "i3/bin/school-pdfs": "~/.i3/bin/school-pdfs",
+  "i3/bin/textbooks": "~/.i3/bin/textbooks",
 
   "virtualenvs/postactivate": "~/.virtualenvs/postactivate",
   "virtualenvs/postdeactivate": "~/.virtualenvs/postdeactivate"
