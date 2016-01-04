@@ -17,6 +17,7 @@ set $mod Mod4
 
 exec --no-startup-id setxkbmap -model pc105 -layout us -option compose:ralt
 exec --no-startup-id xset s 1800 1800
+exec --no-startup-id autorandr --change
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -295,7 +296,7 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000
 
 set $wall ~/Pictures/i3/wall.jpg
 
-exec --no-startup-id feh --bg-center $wall
+exec_always --no-startup-id "sleep 1; feh --bg-center $wall"
 exec --no-startup-id compton -i 0.6 -I 0.05 -b --mark-ovredir-focused
 exec --no-startup-id nm-applet
 
