@@ -29,6 +29,8 @@ bindsym $mod+Shift+q kill
 
 # start a terminal
 bindsym $mod+Return exec urxvt
+bindsym $mod+Shift+Return exec urxvt -name "floating-urxvt"
+for_window [instance="floating-urxvt$"] floating toggle
 
 # start dmenu (a program launcher)
 bindsym $mod+Shift+d exec --no-startup-id \
