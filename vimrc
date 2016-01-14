@@ -96,6 +96,9 @@ nnoremap <F4> :marks<CR>
 nnoremap <C-l> :bnext<CR>
 nnoremap <C-h> :bprevious<CR>
 
+" Make mappings
+nnoremap <F9> :make!<CR>
+
 
 
 " Custom file types
