@@ -81,13 +81,16 @@ set path=.,**
 
 
 " Leader mappings
-let mapleader=","
+map <Space> <leader>
 nnoremap <leader>l :setlocal invrelativenumber<CR>
 nnoremap <leader>p :setlocal invspell<CR>
 nnoremap <leader>n :noh<CR>
 nnoremap <leader>f :find *
 nnoremap <leader>b :bnext<CR>
 nnoremap <leader>B :bprevious<CR>
+
+" Localleader mapping
+map , <localleader>
 
 " Misc mappings
 nnoremap <F2> :buffers<CR>:b
