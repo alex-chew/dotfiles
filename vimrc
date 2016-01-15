@@ -117,5 +117,7 @@ Plug 'ap/vim-buftabline'
 let g:buftabline_show = 1
 let g:buftabline_indicators = 1
 
+Plug 'lervag/vimtex'
+
 call plug#end()
 
