@@ -82,8 +82,9 @@ set path=.,**
 
 " Leader mappings
 map <Space> <leader>
-nnoremap <leader>l :setlocal invrelativenumber<CR>
-nnoremap <leader>p :setlocal invspell<CR>
+nnoremap <leader>l :setlocal invrelativenumber<CR>:setlocal relativenumber?<CR>
+nnoremap <leader>s :setlocal invspell<CR>:setlocal spell?<CR>
+nnoremap <leader>p :setlocal invpaste<CR>:setlocal paste?<CR>
 nnoremap <leader>n :noh<CR>
 nnoremap <leader>f :find *
 nnoremap <leader>b :bnext<CR>
