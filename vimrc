@@ -51,9 +51,6 @@ filetype on
 filetype indent on
 "filetype plugin on
 
-" X clipboard is the + register
-set clipboard=unnamedplus
-
 " Search
 set incsearch
 set hlsearch
