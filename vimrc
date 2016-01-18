@@ -123,5 +123,7 @@ let g:buftabline_indicators = 1
 
 Plug 'lervag/vimtex'
 
+Plug 'sophacles/vim-processing'
+
 call plug#end()
 
