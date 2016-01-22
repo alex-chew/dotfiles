@@ -297,6 +297,18 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000
 
 
 
+# Gaps
+set $gaps_inner 16
+smart_gaps on
+smart_borders no_gaps
+gaps inner $gaps_inner
+gaps outer 0
+
+bindsym $mod+g       gaps inner current set $gaps_inner
+bindsym $mod+Shift+g gaps inner current set 0
+
+
+
 set $wall ~/Pictures/i3/wall.jpg
 
 exec_always --no-startup-id "sleep 1; feh --bg-center $wall"
