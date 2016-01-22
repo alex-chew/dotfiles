@@ -289,9 +289,9 @@ assign [class="^Spotify$"] $wM
 
 # Window colors
 # class                 border  bg      text    indicator
-client.focused          #4c7899 #65737e #ffffff #ebcb8b
-client.focused_inactive #333333 #5f676a #ffffff #484e50
-client.unfocused        #333333 #222222 #888888 #292d2e
+client.focused          #4c7899 #65737e #ffffff #65737e
+client.focused_inactive #333333 #5f676a #ffffff #5f676a
+client.unfocused        #333333 #222222 #888888 #222222
 client.urgent           #2f343a #bf616a #ffffff #bf616a
 client.placeholder      #000000 #0c0c0c #ffffff #000000
 
