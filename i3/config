@@ -241,10 +241,11 @@ bindsym $mod+b mode "launch"
 
 
 # screenshots
+set $scrot screenshot [win | full | select] (Shift for delay)
 set $scrot_fmt '%Y%m%d-%H%M%S_$wx$h.png'
 set $scrot_mv 'mv $f ~/Pictures/scrot/'
 set $scrot_del '-d 5'
-mode "scrot" {
+mode "$scrot" {
         bindsym           w exec --no-startup-id scrot -u -e $scrot_mv $scrot_fmt; mode "default"
         bindsym           f exec --no-startup-id scrot    -e $scrot_mv $scrot_fmt; mode "default"
         bindsym --release s exec --no-startup-id scrot -s -e $scrot_mv $scrot_fmt; mode "default"
@@ -256,7 +257,7 @@ mode "scrot" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-bindsym $mod+Print mode "scrot"
+bindsym $mod+Print mode "$scrot"
 
 
 
