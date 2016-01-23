@@ -291,8 +291,8 @@ assign [class="^Spotify$"] $wM
 # Window colors
 # class                 border  bg      text    indicator
 client.focused          #4c7899 #65737e #ffffff #65737e
-client.focused_inactive #333333 #5f676a #ffffff #5f676a
-client.unfocused        #333333 #222222 #888888 #222222
+client.focused_inactive #333333 #2b303b #ffffff #5f676a
+client.unfocused        #333333 #2b303b #888888 #222222
 client.urgent           #2f343a #bf616a #ffffff #bf616a
 client.placeholder      #000000 #0c0c0c #ffffff #000000
 
@@ -300,7 +300,7 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000
 
 # Gaps
 set $gaps_inner 16
-smart_gaps on
+# smart_gaps on
 smart_borders no_gaps
 gaps inner $gaps_inner
 gaps outer 0
@@ -313,7 +313,7 @@ bindsym $mod+Shift+g gaps inner current set 0
 set $wall ~/Pictures/i3/wall.jpg
 
 exec_always --no-startup-id "sleep 1; feh --bg-center $wall"
-exec --no-startup-id compton -i 0.6 -I 0.05 -b --mark-ovredir-focused
+exec --no-startup-id compton -i 0.75 -I 0.05 -b --mark-ovredir-focused
 exec --no-startup-id nm-applet
 
 
