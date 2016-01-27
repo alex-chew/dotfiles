@@ -3,7 +3,7 @@
 (
 
 cd ~/qd
-book=$(find . -path "*/books/*.pdf" | cut -c 3- | rofi -fuzzy -dmenu -i -no-custom -p "book: ")
+book=$(find . -path "*/books/*.pdf" | cut -c 3- | rofi -levenshtein-sort -dmenu -i -no-custom -p "book: ")
 
 if [[ -n "$book" ]]; then
   xdg-open "$book"
