@@ -159,6 +159,13 @@ bindsym $mod+Shift+Mod1+F8 move workspace to output right
 
 
 
+# keep util workspaces on second monitor
+workspace $wE output eDP1
+workspace $wC output eDP1
+workspace $wM output eDP1
+
+
+
 # scratchpad windows
 bindsym $mod+Shift+p move scratchpad
 bindsym $mod+p scratchpad show
