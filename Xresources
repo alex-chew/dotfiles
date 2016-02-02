@@ -42,6 +42,9 @@ URxvt*.font: xft:Source Code Pro:size=10:antialias=false,\
 URxvt*.letterSpace: -1
 URxvt*.cursorBlink: true
 
+! Geometry
+URxvt*.internalBorder: 4
+
 ! Scroll behavior
 URxvt*.scrollBar: false
 URxvt*.scrollTtyOutput: false
