@@ -4,6 +4,8 @@
 	co = checkout
 	logo = log --oneline
 	logg = log --oneline --graph --decorate
+    wdf = diff --word-diff=color
+    cdf = diff --cached
 
 [user]
 	name = Alex Chew
