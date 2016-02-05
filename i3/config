@@ -194,12 +194,12 @@ bindsym $mod+Shift+Escape exec \
 
 
 # media prev/next/pause
-bindsym $mod+Control+comma  exec --no-startup-id playerctl previous
-bindsym $mod+Control+period exec --no-startup-id playerctl next
-bindsym $mod+Control+slash  exec --no-startup-id playerctl play-pause
-bindsym $mod+Control+Mod1+comma  exec --no-startup-id cmus-remote -r
-bindsym $mod+Control+Mod1+period exec --no-startup-id cmus-remote -n
-bindsym $mod+Control+Mod1+slash  exec --no-startup-id cmus-remote -u
+bindsym $mod+Control+Mod1+comma  exec --no-startup-id playerctl previous
+bindsym $mod+Control+Mod1+period exec --no-startup-id playerctl next
+bindsym $mod+Control+Mod1+slash  exec --no-startup-id playerctl play-pause
+bindsym $mod+Control+comma  exec --no-startup-id cmus-remote -r
+bindsym $mod+Control+period exec --no-startup-id cmus-remote -n
+bindsym $mod+Control+slash  exec --no-startup-id cmus-remote -u
 
 # audio up/down/mute
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q -D pulse set Master 5%+ unmute; exec pkill -RTMIN+1 i3blocks
