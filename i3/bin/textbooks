@@ -3,10 +3,19 @@
 (
 
 cd ~/qd
-book=$(find . -path "*/books/*.pdf" | cut -c 3- | rofi -levenshtein-sort -dmenu -i -no-custom -p "book: ")
+books=($(find . -path "*/books/*.pdf" | cut -c 3-))
 
-if [[ -n "$book" ]]; then
-  xdg-open "$book"
+# Display only file names
+for i in $(seq 0 "${#books[@]}"); do
+  fnames[$i]=$(basename "${books[$i]}")
+done
+
+# Use rofi to select book number in array
+booknum=$(printf '%s\n' "${fnames[@]}" \
+    | rofi -levenshtein-sort -dmenu -i -no-custom -p "book: " -format i)
+
+if [[ -n "$booknum" ]]; then
+  xdg-open "${books[$booknum]}"
 fi
 
 )
