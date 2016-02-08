@@ -291,6 +291,7 @@ bar {
 
 for_window [class="^.*"] border pixel 4
 for_window [class="^Octave$"] floating enable
+for_window [class="^Tk$" title="^Figure"] floating enable
 for_window [title="^cliped$"] floating enable
 
 assign [class="^Thunderbird$"] $wE
