@@ -235,6 +235,7 @@ mode "launch" {
         bindsym h exec --no-startup-id urxvt -e htop; mode "default"
         bindsym n exec --no-startup-id nemo; mode "default"
         bindsym k exec --no-startup-id ~/.i3/bin/textbooks; mode "default"
+        bindsym Shift+k exec --no-startup-id ~/.i3/bin/textbooks all; mode "default"
         bindsym r exec --no-startup-id urxvt -e ranger; mode "default"
         bindsym s exec --no-startup-id spotify; mode "default"
         bindsym t exec --no-startup-id thunderbird; mode "default"
