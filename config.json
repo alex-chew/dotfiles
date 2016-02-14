@@ -31,6 +31,7 @@
   "i3/i3blocks/bin/wifi": "~/.i3/i3blocks/bin/wifi",
 
   "i3/bin/textbooks.py": "~/.i3/bin/textbooks",
+  "i3/bin/autorandr-rofi": "~/.i3/bin/autorandr-rofi",
 
   "virtualenvs/postactivate": "~/.virtualenvs/postactivate",
   "virtualenvs/postdeactivate": "~/.virtualenvs/postdeactivate"

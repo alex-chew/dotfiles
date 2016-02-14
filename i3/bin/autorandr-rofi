@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+(
+
+mode=$(autorandr |& awk '{print $1}' | rofi -levenshtein-sort -dmenu -i -no-custom -p "mode")
+
+if [[ -n "$mode" ]]; then
+  autorandr --load "$mode"
+fi
+
+)
+

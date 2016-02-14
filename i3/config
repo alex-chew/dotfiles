@@ -228,6 +228,7 @@ bindsym $mod+r mode "resize"
 
 # quick launcher
 mode "launch" {
+        bindsym a exec --no-startup-id ~/.i3/bin/autorandr-rofi; mode "default"
         bindsym c exec --no-startup-id \
             urxvt -title cliped -e bash -ic ~/.scripts/cliped; mode "default"
         bindsym f exec --no-startup-id firefox; mode "default"
