@@ -4,6 +4,7 @@
 	co = checkout
 	logo = log --oneline
 	logg = log --oneline --graph --decorate
+    df = diff
     dfw = diff --word-diff=color
     dfc = diff --cached
 
