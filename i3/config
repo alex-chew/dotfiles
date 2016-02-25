@@ -20,6 +20,12 @@ exec --no-startup-id xset s 1800 1800
 exec_always --no-startup-id xset m 0
 exec --no-startup-id autorandr --change
 
+exec_always --no-startup-id synclient \
+    MinSpeed=1 MaxSpeed=1 AccelFactor=1 \
+    TapButton3=2 \
+    PalmDetect=1 \
+    HorizTwoFingerScroll=1
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
