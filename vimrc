@@ -116,6 +116,7 @@ Plug 'editorconfig/editorconfig-vim'
 
 Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'wellle/targets.vim'
 
