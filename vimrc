@@ -101,6 +101,10 @@ nnoremap <C-h> :bprevious<CR>
 " Make mappings
 nnoremap <F9> :make!<CR>
 
+" Folding
+nnoremap \ za
+vnoremap \ zf
+
 
 
 " Custom file types
