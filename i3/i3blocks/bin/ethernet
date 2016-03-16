@@ -2,21 +2,18 @@
 
 source $(dirname $0)/_colors
 
-if [[ "$(cat /sys/class/net/eth0/operstate)" != "up" ]]; then
-  # full text
-  echo "🖧   down"
-  # short text
-  echo
+state=$(nmcli --terse --fields GENERAL.CONNECTION dev show eth0 | cut -d ':' -f 2)
+
+# full text
+echo "🖧   $state"
+# short text
+echo
+
+if [[ "$state" == "--" ]]; then
   # color
   echo ${base03}
-
 else
-  # full text
-  echo  "🖧   $(ip addr show eth0 | awk '/inet / { print $2 }' | cut -d \/ -f 1)"
-  # short text
-  echo
   # color
   echo ${base07}
-
 fi
 

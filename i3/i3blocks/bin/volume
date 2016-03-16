@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 info=$(amixer -D pulse get Master)
-regex="\[([0-9]+%)\] \[(on|off)\]"
+regex="\[([0-9]+)%\] \[(on|off)\]"
 
 # full text
 [[ $info =~ $regex ]]

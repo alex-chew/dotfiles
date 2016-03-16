@@ -2,13 +2,13 @@
 
 info=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0)
 perc=$(echo "$info" | awk '/percentage:/ { print $2 }' | sed 's/%//')
-time=$(echo "$info" | awk '/time to (empty|full):/ { printf "%.0f%.1s → %.1s", $4, $5, $3 }')
+time=$(echo "$info" | awk '/time to (empty|full):/ { printf "%.1s %.0f%.1s", $3, $4, $5 }' | sed 'y/ef/↓↑/')
 
 # full text
 if [[ -n "$time" ]]; then
-  echo "🗲   ${perc}% ($time)"
+  echo "🗲   ${perc} $time"
 else
-  echo "🗲   ${perc}%"
+  echo "🗲   ${perc}"
 fi
 
 # short text

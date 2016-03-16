@@ -6,7 +6,7 @@ source $(dirname $0)/_colors
 
 if [[ $(echo $info | awk '{ print $3 }') != '(connected)' ]]; then
   # full text
-  echo "   down"
+  echo "   --"
   # short text
   echo
   #color
@@ -14,12 +14,11 @@ if [[ $(echo $info | awk '{ print $3 }') != '(connected)' ]]; then
 
 else
   ssid=$(echo $info | awk '{ print $5 }')
-  ip=$(ip addr show wlan0 | awk '/inet / { print $2 }' | cut -d \/ -f 1)
   qual=$(grep wlan0 /proc/net/wireless | awk '{ print int($3 * 100 / 70) }')
 
   # full text
-  echo "   $ip on $ssid ($qual%)"
-  
+  echo "   $ssid ($qual%)"
+
   # short text
   echo
 
