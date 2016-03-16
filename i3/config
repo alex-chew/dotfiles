@@ -302,6 +302,7 @@ for_window [class="^.*"] border pixel 4
 for_window [class="^Octave$"] floating enable
 for_window [class="^Tk$" title="^Figure"] floating enable
 for_window [title="^cliped$"] floating enable
+for_window [instance="sun-awt-X11-XFramePeer"] floating enable
 
 assign [class="^Thunderbird$"] $wE
 assign [class="^Spotify$"] $wM
