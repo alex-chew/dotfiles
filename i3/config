@@ -30,6 +30,9 @@ exec_always --no-startup-id synclient \
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# Don't steal our focus, just set urgency hint
+focus_on_window_activation urgent
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
