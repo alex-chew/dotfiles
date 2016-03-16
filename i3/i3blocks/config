@@ -1,5 +1,9 @@
 command=~/.i3/i3blocks/bin/$BLOCK_NAME
 
+[window]
+command=xtitle -s
+interval=persist
+
 [wifi]
 interval=5
 
