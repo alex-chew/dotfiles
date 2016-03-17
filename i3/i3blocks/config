@@ -1,7 +1,7 @@
 command=~/.i3/i3blocks/bin/$BLOCK_NAME
 
 [window]
-command=xtitle -s
+command=xtitle -s -f "%.72s"
 interval=persist
 
 [wifi]
