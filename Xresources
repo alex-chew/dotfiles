@@ -55,9 +55,14 @@ URxvt*.scrollTtyKeypress: true
 URxvt.keysym.Shift-Up: command:\033]720;1\007
 URxvt.keysym.Shift-Down: command:\033]721;1\007
 
-! Disable perl stuff
+! Disable most perl stuff
 URxvt*.perl-ext:
-URxvt*.perl-ext-common:
+
+! Allow on-the-fly font changing
+URxvt*.perl-ext-common: resize-font
+URxvt*.resize-font.smaller: C-minus
+URxvt*.resize-font.bigger: C-plus
+URxvt*.resize-font.reset: C-equal
 
 URxvt*.saveLines: 1024
 
