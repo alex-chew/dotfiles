@@ -223,6 +223,10 @@ bindsym $mod+Control+F10     exec --no-startup-id amixer -q -D pulse set Master 
 bindsym XF86KbdBrightnessDown exec --no-startup-id ~/.scripts/kb-backlight decrease
 bindsym XF86KbdBrightnessUp   exec --no-startup-id ~/.scripts/kb-backlight increase
 
+# monitor backlight control
+bindsym Shift+XF86KbdBrightnessDown exec --no-startup-id xbacklight -dec 10
+bindsym Shift+XF86KbdBrightnessUp   exec --no-startup-id xbacklight -inc 10
+
 
 
 # resize window (you can also use the mouse for that)
