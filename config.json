@@ -14,6 +14,7 @@
   "tmux.conf": "~/.tmux.conf",
   "scripts/tmuxbatt.py": "~/.scripts/tmuxbatt.py",
   "scripts/cliped": "~/.scripts/cliped",
+  "scripts/kb-backlight": "~/.scripts/kb-backlight",
 
   "Xresources": "~/.Xresources",
   "inputrc": "~/.inputrc",
