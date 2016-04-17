@@ -229,6 +229,11 @@ bindsym Shift+XF86KbdBrightnessUp   exec --no-startup-id xbacklight -inc 10
 
 
 
+# switch input method
+bindsym $mod+n exec --no-startup-id ~/.i3/bin/ibus-switch-engine
+
+
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         bindsym h resize shrink width 10 px or 10 ppt

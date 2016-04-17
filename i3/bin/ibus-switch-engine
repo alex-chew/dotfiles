@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+ibus_jp='mozc-jp'
+ibus_en='xkb:us::eng'
+
+if [ "$(ibus engine)" == "$ibus_en" ]; then
+  ibus engine "$ibus_jp"
+else
+  ibus engine "$ibus_en"
+fi
+
