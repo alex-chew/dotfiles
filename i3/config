@@ -343,10 +343,10 @@ bindsym $mod+Shift+g gaps inner current set 0
 set $wall ~/Pictures/i3/wall.jpg
 
 exec_always --no-startup-id "sleep 1; feh --bg-center $wall"
-exec --no-startup-id LD_PRELOAD=/usr/lib/mumble/libmumble.so \
-    compton -i 0.75 -I 0.05 -b --mark-ovredir-focused \
-    -CG --backend glx --paint-on-overlay --glx-no-stencil --sw-opti \
-    --glx-no-rebind-pixmap
+# exec --no-startup-id LD_PRELOAD=/usr/lib/mumble/libmumble.so \
+#     compton -i 0.75 -I 0.05 -b --mark-ovredir-focused \
+#     -CG --backend glx --paint-on-overlay --glx-no-stencil --sw-opti \
+#     --glx-no-rebind-pixmap
 exec --no-startup-id nm-applet
 
 
