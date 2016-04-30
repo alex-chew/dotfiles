@@ -1,4 +1,5 @@
 command=~/.i3/i3blocks/bin/$BLOCK_NAME
+markup=pango
 
 [window]
 command=xtitle -s -t 72

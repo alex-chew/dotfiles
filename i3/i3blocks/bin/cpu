@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+source $(dirname $0)/_colors
 
 cpu=$(top -bn1 | grep load)
 regex="load average: ([0-9.]+), ([0-9.]+), ([0-9.]+)"
@@ -6,13 +7,12 @@ full=$(grep 'model name' /proc/cpuinfo | wc -l)
 
 # full text
 [[ $cpu =~ $regex ]]
-echo "   ${BASH_REMATCH[1]}"
+echo "$(icon ) ${BASH_REMATCH[1]}"
 
 # short text
 echo
 
 # color
-source $(dirname $0)/_colors
 if (( $(echo "${BASH_REMATCH[3]} > $full * 0.8" | bc -l) )); then
   echo ${base08}
 elif (( $(echo "${BASH_REMATCH[2]} > $full * 0.9" | bc -l) )); then

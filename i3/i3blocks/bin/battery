@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+source $(dirname $0)/_colors
 
 info=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0)
 perc=$(echo "$info" | awk '/percentage:/ { print $2 }' | sed 's/%//')
@@ -6,16 +7,15 @@ time=$(echo "$info" | awk '/time to (empty|full):/ { printf "%.1s %.0f%.1s", $3,
 
 # full text
 if [[ -n "$time" ]]; then
-  echo "🗲   ${perc} $time"
+  echo "$(icon ) ${perc} $time"
 else
-  echo "🗲   ${perc}"
+  echo "$(icon ) ${perc}"
 fi
 
 # short text
 echo
 
 # color
-source $(dirname $0)/_colors
 if (( $(echo "$perc > 60" | bc -l) )); then
   echo ${base07}
 elif (( $(echo "$perc > 40" | bc -l) )); then

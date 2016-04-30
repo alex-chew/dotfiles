@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+source $(dirname $0)/_colors
 
 mem=$(free -m)
 total=$(echo "$mem" | awk 'NR == 2 { print $2 }')
@@ -6,13 +7,12 @@ used=$(echo "$mem" | awk 'NR == 3 { print $3 }')
 perc=$(echo "$used / $total" | bc -l)
 
 # full text
-printf "   %.0f%\n" $(echo "$perc * 100" | bc -l)
+printf "$(icon ) %.0f%\n" $(echo "$perc * 100" | bc -l)
 
 # short text
 echo
 
 # color
-source $(dirname $0)/_colors
 if (( $(echo "$used > $total * 0.9" | bc -l) )); then
   echo ${base08}
 elif (( $(echo "$used > $total * 0.7" | bc -l) )); then

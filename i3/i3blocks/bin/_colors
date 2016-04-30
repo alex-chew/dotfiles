@@ -17,3 +17,7 @@ base0C="#96B5B4"
 base0D="#8FA1B3"
 base0E="#B48EAD"
 
+function icon {
+  echo "<span font_desc='FontAwesome'>$1</span>"
+}
+

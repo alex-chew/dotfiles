@@ -1,12 +1,11 @@
 #!/usr/bin/env bash
+source $(dirname $0)/_colors
 
 info=$(nmcli -f "GENERAL.STATE,GENERAL.CONNECTION" dev show wlan0)
 
-source $(dirname $0)/_colors
-
 if [[ $(echo $info | awk '{ print $3 }') != '(connected)' ]]; then
   # full text
-  echo "   --"
+  echo "$(icon ) --"
   # short text
   echo
   #color
@@ -17,7 +16,7 @@ else
   qual=$(grep wlan0 /proc/net/wireless | awk '{ print int($3 * 100 / 70) }')
 
   # full text
-  echo "   $ssid ($qual%)"
+  echo "$(icon ) $ssid ($qual%)"
 
   # short text
   echo
