@@ -1,6 +1,9 @@
 [alias]
+    s = status
+    au = add -u
     br = branch
     cm = commit
+    cma = commit --amend
     co = checkout
     logo = log --oneline
     logg = log --oneline --graph --decorate
