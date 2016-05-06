@@ -128,6 +128,8 @@ Plug 'ap/vim-buftabline'
 let g:buftabline_show = 1
 let g:buftabline_indicators = 1
 
+Plug 'justinmk/vim-dirvish'
+
 Plug 'lervag/vimtex'
 
 Plug 'sophacles/vim-processing'
