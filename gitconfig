@@ -1,15 +1,16 @@
 [alias]
-	br = branch
-	cm = commit
-	co = checkout
-	logo = log --oneline
-	logg = log --oneline --graph --decorate
+    br = branch
+    cm = commit
+    co = checkout
+    logo = log --oneline
+    logg = log --oneline --graph --decorate
     df = diff
     dfw = diff --word-diff=color
     dfc = diff --cached
 
 [user]
-	name = Alex Chew
-	email = alex@alexchew.net
+    name = Alex Chew
+    email = alex@alexchew.net
+
 [push]
-	default = simple
+    default = simple
