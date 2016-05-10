@@ -101,8 +101,8 @@ nnoremap <C-h> :bprevious<CR>
 " Make mappings
 nnoremap <F9> :make!<CR>
 nnoremap <F10> :cwindow<CR>
-nnoremap <C-L> :cnext<CR>
-nnoremap <C-H> :cprevious<CR>
+nnoremap <Down> :cnext<CR>
+nnoremap <Up> :cprevious<CR>
 
 " Folding
 nnoremap \ za
