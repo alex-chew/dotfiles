@@ -13,8 +13,8 @@ set backspace=indent,eol,start
 set whichwrap+=<,>,h,l,[,]
 
 " Cursor movement on wrapped lines
-inoremap <Down> <C-o>gj
-inoremap <Up> <C-o>gk
+nnoremap j gj
+nnoremap k gk
 
 " Indentation
 set autoindent
@@ -100,6 +100,9 @@ nnoremap <C-h> :bprevious<CR>
 
 " Make mappings
 nnoremap <F9> :make!<CR>
+nnoremap <F10> :cwindow<CR>
+nnoremap <C-L> :cnext<CR>
+nnoremap <C-H> :cprevious<CR>
 
 " Folding
 nnoremap \ za
