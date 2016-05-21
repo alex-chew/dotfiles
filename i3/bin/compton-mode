@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+mode=$(echo -e 'mumble\noff' | rofi -levenshtein-sort -dmenu -i -no-custom -p "compton: ")
+
+case "$mode" in
+  mumble)
+    LD_PRELOAD=/usr/lib/mumble/libmumble.so \
+    compton -b -CG \
+    --backend glx \
+    --paint-on-overlay \
+    --glx-no-stencil --sw-opti \
+    --glx-no-rebind-pixmap
+    ;;
+  off)
+    pkill compton
+    ;;
+esac
+

@@ -33,6 +33,7 @@
 
   "i3/bin/textbooks.py": "~/.i3/bin/textbooks",
   "i3/bin/autorandr-rofi": "~/.i3/bin/autorandr-rofi",
+  "i3/bin/compton-mode": "~/.i3/bin/compton-mode",
   "i3/bin/ibus-switch-engine": "~/.i3/bin/ibus-switch-engine",
 
   "virtualenvs/postactivate": "~/.virtualenvs/postactivate",
