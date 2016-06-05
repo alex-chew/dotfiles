@@ -70,7 +70,7 @@ URxvt*.saveLines: 1024
 URxvt.iso14755: false
 URxvt.iso14755_52: false
 
-URxvt*.visualBell: true
+URxvt*.visualBell: false
 
 
 
