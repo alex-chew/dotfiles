@@ -15,9 +15,9 @@ font pango:Source Code Pro 10
 
 set $mod Mod4
 
-exec --no-startup-id setxkbmap -model pc105 -layout us -option compose:ralt
-exec --no-startup-id xset s 1800 1800
-exec --no-startup-id xset dpms 1800 1800 1800
+exec_always --no-startup-id setxkbmap -model pc105 -layout us -option compose:ralt -option caps:escape
+exec_always --no-startup-id xset s 1800 1800
+exec_always --no-startup-id xset dpms 1800 1800 1800
 exec_always --no-startup-id xset m 0
 exec --no-startup-id autorandr --change
 
