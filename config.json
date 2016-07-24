@@ -19,6 +19,8 @@
   "Xresources": "~/.Xresources",
   "inputrc": "~/.inputrc",
 
+  "urxvt/resize-font": "~/.urxvt/ext/resize-font",
+
   "i3/config": "~/.i3/config",
 
   "i3/i3blocks/config": "~/.i3/i3blocks/config",
