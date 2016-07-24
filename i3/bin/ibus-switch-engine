@@ -2,9 +2,12 @@
 
 ibus_jp='mozc-jp'
 ibus_en='xkb:us::eng'
+ibus_cn='pinyin'
 
 if [ "$(ibus engine)" == "$ibus_en" ]; then
   ibus engine "$ibus_jp"
+elif [ "$(ibus engine)" == "$ibus_jp" ]; then
+  ibus engine "$ibus_cn"
 else
   ibus engine "$ibus_en"
 fi
