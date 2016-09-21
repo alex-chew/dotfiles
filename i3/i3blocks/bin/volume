@@ -10,16 +10,16 @@ vol=${BASH_REMATCH[1]}
 status=${BASH_REMATCH[2]}
 
 # get appropriate icon
-if [[ "$status" == "off" ]]; then
-  vol_icon="$(icon )"
-elif [[ "$vol" -gt 50 ]]; then
-  vol_icon="$(icon )"
-else
-  vol_icon="$(icon )"
-fi
+# if [[ "$status" == "off" ]]; then
+#   vol_icon="$(icon )"
+# elif [[ "$vol" -gt 50 ]]; then
+#   vol_icon="$(icon )"
+# else
+#   vol_icon="$(icon )"
+# fi
 
 # full text
-echo "$vol_icon $vol"
+echo "$vol "
 
 # short text
 echo

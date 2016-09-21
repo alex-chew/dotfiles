@@ -5,7 +5,7 @@ info=$(nmcli -f "GENERAL.STATE,GENERAL.CONNECTION" dev show wlan0)
 
 if [[ $(echo $info | awk '{ print $3 }') != '(connected)' ]]; then
   # full text
-  echo "$(icon ) --"
+  echo "-- "
   # short text
   echo
   #color
@@ -16,7 +16,7 @@ else
   qual=$(grep wlan0 /proc/net/wireless | awk '{ print int($3 * 100 / 70) }')
 
   # full text
-  echo "$(icon ) $ssid ($qual%)"
+  echo "$ssid ($qual%) "
 
   # short text
   echo

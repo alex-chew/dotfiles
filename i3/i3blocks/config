@@ -1,34 +1,45 @@
 command=~/.i3/i3blocks/bin/$BLOCK_NAME
 markup=pango
 
+separator=false
+separator_block_width=6
+
+border=#a7adba
+border_top=0
+border_bottom=2
+border_left=0
+border_right=0
+
 [window]
 command=xtitle -s -t 72
 interval=persist
 
 [wifi]
+label=   
 interval=5
 
 [ethernet]
+label=   
 interval=5
 
 [cpu]
+label=   
 interval=10
 
 [memory]
+label=   
 interval=5
 
 [volume]
+label=   
 interval=10
 signal=1
 
 [battery]
+label=   
 interval=10
 
 [datetime]
+label=   
 interval=5
-
-[nothing]
-# Use zero width space for nonempty line
-command=echo "​"
-interval=once
 

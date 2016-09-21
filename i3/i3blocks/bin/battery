@@ -7,9 +7,9 @@ time=$(echo "$info" | awk '/time to (empty|full):/ { printf "%.1s %.0f%.1s", $3,
 
 # full text
 if [[ -n "$time" ]]; then
-  echo "$(icon ) ${perc} $time"
+  echo "${perc} $time "
 else
-  echo "$(icon ) ${perc}"
+  echo "${perc} "
 fi
 
 # short text

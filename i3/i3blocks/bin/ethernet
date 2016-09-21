@@ -4,7 +4,7 @@ source $(dirname $0)/_colors
 state=$(nmcli --terse --fields GENERAL.CONNECTION dev show eth0 | cut -d ':' -f 2)
 
 # full text
-echo "$(icon ) $state"
+echo "$state "
 # short text
 echo
 
