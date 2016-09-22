@@ -2,22 +2,31 @@
 source $(dirname $0)/_colors
 
 mem=$(free -m)
-total=$(echo "$mem" | awk 'NR == 2 { print $2 }')
-used=$(echo "$mem" | awk 'NR == 3 { print $3 }')
-perc=$(echo "$used / $total" | bc -l)
+
+# get free memory
+if [[ -n $(echo "$mem" | grep 'buffers/cache') ]]; then
+  # free version < 3.3.10: use -/+ buffers/cache
+  free=$(echo "$mem" | awk '/^-\/\+/ { print $4 }')
+else
+  # free version >= 3.3.10: use Mem:available
+  free=$(echo "$mem" | awk '/^Mem/ { print $7 }')
+fi
+
+total=$(echo "$mem" | awk '/^Mem/ { print $2 }')
+perc=$(echo "1 - $free / $total" | bc -l)
 
 # full text
-printf "%.0f% \n" $(echo "$perc * 100" | bc -l)
+printf "%.0f \n" $(echo "$perc * 100" | bc -l)
 
 # short text
 echo
 
 # color
-if (( $(echo "$used > $total * 0.9" | bc -l) )); then
+if (( $(echo "$free < $total * 0.1" | bc -l) )); then
   echo ${base08}
-elif (( $(echo "$used > $total * 0.7" | bc -l) )); then
+elif (( $(echo "$free < $total * 0.3" | bc -l) )); then
   echo ${base09}
-elif (( $(echo "$used > $total * 0.5" | bc -l) )); then
+elif (( $(echo "$free < $total * 0.5" | bc -l) )); then
   echo ${base0A}
 else
   echo ${base07}
