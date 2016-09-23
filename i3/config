@@ -271,6 +271,20 @@ bindsym $mod+b mode "launch"
 
 
 
+set $power power [exit | suspend | hibernate]
+mode "$power" {
+        bindsym e exec --no-startup-id i3-msg exit; mode "default"
+        bindsym s exec --no-startup-id "~/.i3/bin/lock; systemctl suspend"; mode "default"
+        # bindsym h exec --no-startup-id "~/.i3/bin/lock; systemctl hibernate"; mode "default"
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+bindsym $mod+Pause mode "$power"
+
+
+
 # screenshots
 set $scrot screenshot [win | full | select] (Shift for delay)
 set $scrot_fmt '%Y%m%d-%H%M%S_$wx$h.png'
@@ -350,9 +364,7 @@ exec_always --no-startup-id "sleep 1; feh --bg-center $wall"
 exec --no-startup-id nm-applet
 
 
-bindsym $mod+Escape exec --no-startup-id \
-    i3lock -d -I 10 -c 2b303b -e -i ~/Pictures/i3/lock.png -t
-
+bindsym $mod+Escape exec --no-startup-id ~/.i3/bin/lock
 
 
 exec --no-startup-id xrdb -load ~/.Xresources
