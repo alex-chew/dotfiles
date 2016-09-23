@@ -2,13 +2,7 @@ command=~/.i3/i3blocks/bin/$BLOCK_NAME
 markup=pango
 
 separator=false
-separator_block_width=6
-
-border=#a7adba
-border_top=0
-border_bottom=2
-border_left=0
-border_right=0
+separator_block_width=10
 
 [window]
 command=xtitle -s -t 72
