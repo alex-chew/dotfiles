@@ -37,9 +37,9 @@ UXTerm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
 !!! URxvt stuff !!!
 
 ! Font rendering
-URxvt*.font: xft:Source Code Pro:size=10:antialias=false,\
-             xft:symbola:size=10:antialias=false
-URxvt*.letterSpace: -1
+URxvt*.font: xft:Source Code Pro:size=10.5:antialias=false,\
+             xft:symbola:size=10.5:antialias=false
+URxvt*.letterSpace: -2
 URxvt*.cursorBlink: true
 
 ! Geometry
