@@ -1,19 +1,18 @@
 #!/usr/bin/env bash
 source $(dirname $0)/_colors
 
-info=$(nmcli -f "GENERAL.STATE,GENERAL.CONNECTION" dev show wlan0)
+info=$(nmcli -t -f 'ACTIVE,SSID,SIGNAL' dev wifi | awk '/^yes/')
 
-if [[ $(echo $info | awk '{ print $3 }') != '(connected)' ]]; then
+if [[ -z "$info" ]]; then
   # full text
   echo "-- "
   # short text
   echo
   #color
   echo ${base03}
-
 else
-  ssid=$(echo $info | awk '{ print $5 }')
-  qual=$(grep wlan0 /proc/net/wireless | awk '{ print int($3 * 100 / 70) }')
+  ssid=$(echo "$info" | cut -d ':' -f 2)
+  qual=$(echo "$info" | cut -d ':' -f 3)
 
   # full text
   echo "$ssid ($qual%) "
