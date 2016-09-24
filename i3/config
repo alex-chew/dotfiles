@@ -43,10 +43,10 @@ bindsym $mod+Return exec urxvt
 bindsym $mod+Shift+Return exec urxvt -name "floating-urxvt"
 for_window [instance="floating-urxvt$"] floating toggle
 
-set $dmenu_args -b -i -fn "Source Code Pro-10.5:Regular" -nb "#2b303b" -sb "#8fa1b3"
-# start dmenu for PATH, or only .desktop apps
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu $dmenu_args'
-bindsym $mod+Shift+d exec --no-startup-id dmenu_run $dmenu_args
+set $rofi_args '-i'
+# start rofi for PATH, or only .desktop apps
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -dmenu $rofi_args -p "run:"'
+bindsym $mod+Shift+d exec --no-startup-id rofi -show run $rofi_args
 
 
 
