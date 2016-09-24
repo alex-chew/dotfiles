@@ -1,18 +1,17 @@
 #!/usr/bin/env bash
 source $(dirname $0)/_colors
 
-state=$(nmcli --terse --fields GENERAL.CONNECTION dev show eth0 | cut -d ':' -f 2)
-
-# full text
-echo "$state "
-# short text
-echo
-
-if [[ "$state" == "--" ]]; then
-  # color
-  echo ${base03}
-else
-  # color
+conn=$(nmcli -f CONNECTION,TYPE,STATE -t dev \
+    | awk -F: '$2 == "ethernet" && $3 == "connected" { print $1 }')
+if [[ -n "$conn" ]]; then
+  # full text, short text, color
+  echo "$conn "
+  echo
   echo ${base07}
+else
+  # full text, short text, color
+  echo "-- "
+  echo
+  echo ${base03}
 fi
 
