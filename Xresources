@@ -125,3 +125,17 @@ URxvt*.color19:      base02
 URxvt*.color20:      base04
 URxvt*.color21:      base06
 
+
+
+!!! Rofi stuff
+rofi.color-enabled: true
+rofi.color-window: #343d46, #343d46, #65737e
+rofi.color-normal: #343d46, #eff1f5, #343d46, #65737e, #eff1f5
+rofi.color-active: #343d46, #a3be8c, #343d46, #65737e, #a3be8c
+rofi.color-urgent: #343d46, #ebcb8b, #343d46, #65737e, #ebcb8b
+
+rofi.bw: 4
+rofi.font: Source Code Pro 12
+rofi.lines: 16
+rofi.separator-style: none
+rofi.padding: 8
