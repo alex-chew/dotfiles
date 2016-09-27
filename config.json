@@ -32,6 +32,7 @@
   "i3/i3blocks/bin/datetime": "~/.i3/i3blocks/bin/datetime",
   "i3/i3blocks/bin/ethernet": "~/.i3/i3blocks/bin/ethernet",
   "i3/i3blocks/bin/memory": "~/.i3/i3blocks/bin/memory",
+  "i3/i3blocks/bin/title": "~/.i3/i3blocks/bin/title",
   "i3/i3blocks/bin/volume": "~/.i3/i3blocks/bin/volume",
   "i3/i3blocks/bin/wifi": "~/.i3/i3blocks/bin/wifi",
 

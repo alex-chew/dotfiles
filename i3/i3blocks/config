@@ -4,8 +4,7 @@ markup=pango
 separator=false
 separator_block_width=10
 
-[window]
-command=xtitle -s -t 72
+[title]
 interval=persist
 
 [wifi]
