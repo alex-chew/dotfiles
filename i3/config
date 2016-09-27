@@ -41,7 +41,8 @@ bindsym $mod+Shift+q kill
 # start a terminal
 bindsym $mod+Return exec urxvt
 bindsym $mod+Shift+Return exec urxvt -name "floating-urxvt"
-for_window [instance="floating-urxvt$"] floating toggle
+for_window [instance="floating-urxvt$"] floating enable,\
+    exec --no-startup-id "xdotool getwindowfocus set_window --classname urxvt --name urxvt"
 
 set $rofi_args '-i'
 # start rofi for PATH, or only .desktop apps
