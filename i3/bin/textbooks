@@ -5,7 +5,7 @@ import subprocess
 import sys
 
 
-find_cmd = 'cd {}; find . -path "{}" | cut -c 3-'
+find_cmd = 'cd {}; find . -path \'*.pdf\' | cut -c 3-'
 rofi_cmd = 'rofi -levenshtein-sort -dmenu -i -no-custom -p "book: " -format i'
 open_cmd = 'xdg-open {}'
 
@@ -16,13 +16,11 @@ def basename(path):
 
 if len(sys.argv) > 1 and sys.argv[1]:
     base = '~/school/books'
-    search = '*.pdf'
 else:
-    base = '~/qd'
-    search = '*/books/*.pdf'
+    qd = subprocess.check_output('basename $(readlink ~/qd)', shell=True)[:-1]
+    base = '~/school/books/{}'.format(qd)
 
-books = subprocess.check_output(find_cmd.format(base, search),
-        shell=True).split('\n')
+books = subprocess.check_output(find_cmd.format(base), shell=True).split('\n')
 books = filter(None, books)
 
 try:
