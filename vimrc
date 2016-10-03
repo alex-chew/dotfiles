@@ -78,6 +78,19 @@ set path=.,**
 
 
 
+" Auto-closing mappings
+inoremap (<Tab> ()<Esc>i
+inoremap (<CR> (<CR>)<Esc>O
+inoremap [<Tab> []<Esc>i
+inoremap [<CR> [<CR>]<Esc>O
+inoremap {<Tab> {}<Esc>i
+inoremap {<CR> {<CR>}<Esc>O
+inoremap '<Tab> ''<Esc>i
+inoremap "<Tab> ""<Esc>i
+inoremap `<Tab> ``<Esc>i
+
+
+
 " Leader mappings
 map <Space> <leader>
 nnoremap <leader>l :setlocal invrelativenumber<CR>:setlocal relativenumber?<CR>
