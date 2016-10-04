@@ -5,6 +5,7 @@
     cm = commit
     cma = commit --amend
     co = checkout
+    cob = checkout -b
     logo = log --oneline
     logg = log --oneline --graph --decorate
     df = diff
