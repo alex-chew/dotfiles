@@ -1,39 +1,3 @@
-!!! UXTerm stuff !!!
-
-! Always use Unicode support
-UXTerm*utf8: 1
-
-! Font name and size
-UXTerm*faceName: Source Code Pro
-UXTerm*faceSize: 9
-
-! Cursor
-UXTerm*cursorColor: white
-UXTerm*cursorBlink: true
-
-UXTerm*loginshell: false
-
-! Line history and scrolling
-UXTerm*savelines: 8192
-UXTerm*ScrollBar: false
-UXTerm*ScrollKey: true
-UXTerm*scrollTtyOutput: false
-
-! Alt key fix
-UXTerm*metaSendsEscape: true
-
-! locale UTF-8 settings
-UXTerm*locale: true
-
-! colors
-UXTerm*foreground: white
-UXTerm*background: rgb:26/26/26
-
-! Select URLs with double click
-UXTerm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
-
-
-
 !!! URxvt stuff !!!
 
 ! Font rendering
