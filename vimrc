@@ -132,23 +132,22 @@ au BufRead,BufNewFile *.ino set filetype=arduino
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'editorconfig/editorconfig-vim'
-
-Plug 'SirVer/ultisnips'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
-Plug 'wellle/targets.vim'
+Plug 'airblade/vim-gitgutter'
+set updatetime=1000
 
 Plug 'ap/vim-buftabline'
 let g:buftabline_show = 1
 let g:buftabline_indicators = 1
 
+Plug 'editorconfig/editorconfig-vim'
 Plug 'justinmk/vim-dirvish'
-
 Plug 'lervag/vimtex'
-
+Plug 'SirVer/ultisnips'
 Plug 'sophacles/vim-processing'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'wellle/targets.vim'
 
 call plug#end()
 
