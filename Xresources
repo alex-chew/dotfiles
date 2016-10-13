@@ -1,9 +1,9 @@
 !!! URxvt stuff !!!
 
 ! Font rendering
-URxvt*.font: xft:Source Code Pro:size=10.5:antialias=false,\
-             xft:symbola:size=10.5:antialias=false
-URxvt*.letterSpace: -1
+URxvt*.font: xft:Roboto Mono:size=11:antialias=false,\
+             xft:symbola:size=11:antialias=false
+URxvt*.letterSpace: 0
 URxvt*.cursorBlink: true
 
 ! Geometry
