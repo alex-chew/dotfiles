@@ -21,14 +21,14 @@ fi
 echo
 
 # color
-if (( $(echo "$perc > 60" | bc -l) )); then
-  echo ${base07}
-elif (( $(echo "$perc > 40" | bc -l) )); then
-  echo ${base0A}
-elif (( $(echo "$perc > 20" | bc -l) )); then
-  echo ${base09}
+if (( $(echo "$perc > 50" | bc -l) )); then
+  echo ${base07} # white
+elif (( $(echo "$perc > 25" | bc -l) )); then
+  echo ${base0A} # yellow
+elif (( $(echo "$perc > 10" | bc -l) )); then
+  echo ${base09} # orange
 else
-  echo ${base08}
+  echo ${base08} # red
 fi
 
 
