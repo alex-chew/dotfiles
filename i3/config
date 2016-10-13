@@ -215,6 +215,9 @@ bindsym $mod+Control+F12     exec --no-startup-id amixer -q -D pulse set Master 
 bindsym $mod+Control+F11     exec --no-startup-id amixer -q -D pulse set Master 5%- unmute; exec pkill -RTMIN+1 i3blocks
 bindsym $mod+Control+F10     exec --no-startup-id amixer -q -D pulse set Master toggle;     exec pkill -RTMIN+1 i3blocks
 
+# start at 50% unless muted
+exec --no-startup-id amixer -q -D pulse set Master 50%; exec pkill -RTMIN+1 i3blocks
+
 # keyboard backlight control
 bindsym XF86KbdBrightnessDown exec --no-startup-id ~/.scripts/kb-backlight decrease
 bindsym XF86KbdBrightnessUp   exec --no-startup-id ~/.scripts/kb-backlight increase
