@@ -107,7 +107,7 @@ set $w9 9
 set $w0 10:0
 set $wE 11:E
 set $wC 12:C
-set $wM 13:M
+set $wP 13:P
 
 
 
@@ -124,7 +124,7 @@ bindsym $mod+9                 workspace $w9
 bindsym $mod+0                 workspace $w0
 bindsym $mod+bracketleft       workspace $wE
 bindsym $mod+bracketright      workspace $wC
-bindsym $mod+backslash         workspace $wM
+bindsym $mod+backslash         workspace $wP
 
 # move focused container to workspace
 bindsym $mod+Shift+1                 move container to workspace $w1
@@ -139,7 +139,7 @@ bindsym $mod+Shift+9                 move container to workspace $w9
 bindsym $mod+Shift+0                 move container to workspace $w0
 bindsym $mod+Shift+bracketleft       move container to workspace $wE
 bindsym $mod+Shift+bracketright      move container to workspace $wC
-bindsym $mod+Shift+backslash         move container to workspace $wM
+bindsym $mod+Shift+backslash         move container to workspace $wP
 
 # switch to prev/next and back-and-forth
 bindsym $mod+comma workspace prev_on_output
@@ -168,7 +168,7 @@ bindsym $mod+Shift+Mod1+F8 move workspace to output right
 # keep util workspaces on second monitor
 workspace $wE output eDP1
 workspace $wC output eDP1
-workspace $wM output eDP1
+workspace $wP output eDP1
 
 
 
