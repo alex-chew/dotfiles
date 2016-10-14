@@ -105,9 +105,9 @@ set $w7 7
 set $w8 8
 set $w9 9
 set $w0 10:0
-set $wE 11:E
-set $wC 12:C
-set $wP 13:P
+set $wE 11:
+set $wC 12:
+set $wP 13:
 
 
 
