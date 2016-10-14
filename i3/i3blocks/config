@@ -16,11 +16,11 @@ label=  
 interval=5
 
 [cpu]
-label=   
+label=   
 interval=10
 
 [memory]
-label=   
+label=   
 interval=5
 
 [volume]
