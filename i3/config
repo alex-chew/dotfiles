@@ -310,7 +310,7 @@ bindsym $mod+Print mode "$scrot"
 bar {
         status_command i3blocks -c ~/.i3/i3blocks/config
         position top
-        font pango:Roboto Mono 11
+        font pango:Roboto Mono, FontAwesome 11
         separator_symbol " ❱ "
         strip_workspace_numbers yes
         colors {
