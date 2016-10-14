@@ -32,6 +32,9 @@ set breakindent
 let &showbreak = '↳ '
 set display=lastline
 
+" Don't automatically fold
+set foldlevelstart=99
+
 " Line highlighting/numbering
 set number
 set relativenumber
