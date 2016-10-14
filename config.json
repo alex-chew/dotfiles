@@ -23,6 +23,8 @@
 
   "urxvt/resize-font": "~/.urxvt/ext/resize-font",
 
+  "dmrc": "~/.dmrc",
+
   "i3/config": "~/.i3/config",
 
   "i3/i3blocks/config": "~/.i3/i3blocks/config",
