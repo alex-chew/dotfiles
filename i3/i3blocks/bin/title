@@ -19,7 +19,7 @@ try:
         trimmed = line.decode('utf_8').rstrip()
         if len(trimmed) > MAXLEN:
             trimmed = trimmed[:MAXLEN] + u'\u2026'
-        print(trimmed.encode('utf_8'))
+        print(trimmed.encode('utf_8') + ' ')
         sys.stdout.flush()
 except KeyboardInterrupt: # exit cleanly when testing
     exit(0)
