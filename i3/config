@@ -255,7 +255,7 @@ mode "launch" {
         bindsym f exec --no-startup-id firefox; mode "default"
         bindsym g exec --no-startup-id google-chrome; mode "default"
         bindsym h exec --no-startup-id urxvt -e htop; mode "default"
-        bindsym n exec --no-startup-id nemo; mode "default"
+        bindsym n exec --no-startup-id pcmanfm; mode "default"
         bindsym k exec --no-startup-id ~/.i3/bin/textbooks; mode "default"
         bindsym Shift+k exec --no-startup-id ~/.i3/bin/textbooks all; mode "default"
         bindsym r exec --no-startup-id urxvt -e ranger; mode "default"
