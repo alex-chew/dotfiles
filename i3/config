@@ -254,6 +254,7 @@ mode "launch" {
         bindsym c exec --no-startup-id ~/.i3/bin/compton-mode; mode "default"
         bindsym f exec --no-startup-id firefox; mode "default"
         bindsym g exec --no-startup-id google-chrome; mode "default"
+        bindsym Shift+g exec --no-startup-id google-chrome-unstable; mode "default"
         bindsym h exec --no-startup-id urxvt -e htop; mode "default"
         bindsym n exec --no-startup-id pcmanfm; mode "default"
         bindsym k exec --no-startup-id ~/.i3/bin/textbooks; mode "default"
