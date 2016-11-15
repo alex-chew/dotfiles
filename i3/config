@@ -333,8 +333,7 @@ for_window [class="^Tk$" title="^Figure"] floating enable
 for_window [title="^cliped$"] floating enable
 for_window [instance="sun-awt-X11-XFramePeer"] floating enable
 
-assign [class="^Thunderbird$"] $wE
-assign [class="^Spotify$"] $wM
+
 
 # Window colors
 # class                 border  bg      text    indicator
