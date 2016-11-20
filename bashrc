@@ -101,6 +101,17 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+# Colored man pages
+man() {
+    LESS_TERMCAP_md=$'\e[01;31m' \
+    LESS_TERMCAP_me=$'\e[0m' \
+    LESS_TERMCAP_se=$'\e[0m' \
+    LESS_TERMCAP_so=$'\e[01;44;33m' \
+    LESS_TERMCAP_ue=$'\e[0m' \
+    LESS_TERMCAP_us=$'\e[01;32m' \
+    command man "$@"
+}
+
 # Custom prompt
 export DEFAULT_PS1='\n\[\e[01;36m\]\u\[\e[0m\]\[\e[00;37m\] \h \[\e[1m\]\[\e[01;34m\]\w\[\e[0m\]\[\e[00;37m\]$(__git_ps1 " (%s)")\n\[\e[01;37m\]\$ \[\e[0m\]'
 export VIRTUALENV_PS1='\n\[\e[01;36m\]\u\[\e[0m\]\[\e[00;37m\] \h \[\e[0m\]\[\e[01;34m\]\w\[\e[0m\]\[\e[00;37m\]$(__git_ps1 " (%s)")\n($(basename "$VIRTUAL_ENV" )) \[\e[01;37m\]\$ \[\e[0m\]'
