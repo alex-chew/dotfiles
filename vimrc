@@ -111,8 +111,12 @@ map , <localleader>
 nnoremap <F2> :buffers<CR>:b
 nnoremap <F3> :registers<CR>
 nnoremap <F4> :marks<CR>
-nnoremap <C-l> :bnext<CR>
-nnoremap <C-h> :bprevious<CR>
+nnoremap <C-m> :bnext<CR>
+nnoremap <C-n> :bprevious<CR>
+nnoremap <C-h> <C-w><C-h>
+nnoremap <C-j> <C-w><C-j>
+nnoremap <C-k> <C-w><C-k>
+nnoremap <C-l> <C-w><C-l>
 
 " Make mappings
 nnoremap <F9> :make!<CR>
