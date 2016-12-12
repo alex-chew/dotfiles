@@ -142,14 +142,14 @@ bindsym $mod+Shift+bracketright      move container to workspace $wC
 bindsym $mod+Shift+backslash         move container to workspace $wP
 
 # switch to prev/next and back-and-forth
-bindsym $mod+comma workspace prev_on_output
-bindsym $mod+period workspace next_on_output
-bindsym $mod+slash workspace back_and_forth
+bindsym $mod+n workspace prev_on_output
+bindsym $mod+m workspace next_on_output
+bindsym $mod+x workspace back_and_forth
 
 # move focused container to prev/next and back-and-forth
-bindsym $mod+Shift+comma move container to workspace prev_on_output
-bindsym $mod+Shift+period move container to workspace next_on_output
-bindsym $mod+Shift+slash move container to workspace back_and_forth
+bindsym $mod+Shift+n move container to workspace prev_on_output
+bindsym $mod+Shift+m move container to workspace next_on_output
+bindsym $mod+Shift+x move container to workspace back_and_forth
 
 # move focus to left/right
 bindsym $mod+F7 focus output left
@@ -229,7 +229,7 @@ bindsym Shift+XF86KbdBrightnessUp   exec --no-startup-id xbacklight -inc 10
 
 
 # switch input method
-bindsym $mod+n exec --no-startup-id ~/.i3/bin/ibus-switch-engine
+bindsym $mod+z exec --no-startup-id ~/.i3/bin/ibus-switch-engine
 
 
 
