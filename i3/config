@@ -36,6 +36,9 @@ focus_on_window_activation urgent
 # kill focused window
 bindsym $mod+Shift+q kill
 
+# Debugging
+bindsym $mod+apostrophe exec --no-startup-id ~/.scripts/sysdebug.sh
+
 
 
 # start a terminal
