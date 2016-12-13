@@ -104,9 +104,6 @@ nnoremap <leader>n :noh<CR>
 nnoremap <leader>f :find *
 nnoremap <leader>b :bprevious \| bdelete #<CR>
 
-" Localleader mapping
-map , <localleader>
-
 " Misc mappings
 nnoremap <F2> :buffers<CR>:b
 nnoremap <F3> :registers<CR>
@@ -125,8 +122,8 @@ nnoremap <Down> :cnext<CR>
 nnoremap <Up> :cprevious<CR>
 
 " Folding
-nnoremap \ za
-vnoremap \ zf
+nnoremap , za
+vnoremap , zf
 
 
 
