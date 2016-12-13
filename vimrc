@@ -101,8 +101,7 @@ nnoremap <leader>s :setlocal invspell<CR>:setlocal spell?<CR>
 nnoremap <leader>p :setlocal invpaste<CR>:setlocal paste?<CR>
 nnoremap <leader>n :noh<CR>
 nnoremap <leader>f :find *
-nnoremap <leader>b :bnext<CR>
-nnoremap <leader>B :bprevious<CR>
+nnoremap <leader>b :bprevious \| bdelete #<CR>
 
 " Localleader mapping
 map , <localleader>
