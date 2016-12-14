@@ -1,6 +1,7 @@
 [alias]
     s = status
     au = add -u
+    ap = add -p
     br = branch
     cm = commit
     cma = commit --amend
