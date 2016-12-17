@@ -61,7 +61,8 @@ set hlsearch
 set ignorecase smartcase
 
 " Completion options
-set wildmode=longest,list,full
+set path=.,**
+set wildmode=list,full
 set wildmenu
 
 " Bells
@@ -75,9 +76,6 @@ set hidden
 " Backup/swap files
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
-
-" Path for :find
-set path=.,**
 
 
 
