@@ -12,6 +12,9 @@ color base16-ocean
 set backspace=indent,eol,start
 set whichwrap+=<,>,h,l,[,]
 
+" No delay when pressing Esc
+set timeoutlen=1000 ttimeoutlen=0
+
 " Cursor movement on wrapped lines
 nnoremap j gj
 nnoremap k gk
