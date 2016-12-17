@@ -77,6 +77,10 @@ set hidden
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
 
+" Split to right and below
+set splitright
+set splitbelow
+
 
 
 " Auto-closing mappings
@@ -100,6 +104,8 @@ nnoremap <leader>p :setlocal invpaste<CR>:setlocal paste?<CR>
 nnoremap <leader>w :setlocal invwrap<CR>:setlocal wrap?<CR>
 nnoremap <leader>n :noh<CR>
 nnoremap <leader>f :find *
+nnoremap <leader>\| :vsplit \| find *
+nnoremap <leader>- :split \| find *
 nnoremap <leader>b :bprevious \| bdelete #<CR>
 
 " Misc mappings
