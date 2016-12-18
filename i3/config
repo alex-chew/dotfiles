@@ -371,3 +371,6 @@ bindsym $mod+Escape exec --no-startup-id ~/.i3/bin/lock
 
 exec --no-startup-id xrdb -load ~/.Xresources
 
+# Per-machine local config
+exec_always --no-startup-id ~/.i3/local.sh
+
