@@ -21,6 +21,13 @@ set timeoutlen=1000 ttimeoutlen=0
 set laststatus=2
 set showcmd
 
+""" Status line
+set statusline=%<
+set statusline+=%f\ %m%r
+set statusline+=\ \(%{&filetype}\|%{&ff}\)
+set statusline+=%=
+set statusline+=%-18.(%l,%c%V%)\ %P/%L
+
 " Colors
 set t_Co=256
 let base16colorspace=256
