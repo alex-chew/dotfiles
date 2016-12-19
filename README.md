@@ -1,18 +1,13 @@
 #dotfiles
 
-This repository contains my dotfiles for Linux, as well as a deploy script to set up symlinks to the correct destinations.
+This repository contains my dotfiles for Linux and a script to set up symlinks.
 
-To use the _deploy.py script, copy your dotfiles somewhere under the same directory as the script, and add a `config.json` file.
-The `config.json` file should be a single object, with key-value pairs as strings in the format `"dotfile": "destination"`. For example:
+`deploy.sh` requires a `dotfiles.cfg` which lists the source (relative to the directory of `deploy.sh`) and destination (relative to `$HOME`) of each symlink. For example,
 
-```json
-{
-	"bashrc": "~/.bashrc",
-	"vimrc": "~/.vimrc",
-	"tmux.conf": "~/.tmux.conf"
-}
+```
+bashrc=.bashrc
+vimrc=.vimrc
+i3=.i3
 ```
 
-(Using the `~` to indicate home directory is acceptable, as it is replaced by the script with your own home directory.)
-
-If the destination is a directory, the script will leave it alone. If it is a file or existing link, it will make a backup of the file as `file.old` before creating the new symlink.
+instructs `deploy.sh` to symlink `.../dotfiles/bashrc` to `~/.bashrc`, `.../dotfiles/i3` to `~/.i3`, and so forth. Both directories and files may be listed as sources. If the destination already exists, `deploy.sh` will make a backup named `file.old` before creating the new symlink. Blank lines in `dotfiles.cfg` are permissible (to make the file easier to read).
