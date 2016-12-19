@@ -6,8 +6,6 @@ postdeploy="postdeploy.sh"
 
 [[ -r $config ]] || { echo "$config not found"; exit 1; }
 while read -r line || [[ -n $line ]]; do
-  status=""
-
   # Get src and dst
   src=$(cut -d= -sf 1 <<< "$line")
   dst=$(cut -d= -sf 2 <<< "$line")
