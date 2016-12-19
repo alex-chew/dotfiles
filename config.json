@@ -8,8 +8,6 @@
   "vimrc": "~/.vimrc",
   "vim/plug.vim": "~/.vim/autoload/plug.vim",
   "vim/base16-ocean.vim": "~/.vim/colors/base16-ocean.vim",
-  "vim/Tomorrow-Night-Eighties.vim": "~/.vim/colors/Tomorrow-Night-Eighties.vim",
-  "vim/arduino.vim": "~/.vim/arduino.vim",
 
   "tmux.conf": "~/.tmux.conf",
   "scripts/tmuxbatt.py": "~/.scripts/tmuxbatt.py",
