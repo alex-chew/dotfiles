@@ -335,6 +335,7 @@ bar {
                 separator #4f5b66
 
                 focused_workspace #2b303b #2b303b #eff1f5
+                active_workspace #2b303b #2b303b #eff1f5
                 inactive_workspace #2b303b #2b303b #65737e
                 urgent_workspace #2b303b #2b303b #bf616a
         }
