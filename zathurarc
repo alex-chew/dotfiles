@@ -1,0 +1,11 @@
+set selection-clipboard clipboard
+set show-scrollbars false
+
+set font "Roboto Mono 11"
+set default-fg "#EFF1F5"
+set default-bg "#2B303B"
+set inputbar-fg "#EFF1F5"
+set inputbar-bg "#2B303B"
+set statusbar-fg "#EFF1F5"
+set statusbar-bg "#2B303B"
+
