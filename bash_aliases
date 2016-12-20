@@ -14,7 +14,10 @@ alias df='df -h'
 alias du='du -h'
 
 # git
-alias g='git status -s'
+g () {
+  [[ $# -eq 0 ]] && { git status -s; return; }
+  git $@
+}
 
 # auto-open
 alias xo='xdg-open'
