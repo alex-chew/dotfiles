@@ -15,13 +15,13 @@ else
   qual=$(echo "$info" | cut -d ':' -f 3)
 
   # full text
-  echo "$ssid ($qual%) "
+  echo "$ssid ($qual) "
 
   # short text
   echo
 
   # color
-  if (( "$qual" > 70 )); then
+  if (( "$qual" > 60 )); then
     echo ${base07}
   elif (( "$qual" > 40 )); then
     echo ${base0A}
