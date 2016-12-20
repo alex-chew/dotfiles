@@ -37,7 +37,7 @@ while read -r line || [[ -n $line ]]; do
   fi
 
   # Create link with backup
-  if ln -s --backup --suffix ".old" $abs_src $abs_dst; then
+  if ln -s $abs_src $abs_dst; then
     echo "+ | linked $src to ~/$dst"
   else
     echo "X | failed to link $src to ~/$dst"
