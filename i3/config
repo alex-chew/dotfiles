@@ -284,7 +284,6 @@ bindsym $mod+Shift+d exec --no-startup-id rofi -show run $rofi_args
 # quick launcher
 mode "launch" {
         bindsym a exec --no-startup-id ~/.i3/bin/autorandr-rofi; mode "default"
-        bindsym c exec --no-startup-id ~/.i3/bin/compton-mode; mode "default"
         bindsym f exec --no-startup-id firefox; mode "default"
         bindsym g exec --no-startup-id google-chrome; mode "default"
         bindsym Shift+g exec --no-startup-id google-chrome-unstable; mode "default"
@@ -345,6 +344,7 @@ bar {
 
 exec --no-startup-id nm-applet
 exec --no-startup-id xrdb -load ~/.Xresources
+exec_always --no-startup-id "pkill compton; compton -b"
 # Per-machine local config
 exec_always --no-startup-id ~/.i3/local.sh
 
