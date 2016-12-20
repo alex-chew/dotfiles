@@ -49,12 +49,6 @@ man() {
     command man "$@"
 }
 
-export DEFAULT_PS1='\n\[\e[01;36m\]\u\[\e[0m\]\[\e[00;37m\] \h \[\e[1m\]\[\e[01;34m\]\w\[\e[0m\]\[\e[00;37m\]$(__git_ps1 " (%s)")\n\[\e[01;37m\]\$ \[\e[0m\]'
-export VIRTUALENV_PS1='\n\[\e[01;36m\]\u\[\e[0m\]\[\e[00;37m\] \h \[\e[0m\]\[\e[01;34m\]\w\[\e[0m\]\[\e[00;37m\]$(__git_ps1 " (%s)")\n($(basename "$VIRTUAL_ENV" )) \[\e[01;37m\]\$ \[\e[0m\]'
-if ! { [ "$TERM" = "screen" ] && [ -n "$TMUX" ]; } then
-	PS1=$DEFAULT_PS1
-fi
-
 # Git prompt
 export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWUPSTREAM="auto"
@@ -63,6 +57,15 @@ export GIT_PS1_SHOWUPSTREAM="auto"
 export VIRTUAL_ENV_DISABLE_PROMPT=1 # disable default prompt
 export WORKON_HOME=$HOME/.virtualenvs
 [[ -f /usr/local/bin/virtualenvwrapper.sh ]] && . /usr/local/bin/virtualenvwrapper.sh
+
+# venv prompt
+__venv_ps1 () {
+  [[ -z $VIRTUAL_ENV ]] && return
+  echo "($(basename $VIRTUAL_ENV)) "
+}
+
+# Custom prompt
+PS1='\n\[\e[01;36m\]\u\[\e[0m\]\[\e[00;37m\] \h \[\e[1m\]\[\e[01;34m\]\w\[\e[0m\]\[\e[00;37m\]$(__git_ps1 " (%s)")\n$(__venv_ps1)\[\e[01;37m\]\$ \[\e[0m\]'
 
 # Editor
 export EDITOR='vim'
