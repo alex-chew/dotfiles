@@ -7,7 +7,7 @@ URxvt*.letterSpace: 0
 URxvt*.cursorBlink: true
 
 ! Geometry
-URxvt*.internalBorder: 4
+URxvt*.internalBorder: 8
 
 ! Scroll behavior
 URxvt*.scrollBar: false
