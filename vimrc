@@ -164,7 +164,9 @@ set updatetime=1000
 
 Plug 'ap/vim-buftabline'
 let g:buftabline_show = 1
-let g:buftabline_indicators = 1
+hi link BufTabLineCurrent StatusLine
+hi link BufTabLineActive StatusLineNC
+hi link BufTabLineHidden StatusLineNC
 
 Plug 'editorconfig/editorconfig-vim'
 Plug 'justinmk/vim-dirvish'
