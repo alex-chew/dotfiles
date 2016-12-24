@@ -347,5 +347,5 @@ exec --no-startup-id nm-applet
 exec --no-startup-id xrdb -load ~/.Xresources
 exec_always --no-startup-id "pkill compton; compton -b"
 # Per-machine local config
-exec_always --no-startup-id ~/.i3/local.sh
+exec_always --no-startup-id ~/i3-local.sh
 
