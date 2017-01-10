@@ -142,7 +142,7 @@ set wildmode=list,full
 set wildmenu
 
 " Setting toggles
-nnoremap <leader>l :setlocal invrelativenumber<CR>:setlocal relativenumber?<CR>
+nnoremap <leader>r :setlocal invrelativenumber<CR>:setlocal relativenumber?<CR>
 nnoremap <leader>s :setlocal invspell<CR>:setlocal spell?<CR>
 nnoremap <leader>p :setlocal invpaste<CR>:setlocal paste?<CR>
 nnoremap <leader>w :setlocal invwrap<CR>:setlocal wrap?<CR>
