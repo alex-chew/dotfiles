@@ -29,9 +29,7 @@ set statusline+=%=
 set statusline+=%-18.(%l,%c%V%)\ %P/%L
 
 " Colors
-set t_Co=256
 let base16colorspace=256
-set background=dark
 color base16-ocean
 
 " Show invisibles
