@@ -173,7 +173,10 @@ Plug 'justinmk/vim-dirvish'
 Plug 'lervag/vimtex'
 Plug 'SirVer/ultisnips'
 Plug 'sophacles/vim-processing'
+
 Plug 'tpope/vim-commentary'
+autocmd FileType c,cpp setlocal commentstring=//\ %s
+
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'wellle/targets.vim'
