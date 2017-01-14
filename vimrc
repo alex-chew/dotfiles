@@ -60,8 +60,8 @@ set t_vb=
 " Correct backspace/movement wrapping
 set backspace=indent,eol,start
 set whichwrap+=<,>,h,l,[,]
-nnoremap j gj
-nnoremap k gk
+nnoremap <expr> j v:count ? 'j' : 'gj'
+nnoremap <expr> k v:count ? 'k' : 'gk'
 
 " Better wrapping behavior
 set breakindent
