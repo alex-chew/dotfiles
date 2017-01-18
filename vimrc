@@ -173,7 +173,7 @@ Plug 'SirVer/ultisnips'
 Plug 'sophacles/vim-processing'
 
 Plug 'tpope/vim-commentary'
-autocmd FileType c,cpp setlocal commentstring=//\ %s
+autocmd FileType c,cpp,h,hpp setlocal commentstring=//\ %s
 
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
