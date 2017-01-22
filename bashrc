@@ -38,6 +38,9 @@ BASE16_SHELL="$HOME/.config/base16-shell/base16-ocean.dark.sh"
 # Bash completion
 [[ -f /etc/bash_completion ]] && ! shopt -oq posix && . /etc/bash_completion
 
+# fzf completion
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
 # Colored man pages
 man() {
     LESS_TERMCAP_md=$'\e[01;31m' \
