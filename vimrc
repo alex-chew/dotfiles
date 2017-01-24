@@ -104,6 +104,9 @@ set splitbelow
 
 " Indentation
 set autoindent
+set smartindent
+set cindent
+set cinoptions=g0
 set tabstop=4
 set softtabstop=2
 set shiftwidth=2
