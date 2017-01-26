@@ -36,8 +36,7 @@ bindsym $mod+Pause mode "$power"
 
 # Keyboard
 
-exec_always --no-startup-id setxkbmap -model pc105 -layout us -option compose:ralt -option ctrl:nocaps
-exec_always --no-startup-id xcape -e 'Control_L=Escape'
+exec_always --no-startup-id setxkbmap -model pc105 -layout us -option compose:ralt -option caps:escape
 
 # switch input method
 bindsym $mod+z exec --no-startup-id ~/.i3/bin/ibus-switch-engine
