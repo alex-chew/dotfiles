@@ -153,6 +153,8 @@ nnoremap <F9> :make!<CR>
 nnoremap <F10> :cwindow<CR>
 nnoremap <Down> :cnext<CR>
 nnoremap <Up> :cprevious<CR>
+" No qf in :ls/:bn/etc, and use abs line numbers (from romainl's vim-qf)
+autocmd FileType qf set nobuflisted | setlocal norelativenumber number
 
 
 
