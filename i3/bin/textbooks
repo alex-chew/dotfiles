@@ -5,9 +5,9 @@ import subprocess
 import sys
 
 
-find_cmd = 'cd {}; find . -path \'*.pdf\' | cut -c 3-'
+find_cmd = "find {} -path '*.pdf'"
 rofi_cmd = 'rofi -levenshtein-sort -dmenu -i -no-custom -p "book: " -format i'
-open_cmd = 'xdg-open {}'
+open_cmd = "xdg-open '{}'"
 
 
 if len(sys.argv) > 1 and sys.argv[1]:
@@ -20,12 +20,11 @@ books = filter(None, books)
 
 try:
     fnames = '\n'.join(map(os.path.basename, books))
-    booknum = subprocess.check_output('echo "{}" | {}'.format(fnames,
+    booknum = subprocess.check_output("echo '{}' | {}".format(fnames,
         rofi_cmd), shell=True)[:-1]
 except subprocess.CalledProcessError: # pressed Esc or something at the prompt
     sys.exit(0)
 
-book = os.path.join(base, books[int(booknum)]).replace(' ', '\\ ')
-subprocess.call(open_cmd.format(book), shell=True)
-print(open_cmd.format(book))
+cmd = open_cmd.format(books[int(booknum)])
+subprocess.call(cmd, shell=True)
 
