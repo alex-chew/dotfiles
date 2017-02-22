@@ -1,0 +1,62 @@
+[global]
+  font = Roboto Mono 11
+  allow_markup = yes
+  markup = full
+  format = "<b>%s</b>\n%b"
+
+  sort = yes
+  indicate_hidden = yes
+  alignment = center
+  bounce_freq = 0
+  show_age_threshold = 60
+  word_wrap = yes
+  ignore_newline = no
+
+  geometry = "360x8-30+30"
+  title = Dunst
+  class = Dunst
+  shrink = no
+  transparency = 0
+  idle_threshold = 120
+  monitor = 0
+  follow = none
+
+  stack_duplicates = true
+  hide_duplicate_count = false
+  sticky_history = yes
+  history_length = 20
+
+  show_indicators = no
+  line_height = 0
+  notification_height = 0
+  separator_height = 0
+  padding = 15
+  horizontal_padding = 10
+  separator_color = frame
+  startup_notification = false
+  icon_position = off
+
+[frame]
+  width = 0
+  color = "#ffffff"
+
+[shortcuts]
+  close = mod4+Tab
+  close_all = mod4+shift+Tab
+  history = mod4+grave
+
+[urgency_low]
+  background = "#343d46"
+  foreground = "#eff1f5"
+  timeout = 10
+
+[urgency_normal]
+  background = "#65737e"
+  foreground = "#eff1f5"
+  timeout = 10
+
+[urgency_critical]
+  background = "#bf616a"
+  foreground = "#eff1f5"
+  timeout = 0
+
