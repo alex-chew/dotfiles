@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+
+
 # ls
 alias ll='ls -halF'
 alias lls='ls -halF | less'
@@ -16,8 +18,13 @@ alias du='du -h'
 # git
 g () {
   [[ $# -eq 0 ]] && { git status -s; return; }
-  git $@
+  git "$@"
 }
+# git completion
+if [[ -f /usr/share/bash-completion/completions/git ]]; then
+  . /usr/share/bash-completion/completions/git
+  __git_complete g __git_main
+fi
 
 # auto-open
 alias xo='xdg-open'
