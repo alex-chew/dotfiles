@@ -1,3 +1,6 @@
 Control-f: menu-complete
 Control-g: menu-complete-backward
 
+set show-all-if-ambiguous on
+set colored-stats on
+
