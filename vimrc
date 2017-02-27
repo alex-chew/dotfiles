@@ -183,7 +183,7 @@ Plug 'tpope/vim-commentary'
 autocmd FileType c,cpp,h,hpp setlocal commentstring=//\ %s
 
 Plug 'tpope/vim-fugitive'
-autocmd FileType gitcommit set nobuflisted
+nnoremap <leader>gs :Gstatus<CR>
 
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
