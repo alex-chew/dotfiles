@@ -136,7 +136,7 @@ for_window [instance="sun-awt-X11-XFramePeer"] floating enable
 
 # colors
 # class                 border  bg      text    indicator
-client.focused          #4c7899 #2b303b #ffffff #2b303b
+client.focused          #4c7899 #8fa1b3 #ffffff #8fa1b3
 client.focused_inactive #333333 #2b303b #ffffff #2b303b
 client.unfocused        #333333 #2b303b #888888 #2b303b
 client.urgent           #2f343a #bf616a #ffffff #bf616a
@@ -345,7 +345,6 @@ bar {
 
 exec --no-startup-id nm-applet
 exec --no-startup-id xrdb -load ~/.Xresources
-exec_always --no-startup-id "pkill compton; compton -b"
 # Per-machine local config
 exec_always --no-startup-id ~/i3-local.sh
 
