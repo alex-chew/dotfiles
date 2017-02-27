@@ -182,6 +182,9 @@ Plug 'sophacles/vim-processing'
 Plug 'tpope/vim-commentary'
 autocmd FileType c,cpp,h,hpp setlocal commentstring=//\ %s
 
+Plug 'tpope/vim-fugitive'
+autocmd FileType gitcommit set nobuflisted
+
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'wellle/targets.vim'
