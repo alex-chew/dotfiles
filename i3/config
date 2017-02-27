@@ -129,6 +129,7 @@ bindsym $mod+r mode "resize"
 
 # misc rules
 for_window [class="^.*"] border pixel 4
+hide_edge_borders smart
 for_window [class="^Octave$"] floating enable
 for_window [class="^Tk$" title="^Figure"] floating enable
 for_window [title="^cliped$"] floating enable
