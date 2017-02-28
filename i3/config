@@ -145,7 +145,6 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000
 
 # gaps
 set $gaps_inner 12
-smart_borders no_gaps
 gaps inner $gaps_inner
 gaps outer 0
 bindsym $mod+g       gaps inner current set $gaps_inner
