@@ -5,6 +5,7 @@ separator=false
 separator_block_width=10
 
 [title]
+command=xtitle -s -t 72
 interval=persist
 
 [wifi]
