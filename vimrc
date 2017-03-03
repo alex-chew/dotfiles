@@ -118,17 +118,6 @@ set expandtab
 filetype on
 filetype indent on
 
-" Auto-closing mappings
-inoremap (<Tab> ()<Esc>i
-inoremap (<CR> (<CR>)<Esc>O
-inoremap [<Tab> []<Esc>i
-inoremap [<CR> [<CR>]<Esc>O
-inoremap {<Tab> {}<Esc>i
-inoremap {<CR> {<CR>}<Esc>O
-inoremap '<Tab> ''<Esc>i
-inoremap "<Tab> ""<Esc>i
-inoremap `<Tab> ``<Esc>i
-
 
 
 """ Command-line behavior
@@ -176,6 +165,10 @@ hi link BufTabLineHidden StatusLineNC
 Plug 'editorconfig/editorconfig-vim'
 Plug 'justinmk/vim-dirvish'
 Plug 'lervag/vimtex'
+
+Plug 'Raimondi/delimitMate'
+let delimitMate_expand_cr = 1
+
 Plug 'SirVer/ultisnips'
 Plug 'sophacles/vim-processing'
 
