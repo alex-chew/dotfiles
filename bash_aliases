@@ -2,6 +2,9 @@
 
 
 
+alias e="$EDITOR"
+alias v="$EDITOR -R"
+
 # ls
 alias ll='ls -halF'
 alias lls='ls -halF | less'

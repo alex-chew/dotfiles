@@ -32,6 +32,9 @@ fi
 BASE16_SHELL="$HOME/.config/base16-shell/base16-ocean.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
+# Editor
+export EDITOR='nvim'
+
 # Bash aliases
 [[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
 
@@ -69,7 +72,4 @@ __venv_ps1 () {
 
 # Custom prompt
 PS1='\n\[\e[01;36m\]\u\[\e[0m\]\[\e[00;37m\] \h \[\e[1m\]\[\e[01;34m\]\w\[\e[0m\]\[\e[00;37m\]$(__git_ps1 " (%s)")\n$(__venv_ps1)\[\e[01;37m\]\$ \[\e[0m\]'
-
-# Editor
-export EDITOR='vim'
 
