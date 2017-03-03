@@ -75,7 +75,7 @@ vnoremap , zf
 set foldlevelstart=99
 
 " Buffer navigation
-nnoremap <leader>b :if &buflisted \|
+nnoremap <silent> <leader>b :if &buflisted \|
       \ bprevious \| bdelete # \|
       \ else \| q \| endif<CR>
 nnoremap <C-m> :bnext<CR>
