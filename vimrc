@@ -29,6 +29,7 @@ set statusline+=%=
 set statusline+=%-18.(%l,%c%V%)\ %P/%L
 
 " Colors
+set background=dark
 let base16colorspace=256
 color base16-ocean
 
