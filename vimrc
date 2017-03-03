@@ -83,6 +83,7 @@ nnoremap <C-n> :bprevious<CR>
 nnoremap <F2> :buffers<CR>:b
 nnoremap <F3> :registers<CR>
 nnoremap <F4> :marks<CR>
+nnoremap <F5> :TagbarOpenAutoClose<CR>
 
 " Switch buffers without write
 set hidden
@@ -165,6 +166,8 @@ hi link BufTabLineHidden StatusLineNC
 Plug 'editorconfig/editorconfig-vim'
 Plug 'justinmk/vim-dirvish'
 Plug 'lervag/vimtex'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'majutsushi/tagbar'
 
 Plug 'Raimondi/delimitMate'
 let delimitMate_expand_cr = 1
