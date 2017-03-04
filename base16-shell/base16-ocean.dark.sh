@@ -1,9 +1,10 @@
 #!/bin/sh
-# Base16 Ocean - Shell color setup script
-# Chris Kempson (http://chriskempson.com)
+# base16-shell (https://github.com/chriskempson/base16-shell)
+# Base16 Shell template by Chris Kempson (http://chriskempson.com)
+# Ocean scheme by Chris Kempson (http://chriskempson.com)
 
+# This script doesn't support linux console (use 'vconsole' template instead)
 if [ "${TERM%%-*}" = 'linux' ]; then
-    # This script doesn't support linux console (use 'vconsole' template instead)
     return 2>/dev/null || exit 0
 fi
 
@@ -34,20 +35,20 @@ color_background="2b/30/3b" # Base 00
 color_cursor="c0/c5/ce" # Base 05
 
 if [ -n "$TMUX" ]; then
-  # tell tmux to pass the escape sequences through
+  # Tell tmux to pass the escape sequences through
   # (Source: http://permalink.gmane.org/gmane.comp.terminal-emulators.tmux.user/1324)
-  printf_template="\033Ptmux;\033\033]4;%d;rgb:%s\007\033\\"
-  printf_template_var="\033Ptmux;\033\033]%d;rgb:%s\007\033\\"
-  printf_template_custom="\033Ptmux;\033\033]%s%s\007\033\\"
+  printf_template='\033Ptmux;\033\033]4;%d;rgb:%s\033\033\\\033\\'
+  printf_template_var='\033Ptmux;\033\033]%d;rgb:%s\033\033\\\033\\'
+  printf_template_custom='\033Ptmux;\033\033]%s%s\033\033\\\033\\'
 elif [ "${TERM%%-*}" = "screen" ]; then
   # GNU screen (screen, screen-256color, screen-256color-bce)
-  printf_template="\033P\033]4;%d;rgb:%s\007\033\\"
-  printf_template_var="\033P\033]%d;rgb:%s\007\033\\"
-  printf_template_custom="\033P\033]%s%s\007\033\\"
+  printf_template='\033P\033]4;%d;rgb:%s\033\\'
+  printf_template_var='\033P\033]%d;rgb:%s\033\\'
+  printf_template_custom='\033P\033]%s%s\033\\'
 else
-  printf_template="\033]4;%d;rgb:%s\033\\"
-  printf_template_var="\033]%d;rgb:%s\033\\"
-  printf_template_custom="\033]%s%s\033\\"
+  printf_template='\033]4;%d;rgb:%s\033\\'
+  printf_template_var='\033]%d;rgb:%s\033\\'
+  printf_template_custom='\033]%s%s\033\\'
 fi
 
 # 16 color space
@@ -88,8 +89,10 @@ if [ -n "$ITERM_SESSION_ID" ]; then
   printf $printf_template_custom Pm 2b303b # cursor text
 else
   printf $printf_template_var 10 $color_foreground
+  if [ "$BASE16_SHELL_SET_BACKGROUND" != false ]; then
   printf $printf_template_var 11 $color_background
-  printf $printf_template_var 12 $color_cursor
+  fi
+  printf $printf_template_custom 12 ";7" # cursor (reverse video)
 fi
 
 # clean up
