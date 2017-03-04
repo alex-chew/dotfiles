@@ -8,6 +8,10 @@ set directory=~/.vim/backup
 
 """ Global mapping options
 
+" Easier :
+nnoremap ; :
+nnoremap : ;
+
 " Leader key
 map <Space> <leader>
 
