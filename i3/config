@@ -271,10 +271,10 @@ exec --no-startup-id amixer -q -D pulse set Master 50%; exec pkill -RTMIN+1 i3bl
 # Programs
 
 # start a terminal
-bindsym $mod+Return exec urxvt
-bindsym $mod+Shift+Return exec urxvt -name "floating-urxvt"
-for_window [instance="floating-urxvt$"] floating enable,\
-    exec --no-startup-id "xdotool getwindowfocus set_window --classname urxvt --name urxvt"
+bindsym $mod+Return exec termite
+bindsym $mod+Shift+Return exec termite --name "f-termite"
+for_window [instance="f-termite$"] floating enable, exec --no-startup-id \
+        "xdotool getwindowfocus set_window --classname termite --name termite"
 
 # rofi
 set $rofi_args '-i'
@@ -287,11 +287,11 @@ mode "launch" {
         bindsym f exec --no-startup-id firefox; mode "default"
         bindsym g exec --no-startup-id google-chrome; mode "default"
         bindsym Shift+g exec --no-startup-id google-chrome-unstable; mode "default"
-        bindsym h exec --no-startup-id urxvt -e htop; mode "default"
+        bindsym h exec --no-startup-id termite -e htop; mode "default"
         bindsym n exec --no-startup-id pcmanfm; mode "default"
         bindsym k exec --no-startup-id ~/.i3/bin/textbooks; mode "default"
         bindsym Shift+k exec --no-startup-id ~/.i3/bin/textbooks all; mode "default"
-        bindsym r exec --no-startup-id urxvt -e ranger; mode "default"
+        bindsym r exec --no-startup-id termite -e ranger; mode "default"
         bindsym s exec --no-startup-id spotify; mode "default"
         bindsym t exec --no-startup-id thunderbird; mode "default"
 

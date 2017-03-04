@@ -29,6 +29,9 @@ set statusline+=%=
 set statusline+=%-18.(%l,%c%V%)\ %P/%L
 
 " Colors
+if has("termguicolors")
+  set termguicolors
+endif
 set background=dark
 let base16colorspace=256
 color base16-ocean
