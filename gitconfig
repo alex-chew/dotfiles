@@ -13,6 +13,9 @@
     dfw = diff --word-diff=color
     dfc = diff --cached
 
+[core]
+    excludesfile = ~/.gitignore_global
+
 [user]
     name = Alex Chew
     email = alex@alexchew.net
