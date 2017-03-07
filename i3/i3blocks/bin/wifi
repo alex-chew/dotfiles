@@ -5,7 +5,7 @@ info=$(nmcli -t -f 'ACTIVE,SSID,SIGNAL' dev wifi | awk '/^yes/')
 
 if [[ -z "$info" ]]; then
   # full text
-  echo "-- "
+  echo "--"
   # short text
   echo
   #color
@@ -15,7 +15,7 @@ else
   qual=$(echo "$info" | cut -d ':' -f 3)
 
   # full text
-  echo "$ssid ($qual) "
+  echo "$ssid ($qual)"
 
   # short text
   echo

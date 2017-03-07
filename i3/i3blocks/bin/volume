@@ -19,7 +19,7 @@ status=${BASH_REMATCH[2]}
 # fi
 
 # full text
-echo "$vol "
+echo "$vol"
 
 # short text
 echo

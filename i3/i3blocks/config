@@ -2,38 +2,34 @@ command=~/.i3/i3blocks/bin/$BLOCK_NAME
 markup=pango
 
 separator=false
-separator_block_width=10
+separator_block_width=30
 
 [title]
 command=xtitle -s -t 72
 interval=persist
 
-[wifi]
-label=   
-interval=5
-
-[ethernet]
-label=   
-interval=5
-
 [cpu]
-label=   
+label= 
 interval=10
 
 [memory]
-label=   
+label= 
 interval=5
 
 [volume]
-label=   
+label= 
 interval=10
 signal=1
 
 [battery]
-label=   
+label= 
 interval=10
 
 [datetime]
-label=   
+label= 
 interval=5
+
+[space]
+full_text=​
+interval=once
 

@@ -16,7 +16,7 @@ total=$(echo "$mem" | awk '/^Mem/ { print $2 }')
 perc=$(echo "1 - $free / $total" | bc -l)
 
 # full text
-printf "%.0f \n" $(echo "$perc * 100" | bc -l)
+printf "%.0f\n" $(echo "$perc * 100" | bc -l)
 
 # short text
 echo
