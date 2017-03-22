@@ -162,6 +162,16 @@ autocmd FileType qf set nobuflisted | setlocal norelativenumber number
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'SirVer/ultisnips'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'lervag/vimtex'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'majutsushi/tagbar'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-vinegar'
+Plug 'wellle/targets.vim'
+
 Plug 'airblade/vim-gitgutter'
 set updatetime=1000
 
@@ -171,27 +181,14 @@ hi link BufTabLineCurrent StatusLine
 hi link BufTabLineActive StatusLineNC
 hi link BufTabLineHidden StatusLineNC
 
-Plug 'editorconfig/editorconfig-vim'
-Plug 'justinmk/vim-dirvish'
-Plug 'lervag/vimtex'
-Plug 'ludovicchabant/vim-gutentags'
-Plug 'majutsushi/tagbar'
-
 Plug 'Raimondi/delimitMate'
 let delimitMate_expand_cr = 1
-
-Plug 'SirVer/ultisnips'
-Plug 'sophacles/vim-processing'
 
 Plug 'tpope/vim-commentary'
 autocmd FileType c,cpp,h,hpp setlocal commentstring=//\ %s
 
 Plug 'tpope/vim-fugitive'
 nnoremap <leader>gs :Gstatus<CR>
-
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
-Plug 'wellle/targets.vim'
 
 call plug#end()
 
