@@ -26,11 +26,13 @@ set laststatus=2
 set showcmd
 
 """ Status line
-set statusline=%<
-set statusline+=%f\ %m%r
-set statusline+=\ \(%{&filetype}\|%{&ff}\)
-set statusline+=%=
-set statusline+=%-18.(%l,%c%V%)\ %P/%L
+autocmd VimEnter * let &statusline = '%<'
+      \ . '%f %m%r'
+      \ . ' %{bufferline#refresh_status()}'
+      \ . bufferline#get_status_string()
+      \ . '%='
+      \ . '(%{&filetype}|%{&ff})'
+      \ . ' %-10.(%l,%c%V%) %P/%L'
 
 " Colors
 if has("termguicolors")
@@ -179,11 +181,13 @@ Plug 'wellle/targets.vim'
 Plug 'airblade/vim-gitgutter'
 set updatetime=1000
 
-Plug 'ap/vim-buftabline'
-let g:buftabline_show = 1
-hi link BufTabLineCurrent StatusLine
-hi link BufTabLineActive StatusLineNC
-hi link BufTabLineHidden StatusLineNC
+Plug 'bling/vim-bufferline'
+let g:bufferline_echo = 0
+let g:bufferline_active_buffer_left = '['
+let g:bufferline_active_buffer_right = ']'
+let g:bufferline_show_bufnr = 0
+let g:bufferline_fname_mod = ':p:.'
+let g:bufferline_pathshorten = 1
 
 Plug 'Raimondi/delimitMate'
 let delimitMate_expand_cr = 1
