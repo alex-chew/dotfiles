@@ -82,6 +82,10 @@ nnoremap , za
 vnoremap , zf
 set foldlevelstart=99
 
+" Netrw navigation
+nnoremap <F1> :Vex<CR>
+let g:netrw_liststyle=3
+
 " Buffer navigation
 nnoremap <silent> <leader>b :if &buflisted \|
       \ bprevious \| bdelete # \|
