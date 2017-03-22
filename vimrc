@@ -24,6 +24,7 @@ set timeoutlen=1000 ttimeoutlen=0
 
 set laststatus=2
 set showcmd
+set noshowmode
 
 " Colors
 if has("termguicolors")
