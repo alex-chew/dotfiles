@@ -25,15 +25,6 @@ set timeoutlen=1000 ttimeoutlen=0
 set laststatus=2
 set showcmd
 
-""" Status line
-autocmd VimEnter * let &statusline = '%<'
-      \ . '%f %m%r'
-      \ . ' %{bufferline#refresh_status()}'
-      \ . bufferline#get_status_string()
-      \ . '%='
-      \ . '(%{&filetype}|%{&ff})'
-      \ . ' %-10.(%l,%c%V%) %P/%L'
-
 " Colors
 if has("termguicolors")
   set termguicolors
@@ -181,13 +172,13 @@ Plug 'wellle/targets.vim'
 Plug 'airblade/vim-gitgutter'
 set updatetime=1000
 
-Plug 'bling/vim-bufferline'
-let g:bufferline_echo = 0
-let g:bufferline_active_buffer_left = '['
-let g:bufferline_active_buffer_right = ']'
-let g:bufferline_show_bufnr = 0
-let g:bufferline_fname_mod = ':p:.'
-let g:bufferline_pathshorten = 1
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+let g:airline_theme = 'base16_ocean'
+let g:airline_powerline_fonts = 0
+let g:airline_symbols_ascii = 1
+let g:airline_extensions = ['tabline', 'tagbar']
+let g:airline#extensions#tabline#buffer_min_count = 2
 
 Plug 'Raimondi/delimitMate'
 let delimitMate_expand_cr = 1
