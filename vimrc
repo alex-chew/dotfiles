@@ -107,8 +107,8 @@ set splitright
 set splitbelow
 
 " Tab navigation
-nnoremap <Tab> :tabnext<CR>
-nnoremap <S-Tab> :tabprevious<CR>
+nnoremap <silent> <C-m> :tabnext<CR>
+nnoremap <silent> <C-n> :tabprevious<CR>
 
 
 
