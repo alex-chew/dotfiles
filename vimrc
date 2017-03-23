@@ -50,10 +50,9 @@ set colorcolumn=80
 " Matching brackets
 set showmatch
 
-" Bells
-set noerrorbells
-set visualbell
-set t_vb=
+" No bells
+set noerrorbells visualbell t_vb=
+autocmd GuiEnter * set visualbell t_vb=
 
 " Gui stuff
 set guioptions-=mrLtT
