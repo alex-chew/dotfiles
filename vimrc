@@ -169,6 +169,7 @@ Plug 'junegunn/fzf.vim'
 let g:fzf_buffers_jump = 1
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>f :Files<CR>
+nnoremap <leader>F :History<CR>
 nnoremap <leader>m :Marks<CR>
 nnoremap <leader>t :Tags<CR>
 nnoremap <leader>T :BTags<CR>
