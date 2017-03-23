@@ -13,6 +13,8 @@ set directory=~/.vim/backup
 " Easier :
 nnoremap ; :
 nnoremap : ;
+vnoremap ; :
+vnoremap : ;
 
 " Leader key
 map <Space> <leader>
