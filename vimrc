@@ -159,7 +159,6 @@ autocmd FileType qf set nobuflisted | setlocal norelativenumber number
 call plug#begin('~/.vim/plugged')
 
 Plug 'SirVer/ultisnips'
-Plug 'editorconfig/editorconfig-vim'
 Plug 'lervag/vimtex'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
@@ -171,6 +170,9 @@ Plug 'wellle/targets.vim'
 
 Plug 'airblade/vim-gitgutter'
 set updatetime=1000
+
+Plug 'editorconfig/editorconfig-vim'
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
