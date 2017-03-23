@@ -209,5 +209,10 @@ autocmd FileType c,cpp,h,hpp setlocal commentstring=//\ %s
 Plug 'tpope/vim-fugitive'
 nnoremap <leader>gs :Gstatus<CR>
 
+Plug 'vimwiki/vimwiki'
+let g:vimwiki_list = [
+      \ {'path': '~/wiki/', 'syntax': 'markdown', 'ext': '.md'}
+      \ ]
+
 call plug#end()
 
