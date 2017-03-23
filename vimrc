@@ -125,8 +125,7 @@ set shiftwidth=2
 set expandtab
 
 " Filetype extras
-filetype on
-filetype indent on
+filetype plugin indent on
 
 
 
