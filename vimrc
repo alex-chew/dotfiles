@@ -55,6 +55,14 @@ set noerrorbells
 set visualbell
 set t_vb=
 
+" Gui stuff
+set guioptions-=mrLtT
+if has('win32')
+  set guifont=Consolas:h11:cANSI
+elseif has('unix')
+  set guifont=Roboto\ Mono\ 11
+endif
+
 
 
 """ Navigation
