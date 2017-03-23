@@ -84,28 +84,22 @@ let g:netrw_liststyle=3
 nnoremap <silent> <leader>b :if &buflisted \|
       \ bprevious \| bdelete # \|
       \ else \| q \| endif<CR>
-nnoremap <C-m> :bnext<CR>
-nnoremap <C-n> :bprevious<CR>
-nnoremap <F2> :buffers<CR>:b
-nnoremap <F3> :registers<CR>
-nnoremap <F4> :marks<CR>
+nnoremap <BS> <C-^>
+nnoremap <F4> :registers<CR>
 nnoremap <F5> :TagbarOpenAutoClose<CR>
-
-" Switch buffers without write
 set hidden
 
 " Split nagivation
-nnoremap <leader>f :find *
-nnoremap <leader>\| :vsplit \| find *
-nnoremap <leader>- :split \| find *
 nnoremap <C-h> <C-w><C-h>
 nnoremap <C-j> <C-w><C-j>
 nnoremap <C-k> <C-w><C-k>
 nnoremap <C-l> <C-w><C-l>
-
-" Split to right and below
 set splitright
 set splitbelow
+
+" Tab navigation
+nnoremap <Tab> :tabnext<CR>
+nnoremap <S-Tab> :tabprevious<CR>
 
 
 
@@ -173,13 +167,22 @@ Plug 'wellle/targets.vim'
 Plug 'airblade/vim-gitgutter'
 set updatetime=1000
 
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+Plug 'junegunn/fzf.vim'
+let g:fzf_buffers_jump = 1
+nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>f :Files<CR>
+nnoremap <leader>m :Marks<CR>
+nnoremap <leader>t :Tags<CR>
+nnoremap <leader>T :BTags<CR>
+
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 let g:airline_theme = 'base16_ocean'
 let g:airline_powerline_fonts = 0
 let g:airline_symbols_ascii = 1
 let g:airline_extensions = ['tabline', 'tagbar']
-let g:airline#extensions#tabline#buffer_min_count = 2
+let g:airline#extensions#tabline#show_buffers = 0
 
 Plug 'Raimondi/delimitMate'
 let delimitMate_expand_cr = 1
