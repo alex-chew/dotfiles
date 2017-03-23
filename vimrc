@@ -134,12 +134,6 @@ set path=.,**
 set wildmode=list,full
 set wildmenu
 
-" Setting toggles
-nnoremap <leader>r :setlocal invrelativenumber<CR>:setlocal relativenumber?<CR>
-nnoremap <leader>s :setlocal invspell<CR>:setlocal spell?<CR>
-nnoremap <leader>p :setlocal invpaste<CR>:setlocal paste?<CR>
-nnoremap <leader>w :setlocal invwrap<CR>:setlocal wrap?<CR>
-
 " Build systems
 nnoremap <F9> :make!<CR>
 nnoremap <F10> :cwindow<CR>
@@ -161,6 +155,7 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'wellle/targets.vim'
 
