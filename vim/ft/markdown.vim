@@ -11,3 +11,5 @@ function! s:toggleChecked()
 endfunction
 
 nnoremap <silent> <C-Space> :call <SID>toggleChecked()<CR>
+inoremap <silent> <C-Space> <C-o>:call <SID>toggleChecked()<CR>
+vnoremap <silent> <C-Space> :'<,'>call <SID>toggleChecked()<CR>
