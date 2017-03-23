@@ -1,4 +1,6 @@
 set nocompatible
+set encoding=utf-8
+scriptencoding utf-8
 
 " Backup/swap files
 set backupdir=~/.vim/backup
