@@ -211,10 +211,12 @@ autocmd FileType c,cpp,h,hpp setlocal commentstring=//\ %s
 Plug 'tpope/vim-fugitive'
 nnoremap <leader>gs :Gstatus<CR>
 
-Plug 'vimwiki/vimwiki'
-let g:vimwiki_list = [
-      \ {'path': '~/wiki/', 'syntax': 'markdown', 'ext': '.md'}
-      \ ]
+Plug 'plasticboy/vim-markdown'
+let g:vim_markdown_math = 1
+let g:vim_markdown_new_list_item_indent = 0
+let g:vim_markdown_no_extensions_in_markdown = 1
+nnoremap <leader>ww :cd ~/wiki/ \| Files<CR>
+autocmd FileType markdown set conceallevel=2
 
 call plug#end()
 
