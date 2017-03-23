@@ -28,6 +28,6 @@ nnoremap <silent> <leader>c :call <SID>toggleLineCheckbox()<CR>
 inoremap <silent> <leader>c <C-o>:call <SID>toggleLineCheckbox()<CR>
 vnoremap <silent> <leader>c :'<,'>call <SID>toggleLineCheckbox()<CR>
 
-nnoremap <silent> <C-Space> :call <SID>toggleChecked()<CR>
-inoremap <silent> <C-Space> <C-o>:call <SID>toggleChecked()<CR>
-vnoremap <silent> <C-Space> :'<,'>call <SID>toggleChecked()<CR>
+nnoremap <silent> <leader>x :call <SID>toggleChecked()<CR>
+inoremap <silent> <leader>x <C-o>:call <SID>toggleChecked()<CR>
+vnoremap <silent> <leader>x :'<,'>call <SID>toggleChecked()<CR>
