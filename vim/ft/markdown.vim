@@ -1,3 +1,22 @@
+" If called on a single header line (starts with #), increments/decrements
+" header level (if dec is zero/nonzero). Otherwise, defers to regular
+" indentation behavior.
+function! s:headerInc(dec) range
+  let line = getline(a:firstline)
+  if a:firstline != a:lastline || match(line, '^\s*#') == -1
+    execute a:firstline . ',' . a:lastline . (a:dec ? '<' : '>')
+  else
+    let line = a:dec
+          \ ? substitute(line, '^\s*\zs##', '#', "")
+          \ : substitute(line, '^\s*\zs#', '##', "")
+    call setline('.', line)
+  endif
+
+  " Go to start of first line, to match >/>> range behavior
+  call cursor(a:firstline, 0)
+  normal! ^
+endfunction
+
 function! s:toggleLineCheckbox()
   let line = getline('.')
 
@@ -23,6 +42,9 @@ function! s:toggleChecked()
 
   call setline('.', line)
 endfunction
+
+nnoremap <silent> >> :call <SID>headerInc(0)<CR>
+nnoremap <silent> << :call <SID>headerInc(1)<CR>
 
 nnoremap <silent> <leader>c :call <SID>toggleLineCheckbox()<CR>
 inoremap <silent> <leader>c <C-o>:call <SID>toggleLineCheckbox()<CR>
