@@ -99,6 +99,7 @@ nnoremap <BS> <C-^>
 nnoremap <F4> :registers<CR>
 nnoremap <F5> :TagbarOpenAutoClose<CR>
 set hidden
+let g:netrw_altfile = 1
 
 " Split nagivation
 nnoremap <C-h> <C-w><C-h>
