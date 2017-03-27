@@ -20,24 +20,24 @@ while read -r line || [[ -n $line ]]; do
   fi
 
   # Continue if link is already correct
-  if [[ $(readlink $abs_dst) = "$abs_src" ]]; then
+  if [[ $(readlink "$abs_dst") = "$abs_src" ]]; then
     echo "  | ~/$dst is already linked"
     continue
   fi
 
   # Ensure base dir exists
-  dst_dir="$(dirname $abs_dst)"
+  dst_dir="$(dirname "$abs_dst")"
   if [[ ! -d $dst_dir ]]; then
     mkdir -p "$dst_dir" || { echo "X | failed to create $dst_dir"; continue; }
   fi
 
   # Backup dst
   if [[ -e $abs_dst ]]; then
-    mv $abs_dst ${abs_dst}.old || { echo "X | failed to backup ~/$dst"; continue; }
+    mv "$abs_dst" "${abs_dst}.old" || { echo "X | failed to backup ~/$dst"; continue; }
   fi
 
   # Create link with backup
-  if ln -s $abs_src $abs_dst; then
+  if ln -s "$abs_src" "$abs_dst"; then
     echo "+ | linked $src to ~/$dst"
   else
     echo "X | failed to link $src to ~/$dst"
