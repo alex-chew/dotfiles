@@ -279,8 +279,8 @@ bindsym $mod+apostrophe exec --no-startup-id x-www-browser
 
 # rofi
 set $rofi_args '-i'
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -dmenu $rofi_args -p "run:"'
-bindsym $mod+Shift+d exec --no-startup-id rofi -show run $rofi_args
+bindsym $mod+d exec --no-startup-id "rofi $rofi_args -modi drun,run -show drun"
+bindsym $mod+Shift+d exec --no-startup-id rofi $rofi_args -show window
 
 # quick launcher
 mode "launch" {
