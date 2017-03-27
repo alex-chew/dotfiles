@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 source $(dirname $0)/_colors
 
-echo "$(date +"%a %m-%d %H:%M")"
+date +"%a %m-%d %H:%M"
 
 if [[ -n "$BLOCK_BUTTON" ]]; then
   gsimplecal

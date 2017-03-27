@@ -3,7 +3,7 @@ source $(dirname $0)/_colors
 
 cpu=$(top -bn1 | grep load)
 regex="load average: ([0-9.]+), ([0-9.]+), ([0-9.]+)"
-full=$(grep 'model name' /proc/cpuinfo | wc -l)
+full=$(grep -c 'model name' /proc/cpuinfo)
 
 # full text
 [[ $cpu =~ $regex ]]
