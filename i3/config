@@ -271,6 +271,8 @@ exec --no-startup-id amixer -q -D pulse set Master 50%; exec pkill -RTMIN+1 i3bl
 # start a terminal
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+Return exec $term --name "f-terminal"
+bindsym $mod+semicolon exec $term -e editor
+bindsym $mod+Shift+semicolon exec $term --name "f-terminal" -e editor
 for_window [instance="f-terminal$"] floating enable, exec --no-startup-id \
         "xdotool getwindowfocus set_window --classname $term --name $term"
 
