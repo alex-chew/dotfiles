@@ -25,7 +25,7 @@ function! s:toggleLineCheckbox()
   elseif match(line, '^\s*[-*+]') != -1
     let line = substitute(line, '\([-*+]\)\s*', '\1 [ ] ', "")
   else
-    let line = substitute(line, '^\s*', '- [ ] ', "")
+    let line = substitute(line, '^\s*\zs', '- [ ] ', "")
   endif
 
   call setline('.', line)
