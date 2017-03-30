@@ -45,11 +45,11 @@ endfunction
 
 " 1. Autolink without angle brackets.
 " 2. Autolink with angle brackets.
-" 3. Link reference.
+" 3. Inline link.
 let s:linkRegex =
       \ '<\@<!https\?:\/\/\(\w\+\(:\w\+\)\?@\)\?\([A-Za-z0-9][-_0-9A-Za-z]*\.\)\{1,}\(\w\{2,}\.\?\)\{1,}\(:[0-9]\{1,5}\)\?\S*'.'\|'.
       \ '\\\@<!<\ze[a-z][a-z0-9,.-]\{1,22}:\/\/[^> ]*>'.'\|'.
-      \ '\[\]\[\]'
+      \ '\[.\+\](.\+)'
 function! s:searchLink(backward)
   let searchflags = 'sw' . (a:backward ? 'b' : '')
   call search(s:linkRegex, searchflags)
