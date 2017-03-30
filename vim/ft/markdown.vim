@@ -47,7 +47,7 @@ endfunction
 " 2. Autolink with angle brackets.
 " 3. Link reference.
 let s:linkRegex =
-      \ 'https\?:\/\/\(\w\+\(:\w\+\)\?@\)\?\([A-Za-z0-9][-_0-9A-Za-z]*\.\)\{1,}\(\w\{2,}\.\?\)\{1,}\(:[0-9]\{1,5}\)\?\S*'.'\|'.
+      \ '<\@<!https\?:\/\/\(\w\+\(:\w\+\)\?@\)\?\([A-Za-z0-9][-_0-9A-Za-z]*\.\)\{1,}\(\w\{2,}\.\?\)\{1,}\(:[0-9]\{1,5}\)\?\S*'.'\|'.
       \ '\\\@<!<\ze[a-z][a-z0-9,.-]\{1,22}:\/\/[^> ]*>'.'\|'.
       \ '\[\]\[\]'
 function! s:searchLink(backward)
