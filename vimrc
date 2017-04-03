@@ -160,7 +160,6 @@ autocmd FileType qf set nobuflisted | setlocal norelativenumber number
 call plug#begin('~/.vim/plugged')
 
 Plug 'SirVer/ultisnips'
-Plug 'lervag/vimtex'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-repeat'
@@ -184,6 +183,9 @@ nnoremap <leader>F :History<CR>
 nnoremap <leader>m :Marks<CR>
 nnoremap <leader>t :Tags<CR>
 nnoremap <leader>T :BTags<CR>
+
+Plug 'lervag/vimtex'
+let g:vimtex_latexmk_build_dir = 'out'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
