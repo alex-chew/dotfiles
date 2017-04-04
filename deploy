@@ -2,7 +2,7 @@
 
 config="dotfiles.cfg"
 out="$(pwd)/out"
-postdeploy="postdeploy.sh"
+postdeploy="postdeploy"
 
 [[ -r $config ]] || { echo "$config not found"; exit 1; }
 while read -r line || [[ -n $line ]]; do
