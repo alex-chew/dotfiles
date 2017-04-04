@@ -63,3 +63,7 @@ i3:
   focused: "#268bd2"
   urgent: "#dc322f"
   warning: "#b58900"
+
+gtk:
+  theme: oomox-numix_base16-solarized-light
+  icon_theme: oomox-numix_base16-solarized-light
