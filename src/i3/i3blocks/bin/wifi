@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-source $(dirname $0)/_colors
 
 info=$(nmcli -t -f 'ACTIVE,SSID,SIGNAL' dev wifi | awk '/^yes/')
 
@@ -9,7 +8,7 @@ if [[ -z "$info" ]]; then
   # short text
   echo
   #color
-  echo ${base03}
+  echo {{ i3.fg_inactive }}
 else
   ssid=$(echo "$info" | cut -d ':' -f 2)
   qual=$(echo "$info" | cut -d ':' -f 3)
@@ -21,14 +20,12 @@ else
   echo
 
   # color
-  if (( "$qual" > 60 )); then
-    echo ${base07}
-  elif (( "$qual" > 40 )); then
-    echo ${base0A}
+  if (( "$qual" > 50 )); then
+    echo "{{ i3.fg }}"
   elif (( "$qual" > 20 )); then
-    echo ${base09}
+    echo "{{ i3.warning }}"
   else
-    echo ${base08}
+    echo "{{ i3.urgent }}"
   fi
 
 fi

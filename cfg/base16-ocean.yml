@@ -62,3 +62,4 @@ i3:
   fg_inactive: "#65737e"
   focused: "#8fa1b3"
   urgent: "#bf616a"
+  warning: "#ebcb8b"

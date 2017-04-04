@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-source $(dirname $0)/_colors
 
 cpu=$(top -bn1 | grep load)
 regex="load average: ([0-9.]+), ([0-9.]+), ([0-9.]+)"
@@ -14,12 +13,10 @@ echo
 
 # color
 if (( $(echo "${BASH_REMATCH[3]} > $full * 0.8" | bc -l) )); then
-  echo ${base08}
-elif (( $(echo "${BASH_REMATCH[2]} > $full * 0.9" | bc -l) )); then
-  echo ${base09}
+  echo "{{ i3.urgent }}"
 elif (( $(echo "${BASH_REMATCH[1]} > $full" | bc -l) )); then
-  echo ${base0A}
+  echo "{{ i3.warning }}"
 else
-  echo ${base07}
+  echo "{{ i3.fg }}"
 fi
 

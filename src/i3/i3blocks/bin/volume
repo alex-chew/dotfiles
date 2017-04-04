@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-source $(dirname $0)/_colors
 
 info=$(amixer -D pulse get Master)
 regex="\[([0-9]+)%\] \[(on|off)\]"
@@ -9,15 +8,6 @@ regex="\[([0-9]+)%\] \[(on|off)\]"
 vol=${BASH_REMATCH[1]}
 status=${BASH_REMATCH[2]}
 
-# get appropriate icon
-# if [[ "$status" == "off" ]]; then
-#   vol_icon="$(icon )"
-# elif [[ "$vol" -gt 50 ]]; then
-#   vol_icon="$(icon )"
-# else
-#   vol_icon="$(icon )"
-# fi
-
 # full text
 echo "$vol"
 
@@ -26,8 +16,8 @@ echo
 
 # color
 if [[ "$status" == "off" ]]; then
-  echo ${base03}
+  echo "{{ i3.fg_inactive }}"
 else
-  echo ${base07}
+  echo "{{ i3.fg }}"
 fi
 

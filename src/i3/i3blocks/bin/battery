@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-source $(dirname $0)/_colors
 
 path=$(upower -e | grep 'battery_')
 if [[ -z "$path" ]]; then
@@ -22,13 +21,11 @@ echo
 
 # color
 if (( $(echo "$perc > 50" | bc -l) )); then
-  echo ${base07} # white
-elif (( $(echo "$perc > 25" | bc -l) )); then
-  echo ${base0A} # yellow
-elif (( $(echo "$perc > 10" | bc -l) )); then
-  echo ${base09} # orange
+  echo "{{ i3.fg }}"
+elif (( $(echo "$perc > 20" | bc -l) )); then
+  echo "{{ i3.warning }}"
 else
-  echo ${base08} # red
+  echo "{{ i3.urgent }}"
 fi
 
 

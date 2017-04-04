@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-source $(dirname $0)/_colors
 
 date +"%a %m-%d %H:%M"
 
