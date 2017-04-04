@@ -4,7 +4,10 @@ from neovim import attach
 
 
 def send_cmd(path):
-    attach('socket', path=path).command('source $MYVIMRC | AirlineRefresh')
+    try:
+        attach('socket', path=path).command('source $MYVIMRC | AirlineRefresh')
+    except:
+        pass
 
 if len(sys.argv) < 2:
     sys.exit('Usage: {} socket_lines')
