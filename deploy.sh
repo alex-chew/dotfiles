@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 config="dotfiles.cfg"
-here="$(pwd)"
+out="$(pwd)/out"
 postdeploy="postdeploy.sh"
 
 [[ -r $config ]] || { echo "$config not found"; exit 1; }
@@ -9,7 +9,7 @@ while read -r line || [[ -n $line ]]; do
   # Get src and dst
   src=$(cut -d= -sf 1 <<< "$line")
   dst=$(cut -d= -sf 2 <<< "$line")
-  abs_src="${here}/${src}"
+  abs_src="${out}/${src}"
   abs_dst="${HOME}/${dst}"
   [[ -z $src || -z $dst || -z $abs_src || -z $abs_dst ]] && continue
 
