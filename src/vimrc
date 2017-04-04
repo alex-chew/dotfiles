@@ -138,6 +138,7 @@ filetype plugin indent on
 set incsearch
 set hlsearch
 set ignorecase smartcase
+let @/ = ""
 nnoremap <leader>n :noh<CR>
 
 " Completion options
