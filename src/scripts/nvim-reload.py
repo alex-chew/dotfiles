@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+
+import subprocess
 import sys
 
 from neovim import attach
@@ -9,7 +12,17 @@ def send_cmd(path):
     except:
         pass
 
-if len(sys.argv) < 2:
-    sys.exit('Usage: {} socket_lines')
-list(map(send_cmd, sys.argv[1].split()))
+
+def get_sockets():
+    return (subprocess
+            .run('find /tmp/nvim* -type s', shell=True, stdout=subprocess.PIPE)
+            .stdout.decode('utf-8').split())
+
+
+def main():
+    list(map(send_cmd, get_sockets()))
+
+
+if __name__ == '__main__':
+    main()
 

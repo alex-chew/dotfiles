@@ -342,7 +342,9 @@ bar {
 
 
 
-exec --no-startup-id nm-applet
+exec_always --no-startup-id xrdb -load ~/.Xresources
+exec_always --no-startup-id ~/.scripts/nvim-reload.py
+exec_always --no-startup-id killall -USR1 termite
 exec_always --no-startup-id "killall nm-applet; nm-applet"
 # Per-machine local config
 exec_always --no-startup-id ~/i3-local.sh
