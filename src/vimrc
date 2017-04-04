@@ -34,9 +34,9 @@ set noshowmode
 if has("termguicolors")
   set termguicolors
 endif
-set background=dark
+set background={{ vim.background }}
 let base16colorspace=256
-color base16-ocean
+color {{ vim.color }}
 
 " Show invisibles
 set list
@@ -188,9 +188,9 @@ nnoremap <leader>T :BTags<CR>
 Plug 'lervag/vimtex'
 let g:vimtex_latexmk_build_dir = 'out'
 
+let g:airline_theme = '{{ vim.airline_theme }}'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-let g:airline_theme = 'base16_ocean'
 let g:airline_powerline_fonts = 0
 let g:airline_symbols_ascii = 1
 let g:airline_extensions = ['tabline', 'tagbar']
