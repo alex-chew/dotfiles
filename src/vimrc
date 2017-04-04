@@ -34,9 +34,9 @@ set noshowmode
 if has("termguicolors")
   set termguicolors
 endif
-set background={{ vim.background }}
 let base16colorspace=256
 color {{ vim.color }}
+set background={{ vim.background }}
 
 " Show invisibles
 set list
