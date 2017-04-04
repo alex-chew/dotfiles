@@ -2,7 +2,7 @@
 
 " base16-vim (https://github.com/chriskempson/base16-vim)
 " by Chris Kempson (http://chriskempson.com)
-" Ocean scheme by Chris Kempson (http://chriskempson.com)
+" Solarized Light scheme by Ethan Schoonover (http://ethanschoonover.com/solarized)
 
 " This enables the coresponding base16-shell script to run so that
 " :colorscheme works in terminals supported by base16-shell scripts
@@ -10,27 +10,27 @@
 "   let g:base16_shell_path=base16-builder/output/shell/
 if !has('gui_running')
   if exists("g:base16_shell_path")
-    execute "silent !/bin/sh ".g:base16_shell_path."/base16-ocean.sh"
+    execute "silent !/bin/sh ".g:base16_shell_path."/base16-solarized-light.sh"
   endif
 endif
 
 " GUI color definitions
-let s:gui00 = "2b303b"
-let s:gui01 = "343d46"
-let s:gui02 = "4f5b66"
-let s:gui03 = "65737e"
-let s:gui04 = "a7adba"
-let s:gui05 = "c0c5ce"
-let s:gui06 = "dfe1e8"
-let s:gui07 = "eff1f5"
-let s:gui08 = "bf616a"
-let s:gui09 = "d08770"
-let s:gui0A = "ebcb8b"
-let s:gui0B = "a3be8c"
-let s:gui0C = "96b5b4"
-let s:gui0D = "8fa1b3"
-let s:gui0E = "b48ead"
-let s:gui0F = "ab7967"
+let s:gui00 = "fdf6e3"
+let s:gui01 = "eee8d5"
+let s:gui02 = "93a1a1"
+let s:gui03 = "839496"
+let s:gui04 = "657b83"
+let s:gui05 = "586e75"
+let s:gui06 = "073642"
+let s:gui07 = "002b36"
+let s:gui08 = "dc322f"
+let s:gui09 = "cb4b16"
+let s:gui0A = "b58900"
+let s:gui0B = "859900"
+let s:gui0C = "2aa198"
+let s:gui0D = "268bd2"
+let s:gui0E = "6c71c4"
+let s:gui0F = "d33682"
 
 " Terminal color definitions
 let s:cterm00 = "00"
@@ -59,10 +59,36 @@ else
   let s:cterm0F = "14"
 endif
 
+" Neovim terminal colours
+if has("nvim")
+  let g:terminal_color_0 =  "#fdf6e3"
+  let g:terminal_color_1 =  "#dc322f"
+  let g:terminal_color_2 =  "#859900"
+  let g:terminal_color_3 =  "#b58900"
+  let g:terminal_color_4 =  "#268bd2"
+  let g:terminal_color_5 =  "#6c71c4"
+  let g:terminal_color_6 =  "#2aa198"
+  let g:terminal_color_7 =  "#586e75"
+  let g:terminal_color_8 =  "#839496"
+  let g:terminal_color_9 =  "#cb4b16"
+  let g:terminal_color_10 = "#eee8d5"
+  let g:terminal_color_11 = "#93a1a1"
+  let g:terminal_color_12 = "#657b83"
+  let g:terminal_color_13 = "#073642"
+  let g:terminal_color_14 = "#d33682"
+  let g:terminal_color_15 = "#002b36"
+  let g:terminal_color_background = g:terminal_color_0
+  let g:terminal_color_foreground = g:terminal_color_7
+  if &background == "light"
+    let g:terminal_color_background = g:terminal_color_7
+    let g:terminal_color_foreground = g:terminal_color_2
+  endif
+endif
+
 " Theme setup
 hi clear
 syntax reset
-let g:colors_name = "base16-ocean"
+let g:colors_name = "base16-solarized-light"
 
 " Highlighting function
 fun <sid>hi(group, guifg, guibg, ctermfg, ctermbg, attr, guisp)
@@ -98,7 +124,7 @@ call <sid>hi("Folded",        s:gui03, s:gui01, s:cterm03, s:cterm01, "", "")
 call <sid>hi("IncSearch",     s:gui01, s:gui09, s:cterm01, s:cterm09, "none", "")
 call <sid>hi("Italic",        "", "", "", "", "none", "")
 call <sid>hi("Macro",         s:gui08, "", s:cterm08, "", "", "")
-call <sid>hi("MatchParen",    s:gui00, s:gui03, "", s:cterm03,  "", "")
+call <sid>hi("MatchParen",    "", s:gui03, "", s:cterm03,  "", "")
 call <sid>hi("ModeMsg",       s:gui0B, "", s:cterm0B, "", "", "")
 call <sid>hi("MoreMsg",       s:gui0B, "", s:cterm0B, "", "", "")
 call <sid>hi("Question",      s:gui0D, "", s:cterm0D, "", "", "")
