@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import os
+import shutil
 import sys
 
 import pystache
@@ -12,6 +13,10 @@ OUT_DIR = 'out'
 
 
 def get_cfg(cfg_file):
+    '''
+    Returns an object representation of the YAML file cfg_file, or None if the
+    file cannot be parsed/read.
+    '''
     try:
         with open(cfg_file) as cfg:
             return yaml.load(cfg)
@@ -20,8 +25,15 @@ def get_cfg(cfg_file):
 
 
 def render(src, cfg, out):
+    '''
+    Renders the file named src to a file named out, using the cfg configuration
+    object, and creating directories as necessary.
+    '''
     with open(src) as template:
         rendered = pystache.render(template.read(), cfg)
+
+    # Need to ensure base directories exist
+    os.makedirs(os.path.dirname(out), exist_ok=True)
     with open(out, 'w') as output:
         output.write(rendered)
 
@@ -35,10 +47,17 @@ def main():
     if cfg is None:
         sys.exit('Could not read config {}'.format(cfg_file))
 
-    for f in ['vimrc', 'termite/config']:
-        src = os.path.join('src', f)
-        out = os.path.join('out', f)
-        render(src, cfg, out)
+    # Gather all template files from SRC_DIR
+    templates = set()
+    for dirpath, dirs, files in os.walk(SRC_DIR):
+        templates.update(map(lambda f: os.path.join(dirpath, f), files))
+
+    for t in templates:
+        out = t.replace(SRC_DIR, OUT_DIR, 1)
+        render(t, cfg, out)
+
+        # Copy permissions to keep scripts executable
+        shutil.copymode(t, out)
 
 
 if __name__ == '__main__':
