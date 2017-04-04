@@ -54,3 +54,11 @@ termite:
     color19 = #93a1a1
     color20 = #657b83
     color21 = #073642
+
+i3:
+  active: "#073642"
+  bg: "#fdf6e3"
+  fg: "#002b36"
+  fg_inactive: "#93a1a1"
+  focused: "#268bd2"
+  urgent: "#dc322f"

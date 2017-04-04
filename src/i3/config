@@ -135,10 +135,10 @@ for_window [instance="sun-awt-X11-XFramePeer"] floating enable
 
 # colors
 # class                 border  bg      text    indicator
-client.focused          #4c7899 #8fa1b3 #ffffff #8fa1b3
-client.focused_inactive #333333 #2b303b #ffffff #2b303b
-client.unfocused        #333333 #2b303b #888888 #2b303b
-client.urgent           #2f343a #bf616a #ffffff #bf616a
+client.focused          #4c7899 {{ i3.focused }} #ffffff {{ i3.focused }}
+client.focused_inactive #333333 {{ i3.bg }} #ffffff {{ i3.bg }}
+client.unfocused        #333333 {{ i3.bg }} #888888 {{ i3.bg }}
+client.urgent           #2f343a {{ i3.urgent }} #ffffff {{ i3.urgent }}
 client.placeholder      #000000 #0c0c0c #ffffff #000000
 
 # gaps
@@ -328,14 +328,14 @@ bar {
         font pango:Roboto Mono, FontAwesome 11
         strip_workspace_numbers yes
         colors {
-                background #2b303b
-                statusline #eff1f5
+                background {{ i3.bg }}
+                statusline {{ i3.fg }}
                 separator #4f5b66
 
-                focused_workspace #2b303b #2b303b #eff1f5
-                active_workspace #2b303b #2b303b #eff1f5
-                inactive_workspace #2b303b #2b303b #65737e
-                urgent_workspace #2b303b #2b303b #bf616a
+                focused_workspace {{ i3.bg }} {{ i3.bg }} {{ i3.active }}
+                active_workspace {{ i3.bg }} {{ i3.bg }} {{ i3.active }}
+                inactive_workspace {{ i3.bg }} {{ i3.bg }} {{ i3.fg_inactive }}
+                urgent_workspace {{ i3.bg }} {{ i3.bg }} {{ i3.urgent }}
         }
 }
 

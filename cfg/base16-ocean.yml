@@ -55,3 +55,10 @@ termite:
     color20 = #a7adba
     color21 = #dfe1e8
 
+i3:
+  active: "#eff1f5"
+  bg: "#2b303b"
+  fg: "#eff1f5"
+  fg_inactive: "#65737e"
+  focused: "#8fa1b3"
+  urgent: "#bf616a"

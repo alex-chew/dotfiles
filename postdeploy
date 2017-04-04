@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 xrdb -load ~/.Xresources
+i3-msg -t command restart
 killall -USR1 termite
 
 python3 ~/.scripts/nvim-reload.py "$(find /tmp/nvim* -type s)"
