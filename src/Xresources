@@ -1,11 +1,11 @@
 !!! Rofi stuff
 rofi.color-enabled: true
 ! 'bg' 'border' 'separator'
-rofi.color-window: {{ rofi.bg }}, {{ rofi.bg }}, {{ rofi.hl }}
+rofi.color-window: {{ rofi.bg }}, {{ rofi.bg }}, {{ rofi.hl_bg }}
 ! State: 'bg' 'fg' 'bgalt' 'hlbg' 'hlfg'
-rofi.color-normal: {{ rofi.bg }}, {{ rofi.fg }}, {{ rofi.bg }}, {{ rofi.hl }}, {{ rofi.fg }},
-rofi.color-active: {{ rofi.bg }}, {{ rofi.fg_active }}, {{ rofi.bg }}, {{ rofi.hl }}, {{ rofi.fg_active }},
-rofi.color-urgent: {{ rofi.bg }}, {{ rofi.fg_urgent }}, {{ rofi.bg }}, {{ rofi.hl }}, {{ rofi.fg_urgent }},
+rofi.color-normal: {{ rofi.bg }}, {{ rofi.fg }}, {{ rofi.bg }}, {{ rofi.hl_bg }}, {{ rofi.hl_fg }}
+rofi.color-active: {{ rofi.bg }}, {{ rofi.fg_active }}, {{ rofi.bg }}, {{ rofi.hl_bg }}, {{ rofi.hl_fg_active }}
+rofi.color-urgent: {{ rofi.bg }}, {{ rofi.fg_urgent }}, {{ rofi.bg }}, {{ rofi.hl_bg }}, {{ rofi.hl_fg_urgent }}
 
 rofi.bw: 0
 rofi.font: Roboto Mono 11

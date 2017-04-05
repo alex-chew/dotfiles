@@ -1,3 +1,21 @@
+# Color defs
+base00: &white "#fdf6e3"
+base01: &white2 "#eee8d5"
+base02: &silver "#93a1a1"
+base03: &lightgray "#839496"
+base04: &gray "#657b83"
+base05: &darkgray "#586e75"
+base06: &black2 "#073642"
+base07: &black "#002b36"
+base08: &red "#dc322f"
+base09: &orange "#cb4b16"
+base0A: &yellow "#b58900"
+base0B: &green "#859900"
+base0C: &teal "#2aa198"
+base0D: &blue "#268bd2"
+base0E: &purple "#6c71c4"
+base0F: &pink "#d33682"
+
 vim:
   background: light
   color: base16-solarized-light
@@ -62,41 +80,44 @@ tmux:
   window_activity_bg: colour03
 
 i3:
-  active: "#073642"
-  bg: "#fdf6e3"
-  fg: "#002b36"
-  fg_inactive: "#93a1a1"
-  focused: "#268bd2"
-  urgent: "#dc322f"
-  warning: "#b58900"
+  active: *black2
+  bg: *white
+  fg: *black2
+  fg_inactive: *silver
+  focused: *blue
+  urgent: *red
+  warning: *yellow
 
 gtk:
   theme: oomox-numix_base16-solarized-light
   icon_theme: Numix-Light
 
 rofi:
-  bg: "#eee8d5"
-  fg: "#586e75"
-  fg_active: "#859900"
-  fg_urgent: "#dc322f"
-  hl: "#fdf6e3"
+  bg: *white2
+  fg: *darkgray
+  fg_active: *green
+  fg_urgent: *red
+  hl_bg: *silver
+  hl_fg: *white
+  hl_fg_active: *green
+  hl_fg_urgent: *red
 
 dunst:
-  fg_low: "#586e75"
-  fg_normal: "#fdf6e3"
-  fg_critical: "#fdf6e3"
-  bg_low: "#eee8d5"
-  bg_normal: "#586e75"
-  bg_critical: "#dc322f"
+  fg_low: *darkgray
+  fg_normal: *white
+  fg_critical: *white
+  bg_low: *white2
+  bg_normal: *darkgray
+  bg_critical: *red
 
 zathura:
-  fg: "#586e75"
-  bg: "#fdf6e3"
-  fg_group: "#fdf6e3"
-  bg_group: "#586e75"
-  fg_hl: "#fdf6e3"
-  bg_hl: "#268bd2"
-  hl: "#859900"
-  hl_active: "#268bd2"
-  recol_dark: "#002b36"
-  recol_light: "#fdf6e3"
+  fg: *darkgray
+  bg: *white
+  fg_group: *white
+  bg_group: *darkgray
+  fg_hl: *white
+  bg_hl: *blue
+  hl: *green
+  hl_active: *blue
+  recol_dark: *black
+  recol_light: *white
