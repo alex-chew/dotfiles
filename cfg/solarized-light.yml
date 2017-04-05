@@ -55,6 +55,9 @@ termite:
     color20 = #657b83
     color21 = #073642
 
+tmux:
+  window_current_fg: colour18
+
 i3:
   active: "#073642"
   bg: "#fdf6e3"
