@@ -1,5 +1,9 @@
 set selection-clipboard clipboard
 set show-scrollbars false
+set smooth-scroll true
+set statusbar-home-tilde true
+set window-title-basename true
+set window-title-home-tilde true
 
 set font "Roboto Mono 11"
 
