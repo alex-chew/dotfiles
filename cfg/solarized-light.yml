@@ -88,3 +88,15 @@ dunst:
   bg_low: "#eee8d5"
   bg_normal: "#586e75"
   bg_critical: "#dc322f"
+
+zathura:
+  fg: "#586e75"
+  bg: "#fdf6e3"
+  fg_group: "#fdf6e3"
+  bg_group: "#586e75"
+  fg_hl: "#fdf6e3"
+  bg_hl: "#268bd2"
+  hl: "#859900"
+  hl_active: "#268bd2"
+  recol_dark: "#002b36"
+  recol_light: "#fdf6e3"
