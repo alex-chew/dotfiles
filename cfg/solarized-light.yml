@@ -58,6 +58,8 @@ termite:
 tmux:
   window_current_fg: colour18
   window_current_bg: colour04
+  window_activity_fg: colour18
+  window_activity_bg: colour03
 
 i3:
   active: "#073642"
