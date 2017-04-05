@@ -71,6 +71,13 @@ gtk:
   theme: oomox-numix_base16-solarized-light
   icon_theme: Numix-Light
 
+rofi:
+  bg: "#eee8d5"
+  fg: "#586e75"
+  fg_active: "#859900"
+  fg_urgent: "#dc322f"
+  hl: "#fdf6e3"
+
 dunst:
   fg_low: "#586e75"
   fg_normal: "#fdf6e3"

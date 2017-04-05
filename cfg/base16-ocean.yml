@@ -71,6 +71,13 @@ gtk:
   theme: oomox-numix_base16-ocean
   icon_theme: Numix
 
+rofi:
+  bg: "#343d46"
+  fg: "#eff1f5"
+  fg_active: "#a3be8c"
+  fg_urgent: "#ebcb8b"
+  hl: "#65737e"
+
 dunst:
   fg_low: "#eff1f5"
   fg_normal: "#eff1f5"

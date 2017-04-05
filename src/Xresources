@@ -1,9 +1,11 @@
 !!! Rofi stuff
 rofi.color-enabled: true
-rofi.color-window: #2b303b, #2b303b, #65737e
-rofi.color-normal: #2b303b, #eff1f5, #2b303b, #65737e, #eff1f5
-rofi.color-active: #2b303b, #a3be8c, #2b303b, #65737e, #a3be8c
-rofi.color-urgent: #2b303b, #ebcb8b, #2b303b, #65737e, #ebcb8b
+! 'bg' 'border' 'separator'
+rofi.color-window: {{ rofi.bg }}, {{ rofi.bg }}, {{ rofi.hl }}
+! State: 'bg' 'fg' 'bgalt' 'hlbg' 'hlfg'
+rofi.color-normal: {{ rofi.bg }}, {{ rofi.fg }}, {{ rofi.bg }}, {{ rofi.hl }}, {{ rofi.fg }},
+rofi.color-active: {{ rofi.bg }}, {{ rofi.fg_active }}, {{ rofi.bg }}, {{ rofi.hl }}, {{ rofi.fg_active }},
+rofi.color-urgent: {{ rofi.bg }}, {{ rofi.fg_urgent }}, {{ rofi.bg }}, {{ rofi.hl }}, {{ rofi.fg_urgent }},
 
 rofi.bw: 0
 rofi.font: Roboto Mono 11
