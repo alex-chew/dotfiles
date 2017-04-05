@@ -70,3 +70,11 @@ i3:
 gtk:
   theme: oomox-numix_base16-solarized-light
   icon_theme: Numix-Light
+
+dunst:
+  fg_low: "#586e75"
+  fg_normal: "#fdf6e3"
+  fg_critical: "#fdf6e3"
+  bg_low: "#eee8d5"
+  bg_normal: "#586e75"
+  bg_critical: "#dc322f"

@@ -70,3 +70,11 @@ i3:
 gtk:
   theme: oomox-numix_base16-ocean
   icon_theme: Numix
+
+dunst:
+  fg_low: "#eff1f5"
+  fg_normal: "#eff1f5"
+  fg_critical: "#eff1f5"
+  bg_low: "#343d46"
+  bg_normal: "#65737e"
+  bg_critical: "#bf616a"

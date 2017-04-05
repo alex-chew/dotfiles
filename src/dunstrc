@@ -46,17 +46,17 @@
   history = mod4+grave
 
 [urgency_low]
-  background = "#343d46"
-  foreground = "#eff1f5"
+  background = "{{ dunst.bg_low }}"
+  foreground = "{{ dunst.fg_low }}"
   timeout = 10
 
 [urgency_normal]
-  background = "#65737e"
-  foreground = "#eff1f5"
+  background = "{{ dunst.bg_normal }}"
+  foreground = "{{ dunst.fg_normal }}"
   timeout = 10
 
 [urgency_critical]
-  background = "#bf616a"
-  foreground = "#eff1f5"
+  background = "{{ dunst.bg_critical }}"
+  foreground = "{{ dunst.fg_critical }}"
   timeout = 0
 
