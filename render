@@ -8,56 +8,56 @@ import pystache
 import yaml
 
 
-SRC_DIR = 'src'
+TEMPLATE_DIR = 'templates'
 OUT_DIR = 'out'
 
 
-def get_cfg(cfg_file):
+def get_theme(theme_path):
     '''
-    Returns an object representation of the YAML file cfg_file, or None if the
-    file cannot be parsed/read.
+    Returns an object representation of the YAML file at theme_path, or None if
+    the file cannot be parsed/read.
     '''
     try:
-        with open(cfg_file) as cfg:
-            return yaml.load(cfg)
+        with open(theme_path) as theme_file:
+            return yaml.load(theme_file)
     except:
         return None
 
 
-def render(src, cfg, out):
+def render(template_path, theme, out_path):
     '''
-    Renders the file named src to a file named out, using the cfg configuration
+    Renders template_path to out_path, using the theme configuration
     object, and creating directories as necessary.
     '''
-    with open(src) as template:
-        rendered = pystache.render(template.read(), cfg)
+    with open(template_path) as template_file:
+        rendered = pystache.render(template_file.read(), theme)
 
     # Need to ensure base directories exist
-    os.makedirs(os.path.dirname(out), exist_ok=True)
-    with open(out, 'w') as output:
-        output.write(rendered)
+    os.makedirs(os.path.dirname(out_path), exist_ok=True)
+    with open(out_path, 'w') as out:
+        out.write(rendered)
 
 
 def main():
     if len(sys.argv) != 2:
-        sys.exit('Usage: {} config.yml'.format(sys.argv[0]))
+        sys.exit('Usage: {} theme.yml'.format(sys.argv[0]))
 
-    cfg_file = sys.argv[1]
-    cfg = get_cfg(cfg_file)
-    if cfg is None:
-        sys.exit('Could not read config {}'.format(cfg_file))
+    theme_file = sys.argv[1]
+    theme = get_theme(theme_file)
+    if theme is None:
+        sys.exit('Could not read theme {}'.format(theme_file))
 
-    # Gather all template files from SRC_DIR
+    # Gather all template files
     templates = set()
-    for dirpath, dirs, files in os.walk(SRC_DIR):
+    for dirpath, dirs, files in os.walk(TEMPLATE_DIR):
         templates.update(map(lambda f: os.path.join(dirpath, f), files))
 
-    for t in templates:
-        out = t.replace(SRC_DIR, OUT_DIR, 1)
-        render(t, cfg, out)
+    for template_path in templates:
+        out_path = template_path.replace(TEMPLATE_DIR, OUT_DIR, 1)
+        render(template_path, theme, out_path)
 
         # Copy permissions to keep scripts executable
-        shutil.copymode(t, out)
+        shutil.copymode(template_path, out_path)
 
 
 if __name__ == '__main__':

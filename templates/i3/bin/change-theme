@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+(
+  cd ~/dotfiles
+  theme=$(find themes -maxdepth 1 -type f -printf "%f\n" \
+    | rofi -dmenu -i -no-custom -p "theme: ")
+  [[ -n "$theme" ]] && ./render "themes/$theme" && ./postdeploy
+)
+
