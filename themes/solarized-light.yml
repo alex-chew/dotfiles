@@ -22,56 +22,36 @@ vim:
   airline_theme: solarized
 
 termite:
-  colors: |
-    # Base16 Solarized Light
-    # Author: Ethan Schoonover (http://ethanschoonover.com/solarized)
-    # From https://github.com/khamer/base16-termite
+  colors:
+    fg: *darkgray
+    fg_bold: *black2
+    cursor: *black2
+    bg: *white
 
-    foreground      = #586e75
-    foreground_bold = #073642
-    cursor          = #073642
-    background      = #fdf6e3
+    black: *white
+    black_b: *lightgray
+    red: *red
+    green: *green
+    yellow: *yellow
+    blue: *blue
+    magenta: *purple
+    cyan: *teal
+    white: *darkgray
+    white_b: *black
 
-    # 16 color space
-
-    # Black, Gray, Silver, White
-    color0  = #fdf6e3
-    color8  = #839496
-    color7  = #586e75
-    color15 = #002b36
-
-    # Red
-    color1  = #dc322f
-    color9  = #dc322f
-
-    # Green
-    color2  = #859900
-    color10 = #859900
-
-    # Yellow
-    color3  = #b58900
-    color11 = #b58900
-
-    # Blue
-    color4  = #268bd2
-    color12 = #268bd2
-
-    # Purple
-    color5  = #6c71c4
-    color13 = #6c71c4
-
-    # Teal
-    color6  = #2aa198
-    color14 = #2aa198
-
+    c16: *orange
+    c17: *pink
+    c18: *white2
+    c19: *silver
+    c20: *gray
+    c21: *black2
     # Extra colors
-    color15 = #002b36
-    color16 = #cb4b16
-    color17 = #d33682
-    color18 = #eee8d5
-    color19 = #93a1a1
-    color20 = #657b83
-    color21 = #073642
+    # color16 = #cb4b16
+    # color17 = #d33682
+    # color18 = #eee8d5
+    # color19 = #93a1a1
+    # color20 = #657b83
+    # color21 = #073642
 
 tmux:
   window_current_fg: colour18

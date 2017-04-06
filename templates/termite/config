@@ -7,4 +7,35 @@ scrollback_lines = 1000
 
 
 [colors]
-{{ termite.colors }}
+foreground      = {{ termite.colors.fg }}
+foreground_bold = {{ termite.colors.fg_bold }}
+cursor          = {{ termite.colors.cursor }}
+background      = {{ termite.colors.bg }}
+
+# 16 color space, normal
+color0  = {{ termite.colors.black }}
+color1  = {{ termite.colors.red }}
+color2  = {{ termite.colors.green }}
+color3  = {{ termite.colors.yellow }}
+color4  = {{ termite.colors.blue }}
+color5  = {{ termite.colors.magenta }}
+color6  = {{ termite.colors.cyan }}
+color7  = {{ termite.colors.white }}
+
+# 16 color space, bright
+color8  = {{ termite.colors.black_b }}
+color9  = {{ termite.colors.red }}
+color10 = {{ termite.colors.green }}
+color11 = {{ termite.colors.yellow }}
+color12 = {{ termite.colors.blue }}
+color13 = {{ termite.colors.magenta }}
+color14 = {{ termite.colors.cyan }}
+color15 = {{ termite.colors.white_b }}
+
+# 256 color space
+color16 = {{ termite.colors.c16 }}
+color17 = {{ termite.colors.c17 }}
+color18 = {{ termite.colors.c18 }}
+color19 = {{ termite.colors.c19 }}
+color20 = {{ termite.colors.c20 }}
+color21 = {{ termite.colors.c21 }}
