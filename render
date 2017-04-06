@@ -30,7 +30,11 @@ def render(template_path, theme, out_path):
     object, and creating directories as necessary.
     '''
     with open(template_path) as template_file:
-        rendered = pystache.render(template_file.read(), theme)
+        try:
+            rendered = pystache.Renderer(missing_tags='strict') \
+                    .render(template_file.read(), theme)
+        except pystache.context.KeyNotFoundError as e:
+            raise KeyError(e.key)
 
     # Need to ensure base directories exist
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
@@ -52,12 +56,22 @@ def main():
     for dirpath, dirs, files in os.walk(TEMPLATE_DIR):
         templates.update(map(lambda f: os.path.join(dirpath, f), files))
 
+    has_missing = False
     for template_path in templates:
         out_path = template_path.replace(TEMPLATE_DIR, OUT_DIR, 1)
-        render(template_path, theme, out_path)
+        try:
+            render(template_path, theme, out_path)
+        except KeyError as e:
+            has_missing = True
+            print('{}: missing tag {} (others may also be missing)'.format(
+                    template_path, str(e)))
+            continue
 
         # Copy permissions to keep scripts executable
         shutil.copymode(template_path, out_path)
+
+    if has_missing:
+        sys.exit(1)
 
 
 if __name__ == '__main__':

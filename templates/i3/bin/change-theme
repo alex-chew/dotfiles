@@ -4,6 +4,13 @@
   cd ~/dotfiles
   theme=$(find themes -maxdepth 1 -type f -printf "%f\n" \
     | rofi -dmenu -i -no-custom -p "theme: ")
-  [[ -n "$theme" ]] && ./render "themes/$theme" && ./postdeploy
+  [[ -z "$theme" ]] && exit
+  if ./render "themes/$theme"; then
+    ./postdeploy
+  else
+    notify-send -u critical "Theme change incomplete" \
+      "There were errors rendering $theme."
+    exit 1
+  fi
 )
 
