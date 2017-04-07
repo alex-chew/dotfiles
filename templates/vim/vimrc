@@ -188,6 +188,7 @@ nnoremap <leader>T :BTags<CR>
 
 Plug 'lervag/vimtex'
 let g:vimtex_compiler_latexmk = {'build_dir' : 'out'}
+let g:vimtex_view_method = 'zathura'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
