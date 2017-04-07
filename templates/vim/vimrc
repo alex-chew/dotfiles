@@ -187,7 +187,7 @@ nnoremap <leader>t :Tags<CR>
 nnoremap <leader>T :BTags<CR>
 
 Plug 'lervag/vimtex'
-let g:vimtex_latexmk_build_dir = 'out'
+let g:vimtex_compiler_latexmk = {'build_dir' : 'out'}
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
