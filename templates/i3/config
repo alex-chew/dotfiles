@@ -135,10 +135,10 @@ for_window [instance="sun-awt-X11-XFramePeer"] floating enable
 
 # colors
 # class                 border  bg      text    indicator
-client.focused          #4c7899 {{ i3.focused }} #ffffff {{ i3.focused }}
-client.focused_inactive #333333 {{ i3.bg }} #ffffff {{ i3.bg }}
-client.unfocused        #333333 {{ i3.bg }} #888888 {{ i3.bg }}
-client.urgent           #2f343a {{ i3.urgent }} #ffffff {{ i3.urgent }}
+client.focused          {{ i3.focused }} {{ i3.focused }} {{ i3.bg }} {{ i3.focused }}
+client.focused_inactive {{ i3.bg }} {{ i3.bg }} {{ i3.active }} {{ i3.bg }}
+client.unfocused        {{ i3.bg }} {{ i3.bg }} {{ i3.fg_inactive }} {{ i3.bg }}
+client.urgent           {{ i3.urgent }} {{ i3.urgent }} #ffffff {{ i3.urgent }}
 client.placeholder      #000000 #0c0c0c #ffffff #000000
 
 # gaps
