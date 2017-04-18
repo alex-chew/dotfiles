@@ -16,8 +16,9 @@ nnoremap : ;
 vnoremap ; :
 vnoremap : ;
 
-" Leader key
-map <Space> <leader>
+" Leader keys
+let mapleader = "\<Space>"
+let maplocalleader = "\\"
 
 " No delay when pressing Esc
 set timeoutlen=1000 ttimeoutlen=0

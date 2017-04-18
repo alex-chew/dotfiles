@@ -58,11 +58,11 @@ endfunction
 nnoremap <silent> >> :call <SID>headerInc(0)<CR>
 nnoremap <silent> << :call <SID>headerInc(1)<CR>
 
-nnoremap <silent> <leader>c :call <SID>toggleLineCheckbox()<CR>
-vnoremap <silent> <leader>c :'<,'>call <SID>toggleLineCheckbox()<CR>
+nnoremap <silent> <localleader>c :call <SID>toggleLineCheckbox()<CR>
+vnoremap <silent> <localleader>c :'<,'>call <SID>toggleLineCheckbox()<CR>
 
-nnoremap <silent> <leader>x :call <SID>toggleChecked()<CR>
-vnoremap <silent> <leader>x :'<,'>call <SID>toggleChecked()<CR>
+nnoremap <silent> <localleader>x :call <SID>toggleChecked()<CR>
+vnoremap <silent> <localleader>x :'<,'>call <SID>toggleChecked()<CR>
 
 nnoremap <silent> <right> :call <SID>searchLink(0)<CR>
 nnoremap <silent> <left> :call <SID>searchLink(1)<CR>
