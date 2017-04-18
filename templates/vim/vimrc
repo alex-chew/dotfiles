@@ -93,9 +93,6 @@ nnoremap <F1> :Vex<CR>
 let g:netrw_liststyle=3
 
 " Buffer navigation
-nnoremap <silent> <leader>b :if &buflisted \|
-      \ bprevious \| bdelete # \|
-      \ else \| q \| endif<CR>
 nnoremap <BS> <C-^>
 nnoremap <F4> :registers<CR>
 nnoremap <F5> :TagbarOpenAutoClose<CR>
