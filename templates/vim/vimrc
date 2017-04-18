@@ -177,6 +177,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 let g:fzf_buffers_jump = 1
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+nnoremap <leader>a :Ag<CR>
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>F :History<CR>
