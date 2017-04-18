@@ -223,6 +223,7 @@ Plug 'tpope/vim-fugitive'
 nnoremap <leader>gs :Gstatus<CR>
 
 Plug 'plasticboy/vim-markdown'
+let g:tex_conceal = "admg"
 let g:vim_markdown_math = 1
 let g:vim_markdown_new_list_item_indent = 0
 let g:vim_markdown_no_extensions_in_markdown = 1
