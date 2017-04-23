@@ -1,5 +1,10 @@
-let g:pandoc_continuous = 0
-let g:pandoc_output_format = 'pdf'
+let s:pandoc_args = {
+      \ 'html': '--mathjax',
+      \ 'pdf': '-V geometry:margin=1in'
+      \ }
+
+let b:pandoc_continuous = 0
+let b:pandoc_output_format = 'pdf'
 
 function! s:status(msg)
   echohl ModeMsg
@@ -9,20 +14,37 @@ function! s:status(msg)
   echohl None
 endfunction
 
-function! s:toggleContinuous()
-  let g:pandoc_continuous = !g:pandoc_continuous
-  if g:pandoc_continuous
-    let b:pandoc_command_autoexec_command = 'Pandoc ' . g:pandoc_output_format
-    call s:status('started continuous compilation to ' . g:pandoc_output_format)
+function! s:continuousStatus()
+  if b:pandoc_continuous
+    let msg = 'continuously converting to ' . b:pandoc_output_format
+  else
+    let msg = 'continuous conversion disabled ('
+          \ . b:pandoc_output_format . ')'
+  endif
+  call s:status(msg)
+endfunction
+
+function! s:updateCommand()
+  if b:pandoc_continuous
+    let b:pandoc_command_autoexec_command = 'Pandoc ' . b:pandoc_output_format
+    if has_key(s:pandoc_args, b:pandoc_output_format)
+      let b:pandoc_command_autoexec_command .=
+            \ ' ' . get(s:pandoc_args, b:pandoc_output_format)
+    endif
     exe b:pandoc_command_autoexec_command
   else
     let b:pandoc_command_autoexec_command = ''
-    call s:status('stopped continuous compilation')
   endif
 endfunction
 
+function! s:toggleContinuous()
+  let b:pandoc_continuous = !b:pandoc_continuous
+  call s:updateCommand()
+  call s:continuousStatus()
+endfunction
+
 function! s:openOutput()
-  let fname = expand('%:r') . '.' . g:pandoc_output_format
+  let fname = expand('%:r') . '.' . b:pandoc_output_format
   if filereadable(fname)
     silent exe '!xdg-open ' . fname . ' &'
   else
@@ -30,6 +52,16 @@ function! s:openOutput()
   endif
 endfunction
 
+function! s:setFormat(fmt)
+  let b:pandoc_output_format = a:fmt
+  call s:updateCommand()
+  call s:continuousStatus()
+endfunction
+
 " Bindings inspired by vimtex
+nnoremap <silent> <localleader>lg :call <SID>continuousStatus()<CR>
 nnoremap <silent> <localleader>ll :call <SID>toggleContinuous()<CR>
 nnoremap <silent> <localleader>lv :call <SID>openOutput()<CR>
+
+nnoremap <silent> <localleader>lh :call <SID>setFormat('html')<CR>
+nnoremap <silent> <localleader>lp :call <SID>setFormat('pdf')<CR>
