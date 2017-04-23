@@ -3,6 +3,15 @@ let s:pandoc_args = {
       \ 'pdf': '-V geometry:margin=1in'
       \ }
 
+py << EOF
+from vim_pandoc.command import PandocHelpParser
+import re
+
+formats_table = PandocHelpParser.get_output_formats_table()
+def output_ext(fmt):
+    return formats_table[re.split('[-+]', fmt)[0]]
+EOF
+
 if !exists('b:pandoc_continuous')
   let b:pandoc_continuous = 0
 endif
@@ -49,7 +58,8 @@ function! s:toggleContinuous()
 endfunction
 
 function! s:openOutput()
-  let fname = expand('%:r') . '.' . b:pandoc_output_format
+  let fname = expand('%:r') . '.'
+        \ . pyeval('output_ext("' . b:pandoc_output_format . '")')
   if filereadable(fname)
     silent exe '!xdg-open ' . fname . ' &'
   else
