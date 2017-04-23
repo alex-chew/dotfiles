@@ -222,13 +222,16 @@ autocmd FileType c,cpp,h,hpp setlocal commentstring=//\ %s
 Plug 'tpope/vim-fugitive'
 nnoremap <leader>gs :Gstatus<CR>
 
-Plug 'plasticboy/vim-markdown'
-let g:tex_conceal = "admg"
-let g:vim_markdown_math = 1
-let g:vim_markdown_new_list_item_indent = 0
-let g:vim_markdown_no_extensions_in_markdown = 1
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
+let g:pandoc#modules#enabled =
+      \ ['command', 'folding', 'formatting', 'hypertext', 'toc']
+let g:pandoc#modules#disabled = ['chdir']
+let g:pandoc#command#autoexec_on_writes = 1
+let g:pandoc#folding#fdc = 0
+let g:pandoc#formatting#equalprg =
+      \ 'pandoc -t markdown --atx-headers --wrap=preserve'
 nnoremap <leader>ww :cd ~/wiki/ \| Files<CR>
-autocmd FileType markdown set conceallevel=2
 
 call plug#end()
 
