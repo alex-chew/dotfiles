@@ -3,8 +3,13 @@ let s:pandoc_args = {
       \ 'pdf': '-V geometry:margin=1in'
       \ }
 
-let b:pandoc_continuous = 0
-let b:pandoc_output_format = 'pdf'
+if !exists('b:pandoc_continuous')
+  let b:pandoc_continuous = 0
+endif
+
+if !exists('b:pandoc_output_format')
+  let b:pandoc_output_format = 'pdf'
+endif
 
 function! s:status(msg)
   echohl ModeMsg
@@ -31,7 +36,6 @@ function! s:updateCommand()
       let b:pandoc_command_autoexec_command .=
             \ ' ' . get(s:pandoc_args, b:pandoc_output_format)
     endif
-    exe b:pandoc_command_autoexec_command
   else
     let b:pandoc_command_autoexec_command = ''
   endif
@@ -40,6 +44,7 @@ endfunction
 function! s:toggleContinuous()
   let b:pandoc_continuous = !b:pandoc_continuous
   call s:updateCommand()
+  exe b:pandoc_command_autoexec_command
   call s:continuousStatus()
 endfunction
 
@@ -65,3 +70,5 @@ nnoremap <silent> <localleader>lv :call <SID>openOutput()<CR>
 
 nnoremap <silent> <localleader>lh :call <SID>setFormat('html')<CR>
 nnoremap <silent> <localleader>lp :call <SID>setFormat('pdf')<CR>
+
+call s:updateCommand()
