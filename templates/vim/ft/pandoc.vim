@@ -1,5 +1,5 @@
 let s:pandoc_args = {
-      \ 'html': '--mathjax',
+      \ 'html5': '-s --mathjax',
       \ 'pdf': '-V geometry:margin=1in'
       \ }
 
@@ -68,7 +68,7 @@ nnoremap <silent> <localleader>lg :call <SID>continuousStatus()<CR>
 nnoremap <silent> <localleader>ll :call <SID>toggleContinuous()<CR>
 nnoremap <silent> <localleader>lv :call <SID>openOutput()<CR>
 
-nnoremap <silent> <localleader>lh :call <SID>setFormat('html')<CR>
+nnoremap <silent> <localleader>lh :call <SID>setFormat('html5')<CR>
 nnoremap <silent> <localleader>lp :call <SID>setFormat('pdf')<CR>
 
 call s:updateCommand()
