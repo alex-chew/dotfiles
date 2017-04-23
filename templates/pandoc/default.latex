@@ -233,6 +233,8 @@ $if(institute)$
 $endif$
 \date{$date$}
 
+\usepackage{physics}
+
 \begin{document}
 $if(title)$
 \maketitle
