@@ -217,6 +217,8 @@ $for(header-includes)$
 $header-includes$
 $endfor$
 
+\usepackage{titling}
+
 $if(title)$
 \title{$title$$if(thanks)$\thanks{$thanks$}$endif$}
 $endif$
@@ -226,6 +228,8 @@ $if(subtitle)$
 $endif$
 $if(author)$
 \author{$for(author)$$author$$sep$ \and $endfor$}
+$else$
+\preauthor{} \author{} \postauthor{}
 $endif$
 $if(institute)$
 \providecommand{\institute}[1]{}
