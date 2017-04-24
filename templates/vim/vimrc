@@ -158,7 +158,6 @@ autocmd FileType qf set nobuflisted | setlocal norelativenumber number
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'SirVer/ultisnips'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-repeat'
@@ -215,6 +214,9 @@ nmap <leader>9 <Plug>AirlineSelectTab9
 Plug 'Raimondi/delimitMate'
 let delimitMate_expand_cr = 1
 let delimitMate_nesting_quotes = ['`']
+
+Plug 'SirVer/ultisnips'
+let g:UltiSnipsSnippetDirectories = [$HOME . '/.vim/UltiSnips']
 
 Plug 'tpope/vim-commentary'
 autocmd FileType c,cpp,h,hpp setlocal commentstring=//\ %s
