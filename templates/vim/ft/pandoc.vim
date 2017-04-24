@@ -40,7 +40,9 @@ endfunction
 
 function! s:updateCommand()
   if b:pandoc_continuous
-    let b:pandoc_command_autoexec_command = 'Pandoc ' . b:pandoc_output_format
+    let b:pandoc_command_autoexec_command =
+          \ 'Pandoc -F ~/.pandoc/filters/checklist.py '
+          \ . b:pandoc_output_format
     if has_key(s:pandoc_args, b:pandoc_output_format)
       let b:pandoc_command_autoexec_command .=
             \ ' ' . get(s:pandoc_args, b:pandoc_output_format)
