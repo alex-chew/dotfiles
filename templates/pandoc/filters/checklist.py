@@ -3,8 +3,9 @@
 from panflute import *
 
 def is_bullet_item(elem):
-    return (isinstance(elem, (Plain, Para))
-            and isinstance(elem.parent, ListItem))
+    return (isinstance(elem.ancestor(2), BulletList)
+            and isinstance(elem.ancestor(1), ListItem)
+            and isinstance(elem, (Plain, Para)))
 
 def checkitem_html(checked):
     return RawInline('<input type="checkbox" disabled {}>'
