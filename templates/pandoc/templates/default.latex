@@ -237,7 +237,25 @@ $if(institute)$
 $endif$
 \date{$date$}
 
+\usepackage{mathtools}
 \usepackage{physics}
+
+\let\oldto\to
+\RenewDocumentCommand\to{o}{
+  \IfValueTF{#1}
+    {\xrightarrow{#1}}
+    {\oldto}
+}
+\NewDocumentCommand\from{o}{
+  \IfValueTF{#1}
+    {\xleftarrow{#1}}
+    {\leftarrow}
+}
+\NewDocumentCommand\tofrom{o}{
+  \IfValueTF{#1}
+    {\xleftrightarrow{#1}}
+    {\leftrightarrow}
+}
 
 \begin{document}
 $if(title)$
