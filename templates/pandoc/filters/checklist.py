@@ -31,11 +31,13 @@ def action(elem, doc):
         return
 
     c = elem.content
-    if (isinstance(c[0], Str) and c[0].text == '[x]'
+    if (len(c) >= 2
+            and isinstance(c[0], Str) and c[0].text == '[x]'
             and isinstance(c[1], Space)):
         del c[0]
         add_checkitem(c, True, doc)
-    elif (isinstance(c[0], Str) and c[0].text == '['
+    elif (len(c) >= 3
+            and isinstance(c[0], Str) and c[0].text == '['
             and isinstance(c[1], Space)
             and isinstance(c[2], Str) and c[2].text == ']'):
         del c[:3]
