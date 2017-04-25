@@ -44,6 +44,9 @@ set list
 set listchars=tab:»\ ,trail:·
 let &showbreak = '↳ '
 
+" Conceal
+let g:tex_conceal = 'admg'
+
 " Line highlighting/numbering
 set number
 set relativenumber
