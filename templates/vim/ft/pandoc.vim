@@ -83,7 +83,4 @@ nnoremap <silent> <localleader>lv :call <SID>openOutput()<CR>
 nnoremap <silent> <localleader>lh :call <SID>setFormat('html5')<CR>
 nnoremap <silent> <localleader>lp :call <SID>setFormat('pdf')<CR>
 
-" Broken mapping from vim-pandoc...
-nunmap <buffer> <localleader>xi
-
 call s:updateCommand()
