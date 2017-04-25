@@ -234,6 +234,7 @@ let g:pandoc#folding#fdc = 0
 let g:pandoc#formatting#equalprg =
       \ 'pandoc -t markdown --atx-headers --wrap=preserve'
       \ . ' -F ~/.pandoc/filters/checklist.py'
+let g:pandoc#syntax#use_definition_lists = 0
 nnoremap <leader>ww :cd ~/wiki/ \| Files<CR>
 
 call plug#end()
