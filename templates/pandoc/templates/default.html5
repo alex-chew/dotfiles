@@ -14,7 +14,14 @@ $if(keywords)$
   <meta name="keywords" content="$for(keywords)$$keywords$$sep$, $endfor$">
 $endif$
   <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
-  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+    code{white-space: pre;}
+    .checkitem {
+      margin-left: -1.65em;
+      margin-right: 0.3em;
+    }
+    .checkitem-li {list-style-type: none;}
+  </style>
 $if(quotes)$
   <style type="text/css">q { quotes: "“" "”" "‘" "’"; }</style>
 $endif$
@@ -63,5 +70,12 @@ $body$
 $for(include-after)$
 $include-after$
 $endfor$
+<script>
+document.addEventListener('DOMContentLoaded', function(event) {
+  document.querySelectorAll('.checkitem').forEach(function(checkbox) {
+    checkbox.parentElement.classList.add('checkitem-li');
+  });
+});
+</script>
 </body>
 </html>

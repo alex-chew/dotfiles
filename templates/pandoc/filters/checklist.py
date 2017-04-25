@@ -8,11 +8,11 @@ def is_bullet_item(elem):
             and isinstance(elem, (Plain, Para)))
 
 def checkitem_html(checked):
-    return RawInline('<input type="checkbox" disabled {}>'
+    return RawInline('<input type="checkbox" class="checkitem" disabled {}>'
             .format('checked' if checked else ''))
 
 def checkitem_latex(checked):
-    return RawInline('$\\{}$'.format('boxtimes' if checked else 'square'),
+    return RawInline('[$\\{}$]'.format('boxtimes' if checked else 'square'),
             format='latex')
 
 def checkitem_md(checked):
