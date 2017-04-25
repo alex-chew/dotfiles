@@ -3,7 +3,7 @@ let s:pandoc_args = {
       \ 'pdf': '-V geometry:margin=1in'
       \ }
 
-py << EOF
+py3 << EOF
 from vim_pandoc.command import PandocHelpParser
 import re
 
@@ -61,7 +61,7 @@ endfunction
 
 function! s:openOutput()
   let fname = expand('%:r') . '.'
-        \ . pyeval('output_ext("' . b:pandoc_output_format . '")')
+        \ . py3eval('output_ext("' . b:pandoc_output_format . '")')
   if filereadable(fname)
     silent exe '!xdg-open ' . fname . ' &'
   else
