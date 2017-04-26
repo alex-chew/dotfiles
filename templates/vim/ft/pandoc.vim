@@ -88,5 +88,7 @@ nnoremap <silent> <localleader>lp :call <SID>setFormat('pdf')<CR>
 nnoremap <silent> <localleader>lx :call <SID>setEngine('xelatex')<CR>
 nnoremap <silent> <localleader>lf :call <SID>setEngine('pdflatex')<CR>
 
+nnoremap <silent> <F5> :TOC<CR>
+
 command! PandocConvert :call <SID>convert()
 let b:pandoc_command_autoexec_command = 'PandocConvert'
