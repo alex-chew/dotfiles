@@ -38,24 +38,9 @@ function! s:continuousStatus()
   call s:status(msg)
 endfunction
 
-function! s:updateCommand()
-  if b:pandoc_continuous
-    let b:pandoc_command_autoexec_command =
-          \ 'Pandoc -F ~/.pandoc/filters/checklist.py '
-          \ . b:pandoc_output_format
-    if has_key(s:pandoc_args, b:pandoc_output_format)
-      let b:pandoc_command_autoexec_command .=
-            \ ' ' . get(s:pandoc_args, b:pandoc_output_format)
-    endif
-  else
-    let b:pandoc_command_autoexec_command = ''
-  endif
-endfunction
-
 function! s:toggleContinuous()
   let b:pandoc_continuous = !b:pandoc_continuous
-  call s:updateCommand()
-  exe b:pandoc_command_autoexec_command
+  call s:convert()
   call s:continuousStatus()
 endfunction
 
@@ -71,8 +56,25 @@ endfunction
 
 function! s:setFormat(fmt)
   let b:pandoc_output_format = a:fmt
-  call s:updateCommand()
   call s:continuousStatus()
+endfunction
+
+function! s:setEngine(eng)
+  let b:pandoc_command_latex_engine = a:eng
+  call s:status('Using ' . a:eng . ' for pdf conversion')
+endfunction
+
+function! s:convert()
+  if !b:pandoc_continuous
+    return
+  endif
+
+  let cmd = 'Pandoc -F ~/.pandoc/filters/checklist.py '
+        \ . b:pandoc_output_format
+  if has_key(s:pandoc_args, b:pandoc_output_format)
+    let cmd .= ' ' . get(s:pandoc_args, b:pandoc_output_format)
+  endif
+  exe cmd
 endfunction
 
 " Bindings inspired by vimtex
@@ -83,4 +85,8 @@ nnoremap <silent> <localleader>lv :call <SID>openOutput()<CR>
 nnoremap <silent> <localleader>lh :call <SID>setFormat('html5')<CR>
 nnoremap <silent> <localleader>lp :call <SID>setFormat('pdf')<CR>
 
-call s:updateCommand()
+nnoremap <silent> <localleader>lx :call <SID>setEngine('xelatex')<CR>
+nnoremap <silent> <localleader>lf :call <SID>setEngine('pdflatex')<CR>
+
+command! PandocConvert :call <SID>convert()
+let b:pandoc_command_autoexec_command = 'PandocConvert'
