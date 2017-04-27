@@ -172,6 +172,10 @@ Plug 'wellle/targets.vim'
 Plug 'airblade/vim-gitgutter'
 set updatetime=1000
 
+Plug 'epeli/slimux'
+nnoremap <silent> <leader>x :SlimuxREPLSendLine<CR>
+vnoremap <silent> <leader>x :SlimuxREPLSendSelection<CR>
+
 Plug 'editorconfig/editorconfig-vim'
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
