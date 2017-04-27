@@ -187,6 +187,8 @@ nnoremap <leader>a :Ag<CR>
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>F :History<CR>
+nnoremap <leader>l :Lines<CR>
+nnoremap <leader>L :BLines<CR>
 nnoremap <leader>m :Marks<CR>
 nnoremap <leader>t :Tags<CR>
 nnoremap <leader>T :BTags<CR>
