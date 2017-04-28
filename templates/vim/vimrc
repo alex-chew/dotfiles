@@ -223,7 +223,7 @@ nmap <leader>9 <Plug>AirlineSelectTab9
 
 Plug 'Raimondi/delimitMate'
 let delimitMate_expand_cr = 1
-let delimitMate_nesting_quotes = ['`']
+let delimitMate_nesting_quotes = ['`', '"', "'"]
 
 Plug 'SirVer/ultisnips'
 let g:UltiSnipsSnippetDirectories = [$HOME . '/.vim/UltiSnips']
