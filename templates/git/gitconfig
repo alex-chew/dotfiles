@@ -7,11 +7,12 @@
     cma = commit --amend
     co = checkout
     cob = checkout -b
-    logo = log --oneline
-    logg = log --oneline --graph --decorate
+    lg = log --graph --pretty='%C(auto)%h %C(bold)%s%C(auto,reset) %C(green)(%ar)%C(auto)%d'
+    lf = log --graph --pretty='%C(auto)%h %C(green)%aD%C(auto)%d%n        %C(bold)%s%C(auto,reset) %C(blue)(%an)'
     df = diff
     dfw = diff --word-diff=color
-    dfc = diff --cached
+    dc = diff --cached
+    dcw = diff --cached --word-diff=color
 
 [core]
     excludesfile = ~/.gitignore_global
