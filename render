@@ -29,7 +29,7 @@ def render(template_path, theme, out_path):
     Renders template_path to out_path, using the theme configuration
     object, and creating directories as necessary.
     '''
-    with open(template_path) as template_file:
+    with open(template_path, encoding='utf8') as template_file:
         try:
             rendered = pystache.Renderer(missing_tags='strict') \
                     .render(template_file.read(), theme)
@@ -38,7 +38,7 @@ def render(template_path, theme, out_path):
 
     # Need to ensure base directories exist
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
-    with open(out_path, 'w') as out:
+    with open(out_path, 'w', encoding='utf8') as out:
         out.write(rendered)
 
 
