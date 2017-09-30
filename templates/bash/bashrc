@@ -66,6 +66,9 @@ __venv_ps1 () {
   echo "($(basename $VIRTUAL_ENV)) "
 }
 
+# Anaconda
+[[ -d ~/anaconda3/bin ]] && export PATH="~/anaconda3/bin:$PATH"
+
 # Custom prompt
 PS1='\n\[\e[01;36m\]\u\[\e[0m\]\[\e[00;37m\] \h \[\e[1m\]\[\e[01;34m\]\w\[\e[0m\]\[\e[00;37m\]$(__git_ps1 " (%s)")\n$(__venv_ps1)\[\e[01;37m\]\$ \[\e[0m\]'
 
