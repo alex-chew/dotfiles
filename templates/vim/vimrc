@@ -226,6 +226,9 @@ Plug 'Raimondi/delimitMate'
 let delimitMate_expand_cr = 1
 let delimitMate_nesting_quotes = ['`', '"', "'"]
 
+Plug 'sheerun/vim-polyglot'
+let g:polyglot_disabled = []
+
 Plug 'SirVer/ultisnips'
 let g:UltiSnipsSnippetDirectories = [$HOME . '/.vim/UltiSnips']
 
