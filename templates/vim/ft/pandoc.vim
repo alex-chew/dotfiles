@@ -1,6 +1,6 @@
 let s:pandoc_args = {
       \ 'html5': '-s --mathjax',
-      \ 'pdf': '-V geometry:margin=1in'
+      \ 'pdf': ''
       \ }
 
 py3 << EOF
