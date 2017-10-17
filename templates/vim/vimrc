@@ -234,6 +234,7 @@ let g:UltiSnipsSnippetDirectories = [$HOME . '/.vim/UltiSnips']
 
 Plug 'tpope/vim-commentary'
 autocmd FileType c,cpp,h,hpp setlocal commentstring=//\ %s
+autocmd FileType ocaml setlocal commentstring=(*\ %s\ *)
 
 Plug 'tpope/vim-fugitive'
 nnoremap <leader>gs :Gstatus<CR>
