@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
@@ -62,13 +64,22 @@ export WORKON_HOME=$HOME/.virtualenvs
 
 # venv prompt
 __venv_ps1 () {
-  [[ -z $VIRTUAL_ENV ]] && return
-  echo "($(basename $VIRTUAL_ENV)) "
+  [[ -n $VIRTUAL_ENV ]] && echo "($(basename "$VIRTUAL_ENV")) "
+}
+
+# conda prompt
+__conda_ps1 () {
+  [[ -n $CONDA_DEFAULT_ENV ]] && echo "[$CONDA_DEFAULT_ENV] "
 }
 
 # Anaconda
-[[ -d ~/anaconda3/bin ]] && export PATH="~/anaconda3/bin:$PATH"
+ANACONDA_BIN=~/anaconda3/bin
+if [[ -d $ANACONDA_BIN ]]; then
+  alias activate='source $ANACONDA_BIN/activate'
+  alias deactivate='source $ANACONDA_BIN/deactivate'
+  alias conda='$ANACONDA_BIN/conda'
+fi
 
 # Custom prompt
-PS1='\n\[\e[01;36m\]\u\[\e[0m\]\[\e[00;37m\] \h \[\e[1m\]\[\e[01;34m\]\w\[\e[0m\]\[\e[00;37m\]$(__git_ps1 " (%s)")\n$(__venv_ps1)\[\e[01;37m\]\$ \[\e[0m\]'
+PS1='\n\[\e[01;36m\]\u\[\e[0m\]\[\e[00;37m\] \h \[\e[1m\]\[\e[01;34m\]\w\[\e[0m\]\[\e[00;37m\]$(__git_ps1 " (%s)")\n$(__venv_ps1)$(__conda_ps1)\[\e[01;37m\]\$ \[\e[0m\]'
 
