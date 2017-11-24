@@ -79,8 +79,8 @@ __conda_ps1 () {
 # Anaconda
 ANACONDA_BIN=~/anaconda3/bin
 if [[ -d $ANACONDA_BIN ]]; then
-  alias activate='source $ANACONDA_BIN/activate'
-  alias deactivate='source $ANACONDA_BIN/deactivate'
+  alias conact='source $ANACONDA_BIN/activate'
+  alias condeact='source $ANACONDA_BIN/deactivate'
   alias conda='$ANACONDA_BIN/conda'
 fi
 
