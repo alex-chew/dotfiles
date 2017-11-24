@@ -23,3 +23,7 @@
 
 [push]
     default = simple
+
+[include]
+    # guyzmo/git-repo
+    path = ~/.gitconfig-repos
