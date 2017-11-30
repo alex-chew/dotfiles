@@ -3,14 +3,10 @@ let s:pandoc_args = {
       \ 'pdf': ''
       \ }
 
-py3 << EOF
-from vim_pandoc.command import PandocHelpParser
-import re
-
-formats_table = PandocHelpParser.get_output_formats_table()
-def output_ext(fmt):
-    return formats_table[re.split('[-+]', fmt)[0]]
-EOF
+let s:output_ext = {
+      \ 'html5': 'html',
+      \ 'pdf': 'pdf'
+      \ }
 
 if !exists('b:pandoc_continuous')
   let b:pandoc_continuous = 0
@@ -46,7 +42,7 @@ endfunction
 
 function! s:openOutput()
   let fname = expand('%:r') . '.'
-        \ . py3eval('output_ext("' . b:pandoc_output_format . '")')
+        \ . get(s:output_ext, b:pandoc_output_format, 'txt')
   if filereadable(fname)
     silent exe '!xdg-open ' . fname . ' &'
   else
