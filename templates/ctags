@@ -1,0 +1,8 @@
+--exclude=.git
+--exclude=.hg
+--exclude=.svn
+
+--exclude=dist
+--exclude=node_modules
+--exclude=tags
+--exclude=vendor
