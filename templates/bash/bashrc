@@ -81,7 +81,7 @@ ANACONDA_BIN=~/anaconda3/bin
 if [[ -d $ANACONDA_BIN ]]; then
   alias conact='source $ANACONDA_BIN/activate'
   alias condeact='source $ANACONDA_BIN/deactivate'
-  alias conda='$ANACONDA_BIN/conda'
+  # alias conda='$ANACONDA_BIN/conda'
 fi
 
 # Custom prompt
