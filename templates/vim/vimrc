@@ -166,6 +166,7 @@ autocmd FileType qf set nobuflisted | setlocal norelativenumber number
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'bitc/lushtags'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
 Plug 'michaeljsmith/vim-indent-object'
