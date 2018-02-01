@@ -153,10 +153,7 @@ set wildmode=list,full
 set wildmenu
 
 " Build systems
-nnoremap <F9> :make!<CR>
-nnoremap <F10> :cwindow<CR>
-nnoremap <Down> :cnext<CR>
-nnoremap <Up> :cprevious<CR>
+nnoremap <F10> :lwindow<CR>
 " No qf in :ls/:bn/etc, and use abs line numbers (from romainl's vim-qf)
 autocmd FileType qf set nobuflisted | setlocal norelativenumber number
 
@@ -258,6 +255,19 @@ let g:pandoc#formatting#equalprg =
       \ . ' -F ~/.pandoc/filters/checklist.py'
 let g:pandoc#syntax#use_definition_lists = 0
 nnoremap <leader>ww :cd ~/wiki/ \| Files<CR>
+
+Plug 'w0rp/ale'
+let g:ale_lint_on_text_changed = 'never'
+nmap <silent> <CR> <Plug>(ale_detail)
+nmap <silent> <Up> <Plug>(ale_previous_wrap)
+nmap <silent> <Down> <Plug>(ale_next_wrap)
+nmap <silent> <F9> <Plug>(ale_fix)
+let g:ale_linters = {
+      \ 'haskell': ['stack-ghc'],
+      \ }
+let g:ale_fixers = {
+      \ 'haskell': ['hfmt'],
+      \ }
 
 call plug#end()
 
