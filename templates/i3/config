@@ -161,9 +161,6 @@ bindsym $mod+f fullscreen
 bindsym $mod+Shift+p move scratchpad
 bindsym $mod+p scratchpad show
 
-# sticky
-bindsym $mod+i floating toggle; sticky toggle
-
 # floating
 floating_modifier $mod
 bindsym $mod+Shift+space floating toggle
@@ -285,6 +282,7 @@ bindsym $mod+semicolon exec --no-startup-id x-www-browser
 set $rofi_args '-i'
 bindsym $mod+d exec --no-startup-id "rofi $rofi_args -modi drun,run -show drun"
 bindsym $mod+Shift+d exec --no-startup-id rofi $rofi_args -show window
+bindsym $mod+i exec --no-startup-id rofi-pass
 
 # quick launcher
 mode "launch" {
