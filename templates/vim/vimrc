@@ -258,7 +258,7 @@ nnoremap <leader>ww :cd ~/wiki/ \| Files<CR>
 
 Plug 'w0rp/ale'
 let g:ale_lint_on_text_changed = 'never'
-nmap <silent> <CR> <Plug>(ale_detail)
+nmap <silent> <C-P> <Plug>(ale_detail)
 nmap <silent> <Up> <Plug>(ale_previous_wrap)
 nmap <silent> <Down> <Plug>(ale_next_wrap)
 nmap <silent> <F9> <Plug>(ale_fix)
