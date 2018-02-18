@@ -63,6 +63,13 @@ man() {
 export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWUPSTREAM="auto"
 
+# Pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
 # Virtualenv
 export VIRTUAL_ENV_DISABLE_PROMPT=1 # disable default prompt
 export WORKON_HOME=$HOME/.virtualenvs
