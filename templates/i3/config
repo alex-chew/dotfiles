@@ -74,6 +74,8 @@ exec_always --no-startup-id synclient \
     MinSpeed=1 MaxSpeed=1 AccelFactor=1 \
     TapButton3=2 \
     PalmDetect=1 \
+    HorizScrollDelta=-58 \
+    VertScrollDelta=-58 \
     HorizTwoFingerScroll=1
 
 
