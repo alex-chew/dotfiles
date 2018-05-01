@@ -18,7 +18,7 @@ shopt -s checkwinsize
 # Allow ** glob
 shopt -s globstar
 
-export PATH=$PATH:$HOME/.local/bin
+export PATH="$HOME/.local/bin:$PATH"
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -74,8 +74,8 @@ fi
 
 # Virtualenv
 export VIRTUAL_ENV_DISABLE_PROMPT=1 # disable default prompt
-export WORKON_HOME=$HOME/.virtualenvs
-[[ -f /usr/local/bin/virtualenvwrapper.sh ]] && . /usr/local/bin/virtualenvwrapper.sh
+# export WORKON_HOME=$HOME/.virtualenvs
+# [[ -f /usr/local/bin/virtualenvwrapper.sh ]] && . /usr/local/bin/virtualenvwrapper.sh
 
 # venv prompt
 __venv_ps1 () {

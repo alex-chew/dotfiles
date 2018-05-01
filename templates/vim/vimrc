@@ -161,6 +161,9 @@ autocmd FileType qf set nobuflisted | setlocal norelativenumber number
 
 """ Plugins
 
+let g:python_host_prog =  $HOME . '/.pyenv/versions/neovim-python2/bin/python'
+let g:python3_host_prog = $HOME . '/.pyenv/versions/neovim-python3/bin/python'
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'bitc/lushtags'
