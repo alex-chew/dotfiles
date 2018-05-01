@@ -237,6 +237,17 @@ let delimitMate_nesting_quotes = ['`', '"', "'"]
 Plug 'sheerun/vim-polyglot'
 let g:polyglot_disabled = ['latex']
 
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
+" from <https://github.com/Shougo/deoplete.nvim/issues/115>
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+
 Plug 'SirVer/ultisnips'
 let g:UltiSnipsSnippetDirectories = [$HOME . '/.vim/UltiSnips']
 
@@ -273,6 +284,8 @@ let g:ale_fixers = {
       \ 'haskell': ['hfmt'],
       \ 'python': ['yapf'],
       \ }
+
+Plug 'zchee/deoplete-jedi'
 
 call plug#end()
 
