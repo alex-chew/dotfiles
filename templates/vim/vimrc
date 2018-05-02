@@ -272,6 +272,10 @@ let g:pandoc#syntax#use_definition_lists = 0
 nnoremap <leader>ww :cd ~/wiki/ \| Files<CR>
 
 Plug 'w0rp/ale'
+let g:ale_echo_msg_format = '%s [%linter% %severity%]'
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_info_str = 'I'
+let g:ale_echo_msg_warning_str = 'W'
 let g:ale_lint_on_text_changed = 'never'
 nmap <silent> <C-P> <Plug>(ale_detail)
 nmap <silent> <Up> <Plug>(ale_previous_wrap)
