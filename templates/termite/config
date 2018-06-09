@@ -1,5 +1,5 @@
 [options]
-font = Roboto Mono 11
+font = Iosevka Term 12
 scroll_on_keystroke = true
 scroll_on_output = false
 scrollback_lines = 1000

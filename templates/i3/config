@@ -1,4 +1,4 @@
-font pango:Roboto Mono 11
+font pango:Iosevka Term 12
 set $mod Mod4
 set $term termite
 focus_on_window_activation urgent
@@ -327,7 +327,7 @@ bindsym $mod+Print mode "$scrot"
 bar {
         status_command i3blocks -c ~/.i3/i3blocks/config
         position top
-        font pango:Roboto Mono, FontAwesome 11
+        font pango:Iosevka Term, FontAwesome 12
         strip_workspace_numbers yes
         colors {
                 background {{ i3.bg }}

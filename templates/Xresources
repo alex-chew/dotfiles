@@ -8,7 +8,7 @@ rofi.color-active: {{ rofi.bg }}, {{ rofi.fg_active }}, {{ rofi.bg }}, {{ rofi.h
 rofi.color-urgent: {{ rofi.bg }}, {{ rofi.fg_urgent }}, {{ rofi.bg }}, {{ rofi.hl_bg }}, {{ rofi.hl_fg_urgent }}
 
 rofi.bw: 0
-rofi.font: Roboto Mono 11
+rofi.font: Iosevka Term 12
 rofi.lines: 16
 rofi.separator-style: none
 rofi.padding: 20

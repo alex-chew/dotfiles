@@ -5,7 +5,7 @@ set statusbar-home-tilde true
 set window-title-basename true
 set window-title-home-tilde true
 
-set font "Roboto Mono 11"
+set font "Iosevka Term 12"
 
 set completion-bg "{{ zathura.bg }}"
 set completion-fg "{{ zathura.fg }}"
