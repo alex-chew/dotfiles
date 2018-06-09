@@ -329,6 +329,7 @@ bar {
         position top
         font pango:Iosevka Term, FontAwesome 12
         strip_workspace_numbers yes
+        tray_output primary
         colors {
                 background {{ i3.bg }}
                 statusline {{ i3.fg }}
