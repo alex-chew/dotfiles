@@ -46,9 +46,11 @@ export EDITOR='nvim'
 [[ -f /etc/bash_completion ]] && ! shopt -oq posix && . /etc/bash_completion
 
 # fzf completion
-[[ -f ~/.fzf.bash ]] && source ~/.fzf.bash
-complete -F _fzf_path_completion e
-complete -F _fzf_path_completion v
+if [[ -f ~/.fzf.bash ]]; then
+  source ~/.fzf.bash
+  complete -F _fzf_path_completion -o default -o bashdefault e
+  complete -F _fzf_path_completion -o default -o bashdefault v
+fi
 
 # Colored man pages
 man() {
