@@ -8,7 +8,7 @@
     co = checkout
     cob = checkout -b
     lg = log --graph --pretty='%C(auto)%h %C(bold)%s%C(auto,reset) %C(green)(%ar)%C(auto)%d'
-    lf = log --graph --pretty='%C(auto)%h %C(green)%aD%C(auto)%d%n        %C(bold)%s%C(auto,reset) %C(blue)(%an)'
+    lf = log --graph --pretty='%C(auto)%h %C(bold)%s%C(auto)%d%n        %C(green)%aD%C(auto,reset) %C(blue)(%an)'
     df = diff
     dfw = diff --word-diff=color
     dc = diff --cached
