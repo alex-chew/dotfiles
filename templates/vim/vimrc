@@ -3,6 +3,7 @@ set encoding=utf-8
 scriptencoding utf-8
 
 " Backup/swap files
+set backupcopy=yes
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
 

@@ -45,11 +45,13 @@ export EDITOR='nvim'
 # Bash completion
 [[ -f /etc/bash_completion ]] && ! shopt -oq posix && . /etc/bash_completion
 
-# fzf completion
+# fzf
 if [[ -f ~/.fzf.bash ]]; then
   source ~/.fzf.bash
   complete -F _fzf_path_completion -o default -o bashdefault e
   complete -F _fzf_path_completion -o default -o bashdefault v
+  export FZF_DEFAULT_COMMAND='ag -g ""'
+  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 fi
 
 # Colored man pages
