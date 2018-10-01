@@ -11,15 +11,40 @@ base08: &red "#dc322f"
 base09: &orange "#cb4b16"
 base0A: &yellow "#b58900"
 base0B: &green "#859900"
-base0C: &teal "#2aa198"
+base0C: &cyan "#2aa198"
 base0D: &blue "#268bd2"
-base0E: &purple "#6c71c4"
+base0E: &magenta "#6c71c4"
 base0F: &pink "#d33682"
 
 vim:
   background: light
   color: base16-solarized-light
   airline_theme: solarized
+
+alacritty:
+  colors:
+    primary:
+      foreground: *darkgray
+      background: *white
+      bright_foreground: *gray
+    normal:
+      black: *black2
+      red: *red
+      green: *green
+      yellow: *yellow
+      blue: *blue
+      magenta: *magenta
+      cyan: *cyan
+      white: *white2
+    bright:
+      black: *black
+      red: *red
+      green: *green
+      yellow: *yellow
+      blue: *blue
+      magenta: *magenta
+      cyan: *cyan
+      white: *white
 
 termite:
   colors:
@@ -34,8 +59,8 @@ termite:
     green: *green
     yellow: *yellow
     blue: *blue
-    magenta: *purple
-    cyan: *teal
+    magenta: *magenta
+    cyan: *cyan
     white: *darkgray
     white_b: *black
 
