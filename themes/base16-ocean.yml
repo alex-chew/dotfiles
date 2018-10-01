@@ -47,10 +47,14 @@ termite:
     c21: *white2
 
 tmux:
-  window_current_fg: colour15
-  window_current_bg: colour08
-  window_activity_fg: colour00
-  window_activity_bg: colour03
+  session_fg: *white
+  session_bg: *gray
+  window_fg: *lightgray
+  window_bg: *darkgray
+  window_current_fg: *white
+  window_current_bg: *blue
+  window_activity_fg: *gray
+  window_activity_bg: *yellow
 
 i3:
   active: *white

@@ -79,10 +79,14 @@ termite:
     # color21 = #073642
 
 tmux:
-  window_current_fg: colour18
-  window_current_bg: colour04
-  window_activity_fg: colour18
-  window_activity_bg: colour03
+  session_fg: *white
+  session_bg: *gray
+  window_fg: *white2
+  window_bg: *silver
+  window_current_fg: *white
+  window_current_bg: *blue
+  window_activity_fg: *white2
+  window_activity_bg: *yellow
 
 i3:
   active: *black2

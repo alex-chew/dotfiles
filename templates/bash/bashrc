@@ -103,5 +103,4 @@ fi
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # Bash PS1 prompt
-PS1='\n\[\e[1;36m\]\u\[\e[0m\] \h \[\e[1m\]\[\e[1;34m\]\w\[\e[0m\]\[\e[0;37m\]$(__git_ps1 " (%s)")\n$(__venv_ps1)$(__conda_ps1)\[\e[0;1m\]\$ \[\e[0m\]'
-
+PS1='\n\[\e[1;36m\]\u\[\e[0m\] \h \[\e[1m\]\[\e[1;34m\]\w\[\e[0m\]\[\e[0m\]$(__git_ps1 " (%s)")\n$(__venv_ps1)$(__conda_ps1)\[\e[0;1m\]\$ \[\e[0m\]'
