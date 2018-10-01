@@ -11,15 +11,40 @@ base08: &red "#bf616a"
 base09: &orange "#d08770"
 base0A: &yellow "#ebcb8b"
 base0B: &green "#a3be8c"
-base0C: &teal "#96b5b4"
+base0C: &cyan "#96b5b4"
 base0D: &blue "#8fa1b3"
-base0E: &purple "#b48ead"
+base0E: &magenta "#b48ead"
 base0F: &brown "#ab7967"
 
 vim:
   background: dark
   color: base16-ocean
   airline_theme: base16_ocean
+
+alacritty:
+  colors:
+    primary:
+      foreground: *silver
+      background: *black
+      bright_foreground: *white2
+    normal:
+      black: *black2
+      red: *red
+      green: *green
+      yellow: *yellow
+      blue: *blue
+      magenta: *magenta
+      cyan: *cyan
+      white: *white2
+    bright:
+      black: *black
+      red: *red
+      green: *green
+      yellow: *yellow
+      blue: *blue
+      magenta: *magenta
+      cyan: *cyan
+      white: *white
 
 termite:
   colors:
@@ -34,8 +59,8 @@ termite:
     green: *green
     yellow: *yellow
     blue: *blue
-    magenta: *purple
-    cyan: *teal
+    magenta: *magenta
+    cyan: *cyan
     white: *silver
     white_b: *white
 
