@@ -79,6 +79,8 @@ termite:
     # color21 = #073642
 
 tmux:
+  pane_border_fg: *silver
+  pane_active_border_fg: *green
   session_fg: *white
   session_bg: *gray
   window_fg: *white2

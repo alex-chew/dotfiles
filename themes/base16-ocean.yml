@@ -72,6 +72,8 @@ termite:
     c21: *white2
 
 tmux:
+  pane_border_fg: *gray
+  pane_active_border_fg: *green
   session_fg: *white
   session_bg: *gray
   window_fg: *lightgray
