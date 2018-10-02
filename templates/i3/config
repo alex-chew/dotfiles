@@ -345,7 +345,7 @@ bar {
 
 
 exec_always --no-startup-id xrdb -load ~/.Xresources
-exec_always --no-startup-id ~/.scripts/nvim-reload.py
+exec_always --no-startup-id ~/.scripts/nvim-reload.sh
 exec_always --no-startup-id tmux source-file ~/.tmux.conf
 exec_always --no-startup-id killall -USR1 termite
 exec_always --no-startup-id killall dunst
