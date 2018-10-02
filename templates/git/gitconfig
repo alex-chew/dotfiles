@@ -16,6 +16,7 @@
 
 [core]
     excludesfile = ~/.gitignore_global
+    pager = less -+F
 
 [user]
     name = Alex Chew
