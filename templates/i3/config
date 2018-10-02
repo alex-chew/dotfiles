@@ -1,6 +1,6 @@
 font pango:Iosevka Term 12
 set $mod Mod4
-set $term termite
+set $term alacritty
 focus_on_window_activation urgent
 
 
@@ -271,11 +271,11 @@ exec --no-startup-id amixer -q -D pulse set Master 50%; exec pkill -RTMIN+1 i3bl
 
 # start a terminal
 bindsym $mod+Return exec $term
-bindsym $mod+Shift+Return exec $term --name "f-terminal"
+bindsym $mod+Shift+Return exec $term --class "f-terminal"
 bindsym $mod+apostrophe exec $term -e editor
-bindsym $mod+Shift+apostrophe exec $term --name "f-terminal" -e editor
+bindsym $mod+Shift+apostrophe exec $term --class "f-terminal" -e editor
 for_window [instance="f-terminal$"] floating enable, exec --no-startup-id \
-        "xdotool getwindowfocus set_window --classname $term --name $term"
+        "xdotool getwindowfocus set_window --classname $term"
 
 # browser
 bindsym $mod+semicolon exec --no-startup-id x-www-browser
