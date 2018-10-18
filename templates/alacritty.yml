@@ -132,7 +132,7 @@ render_timer: false
 # Use custom cursor colors. If `true`, the `colors.cursor.foreground` and
 # `colors.cursor.background` colors will be used to display the cursor.
 # Otherwise the cell colors are inverted for the cursor.
-custom_cursor_colors: false
+custom_cursor_colors: true
 
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
@@ -157,8 +157,8 @@ colors:
   #
   # These will only be used when the `custom_cursor_colors` field is set to `true`.
   cursor:
-    text: '0x000000'
-    cursor: '0xffffff'
+    text: '{{ alacritty.colors.primary.background }}'
+    cursor: '{{ alacritty.colors.primary.foreground }}'
 
   # Normal colors
   normal:
