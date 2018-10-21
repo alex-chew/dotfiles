@@ -206,8 +206,6 @@ Plug 'lervag/vimtex'
 let g:vimtex_compiler_latexmk = {'build_dir' : 'out'}
 let g:vimtex_compiler_progname = 'nvr'
 let g:vimtex_view_method = 'zathura'
-" Temp fix for qf error (lervag/vimtex/issues/750)
-let g:vimtex_quickfix_latexlog = {'fix_paths': 0}
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
