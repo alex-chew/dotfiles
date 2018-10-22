@@ -176,6 +176,17 @@ Plug 'wellle/targets.vim'
 Plug 'airblade/vim-gitgutter'
 set updatetime=1000
 
+Plug 'autozimu/LanguageClient-neovim', {
+      \ 'branch': 'next',
+      \ 'do': 'bash install.sh',
+      \ }
+let g:LanguageClient_serverCommands = {
+      \ 'python': ['~/.pyenv/versions/neovim-python3/bin/pyls'],
+      \ }
+nnoremap K :call LanguageClient#textDocument_hover()<CR>
+nnoremap gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap <F2> :call LanguageClient#textDocument_rename()<CR>
+
 Plug 'epeli/slimux'
 nnoremap <silent> <leader>x :SlimuxREPLSendLine<CR>
 vnoremap <silent> <leader>x :SlimuxREPLSendSelection<CR>
