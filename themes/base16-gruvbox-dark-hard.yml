@@ -1,0 +1,128 @@
+# Color defs
+# from <https://github.com/dawikur/base16-gruvbox-scheme/blob/master/gruvbox-dark-hard.yaml>
+base00: &black "#1d2021"
+base01: &black2 "#3c3836"
+base02: &darkgray "#504945"
+base03: &gray "#665c54"
+base04: &lightgray "#bdae93"
+base05: &silver "#d5c4a1"
+base06: &white2 "#ebdbb2"
+base07: &white "#fbf1c7"
+base08: &red "#fb4934"
+base09: &orange "#fe8019"
+base0A: &yellow "#fabd2f"
+base0B: &green "#b8bb26"
+base0C: &cyan "#8ec07c"
+base0D: &blue "#83a598"
+base0E: &magenta "#d3869b"
+base0F: &brown "#d65d0e"
+
+vim:
+  background: dark
+  color: gruvbox
+  airline_theme: gruvbox
+
+alacritty:
+  colors:
+    primary:
+      foreground: *silver
+      background: *black
+      bright_foreground: *white2
+    normal:
+      black: *black2
+      red: *red
+      green: *green
+      yellow: *yellow
+      blue: *blue
+      magenta: *magenta
+      cyan: *cyan
+      white: *white2
+    bright:
+      black: *black
+      red: *red
+      green: *green
+      yellow: *yellow
+      blue: *blue
+      magenta: *magenta
+      cyan: *cyan
+      white: *white
+
+termite:
+  colors:
+    fg: *silver
+    fg_bold: *white2
+    cursor: *white2
+    bg: *black
+
+    black: *black
+    black_b: *gray
+    red: *red
+    green: *green
+    yellow: *yellow
+    blue: *blue
+    magenta: *magenta
+    cyan: *cyan
+    white: *silver
+    white_b: *white
+
+    c16: *orange
+    c17: *brown
+    c18: *black2
+    c19: *darkgray
+    c20: *lightgray
+    c21: *white2
+
+tmux:
+  pane_border_fg: *gray
+  pane_active_border_fg: *green
+  session_fg: *white
+  session_bg: *gray
+  window_fg: *lightgray
+  window_bg: *darkgray
+  window_current_fg: *white
+  window_current_bg: *blue
+  window_activity_fg: *gray
+  window_activity_bg: *yellow
+
+i3:
+  active: *white
+  bg: *black
+  fg: *white
+  fg_inactive: *gray
+  focused: *blue
+  urgent: *red
+  warning: *yellow
+
+gtk:
+  theme: oomox-numix_base16-ocean
+  icon_theme: Numix
+
+rofi:
+  bg: *black2
+  fg: *white
+  fg_active: *green
+  fg_urgent: *yellow
+  hl_bg: *gray
+  hl_fg: *white
+  hl_fg_active: *green
+  hl_fg_urgent: *yellow
+
+dunst:
+  fg_low: *white
+  fg_normal: *white
+  fg_critical: *white
+  bg_low: *black2
+  bg_normal: *gray
+  bg_critical: *red
+
+zathura:
+  fg: *white
+  bg: *black
+  fg_group: *black
+  bg_group: *white
+  fg_hl: *white
+  bg_hl: *gray
+  hl: *yellow
+  hl_active: *green
+  recol_dark: *silver
+  recol_light: *black

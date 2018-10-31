@@ -38,7 +38,6 @@ if has("termguicolors")
 endif
 let base16colorspace=256
 set background={{ vim.background }}
-color {{ vim.color }}
 
 " Show invisibles
 set list
@@ -207,6 +206,9 @@ let g:vimtex_compiler_latexmk = {'build_dir' : 'out'}
 let g:vimtex_compiler_progname = 'nvr'
 let g:vimtex_view_method = 'zathura'
 
+Plug 'morhetz/gruvbox'
+let g:gruvbox_contrast_dark = 'hard'
+
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 let g:airline_theme = '{{ vim.airline_theme }}'
@@ -293,3 +295,7 @@ Plug 'zchee/deoplete-jedi'
 
 call plug#end()
 
+
+
+" Set colorscheme after plugin section for plugin-added colorschemes
+color {{ vim.color }}
