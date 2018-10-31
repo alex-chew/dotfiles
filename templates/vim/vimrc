@@ -167,6 +167,7 @@ let g:python3_host_prog = $HOME . '/.pyenv/versions/neovim-python3/bin/python'
 call plug#begin('~/.vim/plugged')
 
 Plug 'bitc/lushtags'
+Plug 'chriskempson/base16-vim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
 Plug 'michaeljsmith/vim-indent-object'
