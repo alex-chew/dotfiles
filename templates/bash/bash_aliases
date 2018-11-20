@@ -32,3 +32,5 @@ fi
 # auto-open
 alias xo='xdg-open'
 
+# docker-related
+alias doco='docker-compose'
