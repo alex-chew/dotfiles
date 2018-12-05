@@ -50,7 +50,7 @@ bindsym XF86KbdBrightnessUp   exec --no-startup-id ~/.scripts/kb-backlight incre
 exec_always --no-startup-id xset s 1800 1800
 exec_always --no-startup-id xset dpms 1800 1800 1800
 
-exec --no-startup-id autorandr --change
+# exec --no-startup-id autorandr --change
 # refresh xrandr configuration
 bindsym $mod+Shift+Mod1+F6 exec --no-startup-id autorandr --change
 
