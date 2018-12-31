@@ -181,7 +181,7 @@ Plug 'autozimu/LanguageClient-neovim', {
       \ 'do': 'bash install.sh',
       \ }
 let g:LanguageClient_serverCommands = {
-      \ 'python': ['~/.pyenv/versions/neovim-python3/bin/pyls'],
+      \ 'python': ['~/.pyenv/versions/lang-server/bin/pyls'],
       \ }
 nnoremap K :call LanguageClient#textDocument_hover()<CR>
 nnoremap gd :call LanguageClient#textDocument_definition()<CR>
