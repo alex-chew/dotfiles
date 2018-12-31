@@ -303,11 +303,11 @@ nmap <silent> <Down> <Plug>(ale_next_wrap)
 nmap <silent> <F9> <Plug>(ale_fix)
 let g:ale_linters = {
       \ 'haskell': ['stack-ghc'],
+      \ 'python': ['flake8', 'pylint']
       \ }
 let g:ale_fixers = {
       \ 'haskell': ['hfmt'],
       \ 'javascript': ['prettier'],
-      \ 'python': ['black'],
       \ }
 
 call plug#end()
