@@ -186,6 +186,8 @@ let g:LanguageClient_serverCommands = {
 nnoremap K :call LanguageClient#textDocument_hover()<CR>
 nnoremap gd :call LanguageClient#textDocument_definition()<CR>
 nnoremap <F2> :call LanguageClient#textDocument_rename()<CR>
+" use ALE for linting instead
+let g:LanguageClient_diagnosticsEnable = 0
 
 Plug 'epeli/slimux'
 nnoremap <silent> <leader>x :SlimuxREPLSendLine<CR>
