@@ -180,7 +180,11 @@ Plug 'autozimu/LanguageClient-neovim', {
       \ 'branch': 'next',
       \ 'do': 'bash install.sh',
       \ }
+let s:js_langserver_path =
+      \ '~/.local/node_envs/lang-server/node_modules/.bin/javascript-typescript-stdio'
 let g:LanguageClient_serverCommands = {
+      \ 'javascript': [s:js_langserver_path],
+      \ 'javascript.jsx': [s:js_langserver_path],
       \ 'python': ['~/.pyenv/versions/lang-server/bin/pyls'],
       \ }
 " use ALE for linting instead
