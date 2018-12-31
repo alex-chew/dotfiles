@@ -191,8 +191,8 @@ nnoremap <leader>a :Ag<CR>
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>F :Files <C-R>=expand('%:h')<CR><CR>
-nnoremap <leader>l :Lines<CR>
-nnoremap <leader>L :BLines<CR>
+nnoremap <leader>i :Lines<CR>
+nnoremap <leader>I :BLines<CR>
 nnoremap <leader>m :Marks<CR>
 nnoremap <leader>o :History<CR>
 nnoremap <leader>t :Tags<CR>
