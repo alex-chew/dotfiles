@@ -110,10 +110,6 @@ nnoremap <C-l> <C-w><C-l>
 set splitright
 set splitbelow
 
-" Tab navigation
-nnoremap <silent> <C-m> :tabnext<CR>
-nnoremap <silent> <C-n> :tabprevious<CR>
-
 
 
 """ Editing
