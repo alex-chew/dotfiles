@@ -183,11 +183,17 @@ Plug 'autozimu/LanguageClient-neovim', {
 let g:LanguageClient_serverCommands = {
       \ 'python': ['~/.pyenv/versions/lang-server/bin/pyls'],
       \ }
-nnoremap K :call LanguageClient#textDocument_hover()<CR>
-nnoremap gd :call LanguageClient#textDocument_definition()<CR>
-nnoremap <F2> :call LanguageClient#textDocument_rename()<CR>
 " use ALE for linting instead
 let g:LanguageClient_diagnosticsEnable = 0
+nnoremap <leader><leader> :call LanguageClient#textDocument_hover()<CR>
+nnoremap <leader>la :call LanguageClient#textDocument_codeAction()<CR>
+nnoremap <leader>ld :call LanguageClient#textDocument_definition()<CR>
+nnoremap <leader>lf :call LanguageClient#textDocument_formatting()<CR>
+nnoremap <leader>lh :call LanguageClient#textDocument_documentHighlight()<CR>
+nnoremap <leader>lH :call LanguageClient#clearDocumentHighlight()<CR>
+nnoremap <leader>ll :call LanguageClient_contextMenu()<CR>
+nnoremap <leader>lm :call LanguageClient#textDocument_rename()<CR>
+nnoremap <leader>lr :call LanguageClient#textDocument_references()<CR>
 
 Plug 'epeli/slimux'
 nnoremap <silent> <leader>x :SlimuxREPLSendLine<CR>
