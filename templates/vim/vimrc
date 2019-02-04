@@ -312,6 +312,7 @@ let g:ale_linters = {
 let g:ale_fixers = {
       \ 'haskell': ['hfmt'],
       \ 'javascript': ['prettier'],
+      \ 'css': ['prettier'],
       \ }
 
 call plug#end()
