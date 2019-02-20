@@ -186,6 +186,7 @@ let g:LanguageClient_serverCommands = {
       \ 'javascript': [s:js_langserver_path],
       \ 'javascript.jsx': [s:js_langserver_path],
       \ 'python': ['~/.pyenv/versions/lang-server/bin/pyls'],
+      \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
       \ }
 " use ALE for linting instead
 let g:LanguageClient_diagnosticsEnable = 0
@@ -307,13 +308,17 @@ nmap <silent> <Down> <Plug>(ale_next_wrap)
 nmap <silent> <F9> <Plug>(ale_fix)
 let g:ale_linters = {
       \ 'haskell': ['stack-ghc'],
-      \ 'python': ['flake8', 'pylint']
+      \ 'python': ['flake8', 'pylint'],
+      \ 'rust': ['rls', 'cargo'],
       \ }
 let g:ale_fixers = {
       \ 'haskell': ['hfmt'],
       \ 'javascript': ['prettier'],
       \ 'css': ['prettier'],
+      \ 'rust': ['rustfmt'],
       \ }
+let g:ale_rust_cargo_use_clippy = executable('cargo-clippy')
+let g:ale_rust_rls_toolchain = 'stable'
 
 call plug#end()
 
