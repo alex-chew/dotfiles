@@ -76,6 +76,9 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
+# Poetry
+export PATH="$HOME/.poetry/bin:$PATH"
+
 # Virtualenv
 export VIRTUAL_ENV_DISABLE_PROMPT=1 # disable default prompt
 # export WORKON_HOME=$HOME/.virtualenvs

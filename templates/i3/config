@@ -279,6 +279,9 @@ for_window [instance="f-terminal$"] floating enable, exec --no-startup-id \
 
 # browser
 bindsym $mod+semicolon exec --no-startup-id x-www-browser
+# --private-window works only for Firefox, but at least Chrome doesn't complain
+bindsym $mod+shift+semicolon exec --no-startup-id \
+          "x-www-browser --private-window"
 
 # rofi
 set $rofi_args '-i'
