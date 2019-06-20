@@ -105,5 +105,12 @@ fi
 # Rust
 export PATH="$HOME/.cargo/bin:$PATH"
 
+# Volta
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+if [[ -f $VOLTA_HOME/load.sh ]]; then
+  source "$VOLTA_HOME/load.sh"
+fi
+
 # Bash PS1 prompt
 PS1='\n\[\e[1;36m\]\u\[\e[0m\] \h \[\e[1m\]\[\e[1;34m\]\w\[\e[0m\]\[\e[0m\]$(__git_ps1 " (%s)")\n$(__venv_ps1)$(__conda_ps1)\[\e[0;1m\]\$ \[\e[0m\]'
