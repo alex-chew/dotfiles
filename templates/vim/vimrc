@@ -97,8 +97,6 @@ let g:netrw_liststyle=3
 
 " Buffer navigation
 nnoremap <BS> <C-^>
-nnoremap <F4> :registers<CR>
-nnoremap <F5> :TagbarOpenAutoClose<CR>
 set hidden
 let g:netrw_altfile = 1
 
@@ -234,7 +232,7 @@ let g:airline_theme = '{{ vim.airline_theme }}'
 let g:airline_solarized_bg = '{{ vim.background }}'
 let g:airline_powerline_fonts = 0
 let g:airline_symbols_ascii = 1
-let g:airline_extensions = ['tabline', 'tagbar']
+let g:airline_extensions = ['tabline']
 let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#tabline#show_close_button = 0
 let g:airline#extensions#tabline#show_tab_type = 0
