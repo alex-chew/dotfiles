@@ -25,6 +25,9 @@
 [push]
     default = simple
 
+[pull]
+    ff = only
+
 [include]
     # guyzmo/git-repo
     path = ~/.gitconfig-repos
