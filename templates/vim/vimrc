@@ -189,9 +189,6 @@ nnoremap <leader>lh :call CocActionAsync('highlight')<CR>
 nmap <leader>lx <Plug>(coc-fix-current)
 nmap <leader>l[ <Plug>(coc-diagnostic-prev)
 nmap <leader>l] <Plug>(coc-diagnostic-next)
-Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-rls', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 
 Plug 'epeli/slimux'
 nnoremap <silent> <leader>x :SlimuxREPLSendLine<CR>
