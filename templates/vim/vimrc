@@ -280,6 +280,7 @@ let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_info_str = 'I'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_lint_on_text_changed = 'never'
+let g:ale_linters_explicit = 1
 nmap <silent> <C-P> <Plug>(ale_detail)
 nmap <silent> <Up> <Plug>(ale_previous_wrap)
 nmap <silent> <Down> <Plug>(ale_next_wrap)
