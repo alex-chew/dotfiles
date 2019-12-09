@@ -18,11 +18,10 @@ bindsym $mod+Shift+Escape exec \
 
 
 # Power control
-set $power power [exit | suspend | hibernate]
+set $power power [exit | suspend]
 mode "$power" {
         bindsym e exec --no-startup-id i3-msg exit; mode "default"
         bindsym s exec --no-startup-id "~/.i3/bin/lock; systemctl suspend"; mode "default"
-        # bindsym h exec --no-startup-id "~/.i3/bin/lock; systemctl hibernate"; mode "default"
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
@@ -231,28 +230,20 @@ bindsym $mod+Shift+x move container to workspace back_and_forth
 # Outputs
 
 # move focus to left/right
-bindsym $mod+F7 focus output left
-bindsym $mod+F8 focus output right
+bindsym $mod+comma focus output left
+bindsym $mod+period focus output right
 
 # move focused container to left/right
-bindsym $mod+Shift+F7 move container to output left
-bindsym $mod+Shift+F8 move container to output right
+bindsym $mod+Shift+comma move container to output left
+bindsym $mod+Shift+period move container to output right
 
 # move focused workspace to left/right
-bindsym $mod+Shift+Mod1+F7 move workspace to output left
-bindsym $mod+Shift+Mod1+F8 move workspace to output right
+bindsym $mod+Shift+Mod1+comma move workspace to output left
+bindsym $mod+Shift+Mod1+period move workspace to output right
 
 
 
 # Audio
-
-# media prev/next/pause
-bindsym $mod+Control+Mod1+comma  exec --no-startup-id playerctl previous
-bindsym $mod+Control+Mod1+period exec --no-startup-id playerctl next
-bindsym $mod+Control+Mod1+slash  exec --no-startup-id playerctl play-pause
-bindsym $mod+Control+comma  exec --no-startup-id cmus-remote -r
-bindsym $mod+Control+period exec --no-startup-id cmus-remote -n
-bindsym $mod+Control+slash  exec --no-startup-id cmus-remote -u
 
 # audio up/down/mute
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q -D pulse set Master 5%+ unmute; exec pkill -RTMIN+1 i3blocks
@@ -292,11 +283,9 @@ bindsym $mod+i exec --no-startup-id rofi-pass
 # quick launcher
 mode "launch" {
         bindsym a exec --no-startup-id ~/.i3/bin/autorandr-rofi; mode "default"
-        bindsym h exec --no-startup-id $term -e htop; mode "default"
         bindsym n exec --no-startup-id pcmanfm; mode "default"
         bindsym k exec --no-startup-id ~/.i3/bin/textbooks; mode "default"
         bindsym Shift+k exec --no-startup-id ~/.i3/bin/textbooks all; mode "default"
-        bindsym r exec --no-startup-id $term -e ranger; mode "default"
         bindsym t exec --no-startup-id ~/.i3/bin/change-theme; mode "default"
 
         # back to normal: Enter or Escape
