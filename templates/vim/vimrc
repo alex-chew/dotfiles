@@ -292,6 +292,7 @@ let g:ale_linters = {
 let g:ale_fixers = {
       \ 'haskell': ['hfmt'],
       \ 'javascript': ['prettier'],
+      \ 'javascriptreact': ['prettier'],
       \ 'css': ['prettier'],
       \ 'rust': ['rustfmt'],
       \ }
