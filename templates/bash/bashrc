@@ -95,7 +95,15 @@ __conda_ps1 () {
 }
 
 # Anaconda
-export PATH="$HOME/anaconda3/condabin:$PATH"
+CONDA_BIN="$HOME/anaconda3/bin/conda"
+if [[ -x $CONDA_BIN ]]; then
+  conda () {
+    echo "initializing conda..." >&2
+    eval "$($CONDA_BIN shell.bash hook)"
+    # the "real" conda defined by the above init hook
+    conda "$@"
+  }
+fi
 
 # Rust
 export PATH="$HOME/.cargo/bin:$PATH"
