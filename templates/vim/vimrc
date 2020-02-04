@@ -293,8 +293,10 @@ let g:ale_fixers = {
       \ 'javascriptreact': ['prettier'],
       \ 'css': ['prettier'],
       \ 'rust': ['rustfmt'],
+      \ 'cpp': ['clang-format'],
       \ }
 let g:ale_rust_cargo_use_clippy = executable('cargo-clippy')
+let g:ale_c_clangformat_options = '-style=file'
 
 call plug#end()
 
