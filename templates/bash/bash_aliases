@@ -34,3 +34,8 @@ alias xo='xdg-open'
 
 # docker-related
 alias doco='docker-compose'
+
+# timestamp
+tsnow () {
+  date +%Y-%m-%d_%H-%M
+}
