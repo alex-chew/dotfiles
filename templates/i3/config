@@ -246,15 +246,15 @@ bindsym $mod+Shift+Mod1+period move workspace to output right
 # Audio
 
 # audio up/down/mute
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q -D pulse set Master 5%+ unmute; exec pkill -RTMIN+1 i3blocks
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q -D pulse set Master 5%- unmute; exec pkill -RTMIN+1 i3blocks
-bindsym XF86AudioMute        exec --no-startup-id amixer -q -D pulse set Master toggle;     exec pkill -RTMIN+1 i3blocks
-bindsym $mod+Control+F12     exec --no-startup-id amixer -q -D pulse set Master 5%+ unmute; exec pkill -RTMIN+1 i3blocks
-bindsym $mod+Control+F11     exec --no-startup-id amixer -q -D pulse set Master 5%- unmute; exec pkill -RTMIN+1 i3blocks
-bindsym $mod+Control+F10     exec --no-startup-id amixer -q -D pulse set Master toggle;     exec pkill -RTMIN+1 i3blocks
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q -D pulse set Master 5%+ unmute
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q -D pulse set Master 5%- unmute
+bindsym XF86AudioMute        exec --no-startup-id amixer -q -D pulse set Master toggle
+bindsym $mod+Control+F12     exec --no-startup-id amixer -q -D pulse set Master 5%+ unmute
+bindsym $mod+Control+F11     exec --no-startup-id amixer -q -D pulse set Master 5%- unmute
+bindsym $mod+Control+F10     exec --no-startup-id amixer -q -D pulse set Master toggle
 
 # start at 50% unless muted
-exec --no-startup-id amixer -q -D pulse set Master 50%; exec pkill -RTMIN+1 i3blocks
+exec --no-startup-id amixer -q -D pulse set Master 50%
 
 
 
@@ -315,27 +315,7 @@ bindsym $mod+Print mode "$scrot"
 
 
 
-# i3bar
-bar {
-        status_command i3blocks -c ~/.config/i3/i3blocks/config
-        position top
-        font pango:Iosevka Term, FontAwesome 5 Free Medium 12
-        strip_workspace_numbers yes
-        tray_output primary
-        colors {
-                background {{ i3.bg }}
-                statusline {{ i3.fg }}
-                separator #4f5b66
-
-                focused_workspace {{ i3.bg }} {{ i3.bg }} {{ i3.active }}
-                active_workspace {{ i3.bg }} {{ i3.bg }} {{ i3.active }}
-                inactive_workspace {{ i3.bg }} {{ i3.bg }} {{ i3.fg_inactive }}
-                urgent_workspace {{ i3.bg }} {{ i3.bg }} {{ i3.urgent }}
-        }
-}
-
-
-
+exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id xrdb -load ~/.Xresources
 exec_always --no-startup-id ~/.scripts/nvim-reload.sh
 exec_always --no-startup-id tmux source-file ~/.tmux.conf

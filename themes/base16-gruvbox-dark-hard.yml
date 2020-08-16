@@ -126,3 +126,9 @@ zathura:
   hl_active: *green
   recol_dark: *silver
   recol_light: *black
+
+polybar:
+  background: *black
+  foreground: *white
+  foreground_dim: *gray
+  foreground_urgent: *red
