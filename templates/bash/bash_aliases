@@ -5,11 +5,9 @@
 alias e="$EDITOR"
 alias v="$EDITOR -R"
 
-# ls
-alias ll='ls -halF'
-alias lls='ls -halF | less'
-alias la='ls -a'
-alias l='ls -CF'
+# exa
+alias l='exa'
+alias ll='exa -haal'
 
 # for safety
 alias rm='rm -I'
