@@ -21,7 +21,7 @@ bindsym $mod+Shift+Escape exec \
 set $power power [exit | suspend]
 mode "$power" {
         bindsym e exec --no-startup-id i3-msg exit; mode "default"
-        bindsym s exec --no-startup-id "~/.i3/bin/lock; systemctl suspend"; mode "default"
+        bindsym s exec --no-startup-id "~/.config/i3/bin/lock; systemctl suspend"; mode "default"
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
@@ -36,7 +36,7 @@ bindsym $mod+Pause mode "$power"
 exec_always --no-startup-id setxkbmap -model pc105 -layout us -option compose:ralt -option caps:escape
 
 # switch input method
-bindsym $mod+z exec --no-startup-id ~/.i3/bin/ibus-switch-engine
+bindsym $mod+z exec --no-startup-id ~/.config/i3/bin/ibus-switch-engine
 
 # keyboard backlight control
 bindsym XF86KbdBrightnessDown exec --no-startup-id ~/.scripts/kb-backlight decrease
@@ -62,7 +62,7 @@ set $wall ~/Pictures/backgrounds/wall.png
 exec_always --no-startup-id "sleep 1; feh --bg-center $wall"
 
 # i3lock
-bindsym $mod+Escape exec --no-startup-id ~/.i3/bin/lock
+bindsym $mod+Escape exec --no-startup-id ~/.config/i3/bin/lock
 
 
 
@@ -282,11 +282,11 @@ bindsym $mod+i exec --no-startup-id rofi-pass
 
 # quick launcher
 mode "launch" {
-        bindsym a exec --no-startup-id ~/.i3/bin/autorandr-rofi; mode "default"
+        bindsym a exec --no-startup-id ~/.config/i3/bin/autorandr-rofi; mode "default"
         bindsym n exec --no-startup-id pcmanfm; mode "default"
-        bindsym k exec --no-startup-id ~/.i3/bin/textbooks; mode "default"
-        bindsym Shift+k exec --no-startup-id ~/.i3/bin/textbooks all; mode "default"
-        bindsym t exec --no-startup-id ~/.i3/bin/change-theme; mode "default"
+        bindsym k exec --no-startup-id ~/.config/i3/bin/textbooks; mode "default"
+        bindsym Shift+k exec --no-startup-id ~/.config/i3/bin/textbooks all; mode "default"
+        bindsym t exec --no-startup-id ~/.config/i3/bin/change-theme; mode "default"
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
@@ -317,7 +317,7 @@ bindsym $mod+Print mode "$scrot"
 
 # i3bar
 bar {
-        status_command i3blocks -c ~/.i3/i3blocks/config
+        status_command i3blocks -c ~/.config/i3/i3blocks/config
         position top
         font pango:Iosevka Term, FontAwesome Medium 12
         strip_workspace_numbers yes

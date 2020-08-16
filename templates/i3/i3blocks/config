@@ -1,4 +1,4 @@
-command=~/.i3/i3blocks/bin/$BLOCK_NAME
+command=~/.config/i3/i3blocks/bin/$BLOCK_NAME
 markup=pango
 
 separator=false
