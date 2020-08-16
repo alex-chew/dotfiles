@@ -319,7 +319,7 @@ bindsym $mod+Print mode "$scrot"
 bar {
         status_command i3blocks -c ~/.config/i3/i3blocks/config
         position top
-        font pango:Iosevka Term, FontAwesome Medium 12
+        font pango:Iosevka Term, FontAwesome 5 Free Medium 12
         strip_workspace_numbers yes
         tray_output primary
         colors {
