@@ -19,7 +19,7 @@ def get_theme(theme_path):
     '''
     try:
         with open(theme_path) as theme_file:
-            return yaml.load(theme_file)
+            return yaml.safe_load(theme_file)
     except:
         return None
 
