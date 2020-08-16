@@ -46,8 +46,10 @@ export EDITOR='nvim'
 [[ -f /etc/bash_completion ]] && ! shopt -oq posix && . /etc/bash_completion
 
 # fzf
-if [[ -f ~/.fzf.bash ]]; then
-  source ~/.fzf.bash
+if [[ -d "$HOME/.fzf" ]]; then
+  [[ $- == *i* ]] && source "$HOME/.fzf/shell/completion.bash" 2> /dev/null
+  source "/home/alex/.fzf/shell/key-bindings.bash"
+
   complete -F _fzf_path_completion -o default -o bashdefault e
   complete -F _fzf_path_completion -o default -o bashdefault v
   export FZF_DEFAULT_COMMAND='fd --type f'
