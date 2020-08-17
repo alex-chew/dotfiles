@@ -2,7 +2,7 @@
 
 set -eux
 
-killall -q polybar
+killall -q polybar || true
 
 primary_monitor=$(polybar --list-monitors | grep primary | cut -d':' -f 1)
 logfile=/tmp/polybar_primary.log
