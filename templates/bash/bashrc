@@ -45,6 +45,9 @@ export EDITOR='nvim'
 # Bash completion
 [[ -f /etc/bash_completion ]] && ! shopt -oq posix && . /etc/bash_completion
 
+# keychain
+eval $(keychain --agents ssh --quiet)
+
 # fzf
 if [[ -d "$HOME/.fzf" ]]; then
   [[ $- == *i* ]] && source "$HOME/.fzf/shell/completion.bash" 2> /dev/null
