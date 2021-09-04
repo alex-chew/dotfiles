@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-i3lock -I 10 -c 2b303b -e -i ~/Pictures/backgrounds/lock.png -t
-
