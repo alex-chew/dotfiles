@@ -50,6 +50,8 @@ eval $(keychain --eval --agents ssh --quiet)
 
 # fzf
 if [[ -d "$HOME/.fzf" ]]; then
+  export PATH="$HOME/.fzf/bin:$PATH"
+
   [[ $- == *i* ]] && source "$HOME/.fzf/shell/completion.bash" 2> /dev/null
   source "/home/alex/.fzf/shell/key-bindings.bash"
 
