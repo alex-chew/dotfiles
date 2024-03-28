@@ -179,7 +179,7 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
-let $FZF_DEFAULT_COMMAND = 'fd --type f'
+let $FZF_DEFAULT_COMMAND = 'fd --type f --hidden -E .git'
 nnoremap <leader>r :Rg<CR>
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>f :Files<CR>
