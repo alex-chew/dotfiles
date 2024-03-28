@@ -160,7 +160,6 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'chriskempson/base16-vim'
 Plug 'michaeljsmith/vim-indent-object'
-Plug 'neovim/nvim-lspconfig'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
@@ -255,66 +254,66 @@ let g:pandoc#formatting#equalprg =
 let g:pandoc#syntax#use_definition_lists = 0
 nnoremap <leader>ww :cd ~/wiki/ \| Files<CR>
 
-Plug 'w0rp/ale'
-let g:ale_echo_msg_format = '%s [%linter% %severity%] %(code)%'
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_info_str = 'I'
-let g:ale_echo_msg_warning_str = 'W'
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_linters_explicit = 1
-nmap <silent> <C-P> <Plug>(ale_detail)
-nmap <silent> <Up> <Plug>(ale_previous_wrap)
-nmap <silent> <Down> <Plug>(ale_next_wrap)
-nmap <silent> <F9> <Plug>(ale_fix)
-let g:ale_linters = {
-      \ 'haskell': ['stack-ghc'],
-      \ 'python': ['flake8', 'pylint'],
-      \ }
-let g:ale_fixers = {
-      \ 'haskell': ['hfmt'],
-      \ 'javascript': ['prettier'],
-      \ 'javascriptreact': ['prettier'],
-      \ 'css': ['prettier'],
-      \ 'rust': ['rustfmt'],
-      \ 'cpp': ['clang-format'],
-      \ }
-let g:ale_rust_cargo_use_clippy = executable('cargo-clippy')
-let g:ale_c_clangformat_options = '-style=file'
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
+Plug 'neovim/nvim-lspconfig'
 
 call plug#end()
 
 
 
+""" LSP setup
+
 lua << EOF
-local on_attach = function(client, bufnr)
-  local function keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-  local function option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+require("mason").setup()
+require("mason-lspconfig").setup()
 
-  option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+-- Global mappings
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 
-  local opts = { noremap = true, silent = true }
-  keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-  keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-  keymap('n', '<leader>li', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-  keymap('n', '<leader>lt', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-  keymap('n', '<leader>lR', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+vim.api.nvim_create_autocmd('LspAttach', {
+  group = vim.api.nvim_create_augroup('UserLspConfig', {}),
+  callback = function(ev)
+    vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
-  keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-  keymap('n', '<leader>ls', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+    -- Buffer-local mappings
+    local opts = { buffer = ev.buf }
+    local km = vim.keymap.set
 
-  keymap('n', '<leader>lf', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
-  keymap('n', '<leader>lr', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-  keymap('n', '<leader>la', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+    km('n', 'gD', vim.lsp.buf.declaration, opts)
+    km('n', 'gd', vim.lsp.buf.definition, opts)
+    km('n', 'K', vim.lsp.buf.hover, opts)
+    km('n', 'gi', vim.lsp.buf.implementation, opts)
+    km('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+    km('n', '<leader>lt', vim.lsp.buf.type_definition, opts)
+    km('n', '<leader>lr', vim.lsp.buf.rename, opts)
+    km('n', 'gr', vim.lsp.buf.references, opts)
+    km({ 'n', 'v' }, '<leader>la', vim.lsp.buf.code_action, opts)
+    km('n', '<leader>lf', function()
+      vim.lsp.buf.format { async = true }
+    end, opts)
 
-  keymap('n', '<leader>lo', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
-  keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
-  keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
-  keymap('n', '<leader>lq', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
-end
+    km('n', '<leader>wa', vim.lsp.buf.add_workspace_folder)
+    km('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder)
+    km('n', '<leader>wl', function()
+      print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+    end, opts)
+  end,
+})
 
 local lspconfig = require'lspconfig'
 local servers = {
+  -- Python
+  'pyright',
+  'ruff',
+
+  -- Rust
   'rust_analyzer',
+
+  -- Typescript/Javascript
   'tsserver',
 }
 for _, lsp in ipairs(servers) do
@@ -325,6 +324,7 @@ for _, lsp in ipairs(servers) do
     }
   }
 end
+
 EOF
 
 
