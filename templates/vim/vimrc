@@ -269,10 +269,7 @@ require("mason").setup()
 require("mason-lspconfig").setup()
 
 -- Global mappings
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
@@ -285,7 +282,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
     km('n', 'gD', vim.lsp.buf.declaration, opts)
     km('n', 'gd', vim.lsp.buf.definition, opts)
-    km('n', 'K', vim.lsp.buf.hover, opts)
     km('n', '<leader>li', vim.lsp.buf.implementation, opts)
     km('n', '<leader>ls', vim.lsp.buf.signature_help, opts)
     km('n', '<leader>lt', vim.lsp.buf.type_definition, opts)
