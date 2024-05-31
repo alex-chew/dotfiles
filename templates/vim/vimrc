@@ -155,12 +155,10 @@ let g:python3_host_prog = $HOME . '/.pyenv/versions/neovim-python3/bin/python'
 call plug#begin('~/.vim/plugged')
 
 Plug 'chriskempson/base16-vim'
-Plug 'michaeljsmith/vim-indent-object'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
-Plug 'wellle/targets.vim'
 
 Plug 'airblade/vim-gitgutter'
 set updatetime=1000
@@ -200,10 +198,6 @@ nmap <leader>7 <Plug>AirlineSelectTab7
 nmap <leader>8 <Plug>AirlineSelectTab8
 nmap <leader>9 <Plug>AirlineSelectTab9
 
-Plug 'Raimondi/delimitMate'
-let delimitMate_expand_cr = 1
-let delimitMate_nesting_quotes = ['`', '"', "'"]
-
 Plug 'sheerun/vim-polyglot'
 let g:polyglot_disabled = ['latex']
 
@@ -219,11 +213,33 @@ let g:pandoc#command#autoexec_on_writes = 1
 let g:pandoc#folding#fdc = 0
 let g:pandoc#syntax#use_definition_lists = 0
 
+Plug 'echasnovski/mini.nvim', { 'branch': 'stable' }
+
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'neovim/nvim-lspconfig'
 
 call plug#end()
+
+
+
+""" Misc Lua setup
+
+lua << EOF
+require('mini.ai').setup({})
+
+require('mini.indentscope').setup({
+  draw = {
+    animation = require('mini.indentscope').gen_animation.none(),
+  },
+  options = {
+    border = 'top',
+    indent_at_cursor = false,
+  },
+})
+
+require('mini.pairs').setup({})
+EOF
 
 
 
