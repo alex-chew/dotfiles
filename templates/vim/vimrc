@@ -60,14 +60,6 @@ set showmatch
 set noerrorbells visualbell t_vb=
 autocmd GuiEnter * set visualbell t_vb=
 
-" Gui stuff
-set guioptions-=mrLtT
-if has('win32')
-  set guifont=Consolas:h11:cANSI
-elseif has('unix')
-  set guifont=Roboto\ Mono\ 11
-endif
-
 
 
 """ Navigation
@@ -128,6 +120,10 @@ vnoremap <Right> >gv
 " Filetype extras
 filetype plugin indent on
 
+" Commenting
+autocmd FileType c,cpp,h,hpp setlocal commentstring=//\ %s
+autocmd FileType ocaml setlocal commentstring=(*\ %s\ *)
+
 
 
 """ Command-line behavior
@@ -169,32 +165,12 @@ Plug 'wellle/targets.vim'
 Plug 'airblade/vim-gitgutter'
 set updatetime=1000
 
-Plug 'epeli/slimux'
-nnoremap <silent> <leader>x :SlimuxREPLSendLine<CR>
-vnoremap <silent> <leader>x :SlimuxREPLSendSelection<CR>
-
-Plug 'editorconfig/editorconfig-vim'
-let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
-
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 let $FZF_DEFAULT_COMMAND = 'fd --type f --hidden -E .git'
-nnoremap <leader>r :Rg<CR>
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>F :Files <C-R>=expand('%:h')<CR><CR>
-nnoremap <leader>i :Lines<CR>
-nnoremap <leader>I :BLines<CR>
-nnoremap <leader>m :Marks<CR>
-nnoremap <leader>o :History<CR>
-nnoremap <leader>t :Tags<CR>
-nnoremap <leader>T :BTags<CR>
-
-Plug 'lervag/vimtex'
-let g:tex_flavor = 'latex'
-let g:vimtex_compiler_latexmk = {'build_dir' : 'out'}
-let g:vimtex_compiler_progname = 'nvr'
-let g:vimtex_view_method = 'zathura'
 
 Plug 'morhetz/gruvbox'
 let g:gruvbox_contrast_dark = 'hard'
@@ -231,13 +207,6 @@ let delimitMate_nesting_quotes = ['`', '"', "'"]
 Plug 'sheerun/vim-polyglot'
 let g:polyglot_disabled = ['latex']
 
-Plug 'SirVer/ultisnips'
-let g:UltiSnipsSnippetDirectories = [$HOME . '/.vim/UltiSnips']
-
-Plug 'tpope/vim-commentary'
-autocmd FileType c,cpp,h,hpp setlocal commentstring=//\ %s
-autocmd FileType ocaml setlocal commentstring=(*\ %s\ *)
-
 Plug 'tpope/vim-fugitive'
 nnoremap <leader>gs :Gstatus<CR>
 
@@ -248,11 +217,7 @@ let g:pandoc#modules#enabled =
 let g:pandoc#modules#disabled = ['chdir']
 let g:pandoc#command#autoexec_on_writes = 1
 let g:pandoc#folding#fdc = 0
-let g:pandoc#formatting#equalprg =
-      \ 'pandoc -t markdown --atx-headers --wrap=preserve'
-      \ . ' -F ~/.pandoc/filters/checklist.py'
 let g:pandoc#syntax#use_definition_lists = 0
-nnoremap <leader>ww :cd ~/wiki/ \| Files<CR>
 
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
