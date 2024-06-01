@@ -155,13 +155,12 @@ let g:python3_host_prog = $HOME . '/.pyenv/versions/neovim-python3/bin/python'
 call plug#begin('~/.vim/plugged')
 
 Plug 'chriskempson/base16-vim'
+Plug 'lewis6991/gitsigns.nvim'
+Plug 'luukvbaal/statuscol.nvim'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
-
-Plug 'airblade/vim-gitgutter'
-set updatetime=1000
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
@@ -175,6 +174,7 @@ let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_invert_selection = 0
 let g:gruvbox_italic = 1
 let g:gruvbox_italicize_strings = 0
+let g:gruvbox_sign_column = 'bg0'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -223,11 +223,53 @@ call plug#end()
 
 
 
+" Set colorscheme after plugin section for plugin-added colorschemes
+color {{ vim.color }}
+
+
+
 """ Misc Lua setup
 
 lua << EOF
+vim.cmd('highlight link GitSignsAdd GruvboxGreenSign')
+vim.cmd('highlight link GitSignsChange GruvboxBlueSign')
+vim.cmd('highlight link GitSignsDelete GruvboxRedSign')
+require('gitsigns').setup({
+  on_attach = function(bufnr)
+    local gitsigns = require('gitsigns')
+    local opts = { buffer = bufnr }
+    local km = vim.keymap.set
+
+    km('n', ']c', function()
+      if vim.wo.diff then
+        vim.cmd.normal({ ']c', bang = true })
+      else
+        gitsigns.nav_hunk('next')
+      end
+    end)
+    km('n', '[c', function()
+      if vim.wo.diff then
+        vim.cmd.normal({ '[c', bang = true })
+      else
+        gitsigns.nav_hunk('prev')
+      end
+    end)
+
+    km('n', '<leader>hs', gitsigns.stage_hunk)
+    km('n', '<leader>hr', gitsigns.reset_hunk)
+    km('v', '<leader>hs', function()
+      gitsigns.stage_hunk { vim.fn.line('.'), vim.fn.line('v') }
+    end)
+    km('v', '<leader>hr', function()
+      gitsigns.reset_hunk { vim.fn.line('.'), vim.fn.line('v') }
+    end)
+    km('n', '<leader>hu', gitsigns.undo_stage_hunk)
+  end
+})
+
 require('mini.ai').setup({})
 
+vim.cmd('highlight link MiniIndentscopeSymbol LineNr')
 require('mini.indentscope').setup({
   draw = {
     animation = require('mini.indentscope').gen_animation.none(),
@@ -239,6 +281,30 @@ require('mini.indentscope').setup({
 })
 
 require('mini.pairs').setup({})
+
+local statuscol_builtin = require('statuscol.builtin')
+require('statuscol').setup({
+  relculright = true,
+  segments = {
+    { text = { statuscol_builtin.foldfunc } },
+    {
+      sign = {
+        namespace = { "diagnostic/signs" },
+        maxwidth = 2,
+        auto = true,
+      },
+    },
+    { text = { statuscol_builtin.lnumfunc } },
+    {
+      sign = {
+        namespace = { ".*" },
+        maxwidth = 1,
+        colwidth = 1,
+        wrap = true,
+      },
+    },
+  },
+})
 EOF
 
 
@@ -303,8 +369,3 @@ for _, lsp in ipairs(servers) do
 end
 
 EOF
-
-
-
-" Set colorscheme after plugin section for plugin-added colorschemes
-color {{ vim.color }}
