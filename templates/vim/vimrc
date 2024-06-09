@@ -198,9 +198,6 @@ nmap <leader>7 <Plug>AirlineSelectTab7
 nmap <leader>8 <Plug>AirlineSelectTab8
 nmap <leader>9 <Plug>AirlineSelectTab9
 
-Plug 'sheerun/vim-polyglot'
-let g:polyglot_disabled = ['latex']
-
 Plug 'tpope/vim-fugitive'
 nnoremap <leader>gs :Git status<CR>
 
@@ -214,6 +211,8 @@ let g:pandoc#folding#fdc = 0
 let g:pandoc#syntax#use_definition_lists = 0
 
 Plug 'echasnovski/mini.nvim', { 'branch': 'stable' }
+
+Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
@@ -305,6 +304,28 @@ require('statuscol').setup({
     },
   },
 })
+EOF
+
+
+""" Treesitter setup
+
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = {
+    "lua", "vim", "vimdoc", "query",
+    "bash", "make",
+    "c", "cpp",
+    "python",
+    "rust",
+    "css", "html", "javascript", "typescript",
+    "json", "json5", "jsonc",
+    "toml", "yaml",
+  },
+  auto_install = false,
+  highlight = {
+    enable = true,
+  }
+}
 EOF
 
 
