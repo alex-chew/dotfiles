@@ -51,7 +51,7 @@ let g:tex_conceal = 'admg'
 set number
 set relativenumber
 set cursorline
-set colorcolumn=80
+set colorcolumn=100
 
 " Matching brackets
 set showmatch
