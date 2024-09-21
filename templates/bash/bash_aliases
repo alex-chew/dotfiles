@@ -5,9 +5,10 @@
 alias e="$EDITOR"
 alias v="$EDITOR -R"
 
-# exa
-alias l='exa'
-alias ll='exa -haal'
+# eza
+alias l='eza'
+alias ll='eza -haal'
+alias tree='eza --tree'
 
 # for safety
 alias rm='rm -I'
