@@ -379,6 +379,9 @@ local servers = {
 
   -- Typescript/Javascript
   'ts_ls',
+
+  -- C/C++
+  'clangd',
 }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
