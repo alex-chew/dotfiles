@@ -102,14 +102,11 @@ __conda_ps1 () {
   [[ -n $CONDA_DEFAULT_ENV ]] && echo "[$CONDA_DEFAULT_ENV] "
 }
 
-# Anaconda
-CONDA_BIN="$HOME/anaconda3/bin/conda"
+# Conda
+CONDA_BIN="$HOME/miniconda3/bin/conda"
 if [[ -x $CONDA_BIN ]]; then
   conda () {
-    echo "initializing conda..." >&2
-    eval "$($CONDA_BIN shell.bash hook)"
-    # the "real" conda defined by the above init hook
-    conda "$@"
+    "$CONDA_BIN" "$@"
   }
 fi
 
